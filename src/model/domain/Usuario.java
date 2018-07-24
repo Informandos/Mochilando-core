@@ -10,7 +10,7 @@ package model.domain;
  * @author Juliana
  */
 public class Usuario {
-    private String codUsuario;
+    private Long codUsuario;
     private String nomUsuario;
     private String sobrenomeUsuario;
     private String txtEmail;
@@ -23,7 +23,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, String codCidade) {
+    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, String codCidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -38,14 +38,14 @@ public class Usuario {
     /**
      * @return the codUsuario
      */
-    public String getCodUsuario() {
+    public Long getCodUsuario() {
         return codUsuario;
     }
 
     /**
      * @param codUsuario the codUsuario to set
      */
-    public void setCodUsuario(String codUsuario) {
+    public void setCodUsuario(Long codUsuario) {
         this.codUsuario = codUsuario;
     }
 

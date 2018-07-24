@@ -11,15 +11,15 @@ package model.domain;
  */
 public class AvaliacaoComentario {
     
-    private String seqAvaliacao;
-    private String seqComentario;
-    private String codUsuarioAvaliador;
+    private Long seqAvaliacao;
+    private Long seqComentario;
+    private Long codUsuarioAvaliador;
     private String avaliacao; //limitar em dois valores
 
     public AvaliacaoComentario() {
     }
 
-    public AvaliacaoComentario(String seqAvaliacao, String seqComentario, String codUsuarioAvaliador, String avaliacao) {
+    public AvaliacaoComentario(Long seqAvaliacao, Long seqComentario, Long codUsuarioAvaliador, String avaliacao) {
         this.seqAvaliacao = seqAvaliacao;
         this.seqComentario = seqComentario;
         this.codUsuarioAvaliador = codUsuarioAvaliador;
@@ -29,28 +29,28 @@ public class AvaliacaoComentario {
     /**
      * @return the seqComentario
      */
-    public String getSeqComentario() {
+    public Long getSeqComentario() {
         return seqComentario;
     }
 
     /**
      * @param seqComentario the seqComentario to set
      */
-    public void setSeqComentario(String seqComentario) {
+    public void setSeqComentario(Long seqComentario) {
         this.seqComentario = seqComentario;
     }
 
     /**
      * @return the codUsuarioAvaliador
      */
-    public String getCodUsuarioAvaliador() {
+    public Long getCodUsuarioAvaliador() {
         return codUsuarioAvaliador;
     }
 
     /**
      * @param codUsuarioAvaliador the codUsuarioAvaliador to set
      */
-    public void setCodUsuarioAvaliador(String codUsuarioAvaliador) {
+    public void setCodUsuarioAvaliador(Long codUsuarioAvaliador) {
         this.codUsuarioAvaliador = codUsuarioAvaliador;
     }
 
@@ -71,14 +71,14 @@ public class AvaliacaoComentario {
     /**
      * @return the seqAvaliacao
      */
-    public String getSeqAvaliacao() {
+    public Long getSeqAvaliacao() {
         return seqAvaliacao;
     }
 
     /**
      * @param seqAvaliacao the seqAvaliacao to set
      */
-    public void setSeqAvaliacao(String seqAvaliacao) {
+    public void setSeqAvaliacao(Long seqAvaliacao) {
         this.seqAvaliacao = seqAvaliacao;
     }
     

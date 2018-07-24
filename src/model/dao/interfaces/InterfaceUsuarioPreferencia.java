@@ -16,7 +16,7 @@ public interface InterfaceUsuarioPreferencia {
     public Long inserir(UsuarioPreferencia usuarioPreferencia);
     public boolean alterar(UsuarioPreferencia usuarioPreferencia);
     public boolean excluir(UsuarioPreferencia usuarioPreferencia);
-    public UsuarioPreferencia consultarPorId(String seqUsuarioPreferencia);
+    public UsuarioPreferencia consultarPorId(Long seqUsuarioPreferencia);
     public List<UsuarioPreferencia> listarTudo();
-    public List<UsuarioPreferencia> listarTudoPorUsuario(String codUsuario);
+    public List<UsuarioPreferencia> listarTudoPorUsuario(Long codUsuario);
 }

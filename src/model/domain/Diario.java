@@ -12,8 +12,8 @@ import java.util.Date;
  * @author Juliana
  */
 public class Diario {
-    private String codDiario;
-    private String codUsuarioAutor;
+    private Long codDiario;
+    private Long codUsuarioAutor;
     private String nomDiario;
     private Date datPublicacao;
     private Date datInicioViagem;
@@ -24,7 +24,7 @@ public class Diario {
     public Diario() {
     }
 
-    public Diario(String codDiario, String codUsuarioAutor, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String desDiario, String txtDiario) {
+    public Diario(Long codDiario, Long codUsuarioAutor, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String desDiario, String txtDiario) {
         this.codDiario = codDiario;
         this.codUsuarioAutor = codUsuarioAutor;
         this.nomDiario = nomDiario;
@@ -38,28 +38,28 @@ public class Diario {
     /**
      * @return the codDiario
      */
-    public String getCodDiario() {
+    public Long getCodDiario() {
         return codDiario;
     }
 
     /**
      * @param codDiario the codDiario to set
      */
-    public void setCodDiario(String codDiario) {
+    public void setCodDiario(Long codDiario) {
         this.codDiario = codDiario;
     }
 
     /**
      * @return the codUsuarioAutor
      */
-    public String getCodUsuarioAutor() {
+    public Long getCodUsuarioAutor() {
         return codUsuarioAutor;
     }
 
     /**
      * @param codUsuarioAutor the codUsuarioAutor to set
      */
-    public void setCodUsuarioAutor(String codUsuarioAutor) {
+    public void setCodUsuarioAutor(Long codUsuarioAutor) {
         this.codUsuarioAutor = codUsuarioAutor;
     }
 

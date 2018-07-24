@@ -13,12 +13,12 @@ import model.domain.Diario;
  * @author Juliana
  */
 public interface InterfaceDiarioDAO {
-    public String inserir(Diario diario);
+    public Long inserir(Diario diario);
     public boolean alterar(Diario diario);
-    public boolean remover(String codDiario);
-    public Diario obterDiarioPorId(String codDiario);
+    public boolean remover(Long codDiario);
+    public Diario obterDiarioPorId(Long codDiario);
     public List<Diario> listarTudo();
-    public List<Diario> listarTudoPorUsuario(String codUsuario);
-    public List<Diario> listarTudoPorCidade(String codCidade);
-    public List<Diario> listarTudoPorEstado(String codEstado);
+    public List<Diario> listarTudoPorUsuario(Long codUsuario);
+    public List<Diario> listarTudoPorCidade(Long codCidade);
+    public List<Diario> listarTudoPorEstado(Long codEstado);
 }

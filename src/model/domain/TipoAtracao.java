@@ -10,13 +10,13 @@ package model.domain;
  * @author Juliana
  */
 public class TipoAtracao {
-    private String codTipoAtracao;
+    private Long codTipoAtracao;
     private String descTipoAtracao;
 
     public TipoAtracao() {
     }
 
-    public TipoAtracao(String codTipoAtracao, String descTipoAtracao) {
+    public TipoAtracao(Long codTipoAtracao, String descTipoAtracao) {
         this.codTipoAtracao = codTipoAtracao;
         this.descTipoAtracao = descTipoAtracao;
     }
@@ -24,14 +24,14 @@ public class TipoAtracao {
     /**
      * @return the codTipoAtracao
      */
-    public String getCodTipoAtracao() {
+    public Long getCodTipoAtracao() {
         return codTipoAtracao;
     }
 
     /**
      * @param codTipoAtracao the codTipoAtracao to set
      */
-    public void setCodTipoAtracao(String codTipoAtracao) {
+    public void setCodTipoAtracao(Long codTipoAtracao) {
         this.codTipoAtracao = codTipoAtracao;
     }
 

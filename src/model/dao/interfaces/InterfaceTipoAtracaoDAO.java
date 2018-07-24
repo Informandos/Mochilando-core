@@ -13,10 +13,10 @@ import model.domain.TipoAtracao;
  * @author Juliana
  */
 public interface InterfaceTipoAtracaoDAO {
-    public String inserir(TipoAtracao tipoAtracao);
+    public Long inserir(TipoAtracao tipoAtracao);
     public boolean alterar(TipoAtracao tipoAtracao);
     public boolean excluir(TipoAtracao tipoAtracao);
-    public TipoAtracao consultarTipoAtracaoPorId(String codTipoAtracao);
+    public TipoAtracao consultarTipoAtracaoPorId(Long codTipoAtracao);
     public TipoAtracao consultarTipoAtracaoPorNome(String descTipoAtracao);
     public List<TipoAtracao> listarTudo();
 }

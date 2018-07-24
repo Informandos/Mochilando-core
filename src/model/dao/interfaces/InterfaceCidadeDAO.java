@@ -13,10 +13,10 @@ import model.domain.Cidade;
  * @author Juliana
  */
 public interface InterfaceCidadeDAO {
-    public String inserir(Cidade cidade);
+    public Long inserir(Cidade cidade);
     public boolean alterar(Cidade cidade);
     public boolean excluir(Cidade cidade);
-    public Cidade consultarCidadePorId(String codCidade);
-    public List<Cidade> listarPorCodEstado(String codEstado);
+    public Cidade consultarCidadePorId(Long codCidade);
+    public List<Cidade> listarPorCodEstado(Long codEstado);
     public List<Cidade> listarTudo();
 }

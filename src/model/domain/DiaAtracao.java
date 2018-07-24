@@ -10,60 +10,58 @@ package model.domain;
  * @author Juliana
  */
 public class DiaAtracao {
-    private String seqDiaAtracao;
-    private String seqAtracao;
-    private String seqDia;
+    private Long seqDiaAtracao;
+    private Long seqAtracao;
+    private Long seqDia;
 
     public DiaAtracao() {
     }
 
-    public DiaAtracao(String seqDiaAtracao, String seqAtracao, String seqDia) {
+    public DiaAtracao(Long seqDiaAtracao, Long seqAtracao, Long seqDia) {
         this.seqDiaAtracao = seqDiaAtracao;
         this.seqAtracao = seqAtracao;
-        this.seqDia = seqDia;
-    }
-
-    /**
-     * @return the seqAtracao
-     */
-    public String getSeqAtracao() {
-        return seqAtracao;
-    }
-
-    /**
-     * @param seqAtracao the seqAtracao to set
-     */
-    public void setSeqAtracao(String seqAtracao) {
-        this.seqAtracao = seqAtracao;
-    }
-
-    /**
-     * @return the seqDia
-     */
-    public String getSeqDia() {
-        return seqDia;
-    }
-
-    /**
-     * @param seqDia the seqDia to set
-     */
-    public void setSeqDia(String seqDia) {
         this.seqDia = seqDia;
     }
 
     /**
      * @return the seqDiaAtracao
      */
-    public String getSeqDiaAtracao() {
+    public Long getSeqDiaAtracao() {
         return seqDiaAtracao;
     }
 
     /**
      * @param seqDiaAtracao the seqDiaAtracao to set
      */
-    public void setSeqDiaAtracao(String seqDiaAtracao) {
+    public void setSeqDiaAtracao(Long seqDiaAtracao) {
         this.seqDiaAtracao = seqDiaAtracao;
     }
-    
-    
+
+    /**
+     * @return the seqAtracao
+     */
+    public Long getSeqAtracao() {
+        return seqAtracao;
+    }
+
+    /**
+     * @param seqAtracao the seqAtracao to set
+     */
+    public void setSeqAtracao(Long seqAtracao) {
+        this.seqAtracao = seqAtracao;
+    }
+
+    /**
+     * @return the seqDia
+     */
+    public Long getSeqDia() {
+        return seqDia;
+    }
+
+    /**
+     * @param seqDia the seqDia to set
+     */
+    public void setSeqDia(Long seqDia) {
+        this.seqDia = seqDia;
+    }
 }

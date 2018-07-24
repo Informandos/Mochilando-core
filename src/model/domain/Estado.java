@@ -11,29 +11,45 @@ package model.domain;
  */
 public class Estado {
     
-    private String codEstado;
+    private Long codEstado;
+    private String sigla;
     private String nomEstado;
 
     public Estado() {
     }
 
-    public Estado(String codEstado, String nomEstado) {
+    public Estado(Long codEstado, String sigla, String nomEstado) {
         this.codEstado = codEstado;
+        this.sigla = sigla;
         this.nomEstado = nomEstado;
     }
 
     /**
      * @return the codEstado
      */
-    public String getCodEstado() {
+    public Long getCodEstado() {
         return codEstado;
     }
 
     /**
      * @param codEstado the codEstado to set
      */
-    public void setCodEstado(String codEstado) {
+    public void setCodEstado(Long codEstado) {
         this.codEstado = codEstado;
+    }
+
+    /**
+     * @return the sigla
+     */
+    public String getSigla() {
+        return sigla;
+    }
+
+    /**
+     * @param sigla the sigla to set
+     */
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
     }
 
     /**
@@ -49,5 +65,6 @@ public class Estado {
     public void setNomEstado(String nomEstado) {
         this.nomEstado = nomEstado;
     }
+
     
 }

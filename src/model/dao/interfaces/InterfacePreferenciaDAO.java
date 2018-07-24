@@ -13,10 +13,10 @@ import model.domain.Preferencia;
  * @author Juliana
  */
 public interface InterfacePreferenciaDAO {
-    public String inserir(Preferencia preferencia);
+    public Long inserir(Preferencia preferencia);
     public boolean alterar(Preferencia preferencia);
     public boolean excluir(Preferencia preferencia);
-    public Preferencia consultarPreferenciaPorId(String codPreferencia);
+    public Preferencia consultarPreferenciaPorId(Long codPreferencia);
     public Preferencia consultarPreferenciaPorNome(String descPreferencia);
     public List<Preferencia> listarTudo();
 }

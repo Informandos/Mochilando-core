@@ -9,11 +9,11 @@ import java.util.List;
 import model.domain.Atracao;
 
 public interface InterfaceAtracaoDAO {
-    public String inserir(Atracao atracao);
+    public Long inserir(Atracao atracao);
     public boolean alterar(Atracao atracao);
     public boolean excluir(Atracao atracao);
-    public Atracao consultarPorId(String codAtracao);
-    public List<Atracao> listarPorCodCidade(String codCidade);
-    public List<Atracao> listarPorCodEstado(String codEstado);
+    public Atracao consultarPorId(Long codAtracao);
+    public List<Atracao> listarPorCodCidade(Long codCidade);
+    public List<Atracao> listarPorCodEstado(Long codEstado);
     public List<Atracao> listarTudo();
 }

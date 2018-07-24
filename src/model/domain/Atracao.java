@@ -11,9 +11,9 @@ package model.domain;
  */
 public class Atracao {
     
-    private String seqAtracao;
-    private String codCidadeAtracao;
-    private String codTipoAtracao;
+    private Long seqAtracao;
+    private Long codCidadeAtracao;
+    private Long codTipoAtracao;
     private String nomAtracao;
     private double nroLatitude;
     private double nroLongitude;
@@ -21,7 +21,7 @@ public class Atracao {
     public Atracao() {
     }
 
-    public Atracao(String seqAtracao, String codTipoAtracao, String codCidadeAtracao, String nomAtracao, double nroLatitude, double nroLongitude) {
+    public Atracao(Long seqAtracao, Long codTipoAtracao, Long codCidadeAtracao, String nomAtracao, double nroLatitude, double nroLongitude) {
         this.seqAtracao = seqAtracao;
         this.codTipoAtracao = codTipoAtracao;
         this.codCidadeAtracao = codCidadeAtracao;
@@ -34,42 +34,42 @@ public class Atracao {
     /**
      * @return the seqAtracao
      */
-    public String getSeqAtracao() {
+    public Long getSeqAtracao() {
         return seqAtracao;
     }
 
     /**
      * @param seqAtracao the seqAtracao to set
      */
-    public void setSeqAtracao(String seqAtracao) {
+    public void setSeqAtracao(Long seqAtracao) {
         this.seqAtracao = seqAtracao;
     }
 
     /**
      * @return the codTipoAtracao
      */
-    public String getCodTipoAtracao() {
+    public Long getCodTipoAtracao() {
         return codTipoAtracao;
     }
 
     /**
      * @param codTipoAtracao the codTipoAtracao to set
      */
-    public void setCodTipoAtracao(String codTipoAtracao) {
+    public void setCodTipoAtracao(Long codTipoAtracao) {
         this.codTipoAtracao = codTipoAtracao;
     }
 
     /**
      * @return the codCidadeAtracao
      */
-    public String getCodCidadeAtracao() {
+    public Long getCodCidadeAtracao() {
         return codCidadeAtracao;
     }
 
     /**
      * @param codCidadeAtracao the codCidadeAtracao to set
      */
-    public void setCodCidadeAtracao(String codCidadeAtracao) {
+    public void setCodCidadeAtracao(Long codCidadeAtracao) {
         this.codCidadeAtracao = codCidadeAtracao;
     }
 

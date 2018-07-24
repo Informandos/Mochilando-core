@@ -13,14 +13,14 @@ import java.awt.image.BufferedImage;
  */
 public class Foto {
 
-    private String seqFoto;
-    private String seqDia;
+    private Long seqFoto;
+    private Long seqDia;
     private byte[] byteFoto;
 
     public Foto() {
     }
 
-    public Foto(String seqFoto, String seqDia, byte[] byteFoto) {
+    public Foto(Long seqFoto, Long seqDia, byte[] byteFoto) {
         this.seqFoto = seqFoto;
         this.seqDia = seqDia;
         this.byteFoto = byteFoto;
@@ -29,28 +29,28 @@ public class Foto {
     /**
      * @return the seqFoto
      */
-    public String getSeqFoto() {
+    public Long getSeqFoto() {
         return seqFoto;
     }
 
     /**
      * @param seqFoto the seqFoto to set
      */
-    public void setSeqFoto(String seqFoto) {
+    public void setSeqFoto(Long seqFoto) {
         this.seqFoto = seqFoto;
     }
 
     /**
      * @return the seqDia
      */
-    public String getSeqDia() {
+    public Long getSeqDia() {
         return seqDia;
     }
 
     /**
      * @param seqDia the seqDia to set
      */
-    public void setSeqDia(String seqDia) {
+    public void setSeqDia(Long seqDia) {
         this.seqDia = seqDia;
     }
 

@@ -10,13 +10,13 @@ package model.domain;
  * @author Juliana
  */
 public class Preferencia {
-    private String codPreferencia;
+    private Long codPreferencia;
     private String descPreferencia;
 
     public Preferencia() {
     }
 
-    public Preferencia(String codPreferencia, String descPreferencia) {
+    public Preferencia(Long codPreferencia, String descPreferencia) {
         this.codPreferencia = codPreferencia;
         this.descPreferencia = descPreferencia;
     }
@@ -24,14 +24,14 @@ public class Preferencia {
     /**
      * @return the codPreferencia
      */
-    public String getCodPreferencia() {
+    public Long getCodPreferencia() {
         return codPreferencia;
     }
 
     /**
      * @param codPreferencia the codPreferencia to set
      */
-    public void setCodPreferencia(String codPreferencia) {
+    public void setCodPreferencia(Long codPreferencia) {
         this.codPreferencia = codPreferencia;
     }
 

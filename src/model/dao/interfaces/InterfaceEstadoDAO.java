@@ -13,9 +13,10 @@ import model.domain.Estado;
  * @author Juliana
  */
 public interface InterfaceEstadoDAO {
-    public String inserir(Estado estado);
+    public Long inserir(Estado estado);
     public boolean alterar(Estado estado);
     public boolean excluir(Estado estado);
-    public Estado consultarPorId(String codEstado);
+    public Estado consultarPorId(Long codEstado);
+    public Estado consultarPorSigla(Long codEstado);
     public List<Estado> listarTudo();
 }

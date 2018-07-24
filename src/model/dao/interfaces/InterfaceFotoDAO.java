@@ -13,10 +13,10 @@ import model.domain.Foto;
  * @author Juliana
  */
 public interface InterfaceFotoDAO {
-    public String inserir(Foto foto);
+    public Long inserir(Foto foto);
     public boolean alterar(Foto foto);
-    public boolean excluir(String seqFoto);
-    public Foto obterFotoPorId(String seqFoto);
+    public boolean excluir(Long seqFoto);
+    public Foto obterFotoPorId(Long seqFoto);
     public List<Foto> listarTudo();
-    public List<Foto> listarTudoPorDia(String seqDia);
+    public List<Foto> listarTudoPorDia(Long seqDia);
 }

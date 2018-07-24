@@ -11,15 +11,15 @@ package model.domain;
  */
 public class AvaliacaoDiario {
 
-    private String seqAvaliacao;
-    private String codDiario;
-    private String codUsuarioAvaliador;
+    private Long seqAvaliacao;
+    private Long codDiario;
+    private Long codUsuarioAvaliador;
     private String avaliacao; //limitar em dois valores
 
     public AvaliacaoDiario() {
     }
 
-    public AvaliacaoDiario(String seqAvaliacao, String codDiario, String codUsuarioAvaliador, String avaliacao) {
+    public AvaliacaoDiario(Long seqAvaliacao, Long codDiario, Long codUsuarioAvaliador, String avaliacao) {
         this.seqAvaliacao = seqAvaliacao;
         this.codDiario = codDiario;
         this.codUsuarioAvaliador = codUsuarioAvaliador;
@@ -29,28 +29,28 @@ public class AvaliacaoDiario {
     /**
      * @return the codDiario
      */
-    public String getCodDiario() {
+    public Long getCodDiario() {
         return codDiario;
     }
 
     /**
      * @param codDiario the codDiario to set
      */
-    public void setCodDiario(String codDiario) {
+    public void setCodDiario(Long codDiario) {
         this.codDiario = codDiario;
     }
 
     /**
      * @return the codUsuarioAvaliador
      */
-    public String getCodUsuarioAvaliador() {
+    public Long getCodUsuarioAvaliador() {
         return codUsuarioAvaliador;
     }
 
     /**
      * @param codUsuarioAvaliador the codUsuarioAvaliador to set
      */
-    public void setCodUsuarioAvaliador(String codUsuarioAvaliador) {
+    public void setCodUsuarioAvaliador(Long codUsuarioAvaliador) {
         this.codUsuarioAvaliador = codUsuarioAvaliador;
     }
 
@@ -71,14 +71,14 @@ public class AvaliacaoDiario {
     /**
      * @return the seqAvaliacao
      */
-    public String getSeqAvaliacao() {
+    public Long getSeqAvaliacao() {
         return seqAvaliacao;
     }
 
     /**
      * @param seqAvaliacao the seqAvaliacao to set
      */
-    public void setSeqAvaliacao(String seqAvaliacao) {
+    public void setSeqAvaliacao(Long seqAvaliacao) {
         this.seqAvaliacao = seqAvaliacao;
     }
 

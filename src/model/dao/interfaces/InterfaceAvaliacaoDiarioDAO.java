@@ -13,11 +13,11 @@ import model.domain.AvaliacaoDiario;
  * @author Juliana
  */
 public interface InterfaceAvaliacaoDiarioDAO {
-    public String inserir(AvaliacaoDiario avaliacaoDiario);
+    public Long inserir(AvaliacaoDiario avaliacaoDiario);
     public boolean alterar(AvaliacaoDiario avaliacaoDiario);
     public boolean remover(AvaliacaoDiario avaliacaoDiario);
-    public int consultarNumAvPositivas(String codDiario);
-    public int consultarNumAvNegativas(String codDiario);
-    public boolean haAvaliacao(String codUsuario, String codDiario);
-    public AvaliacaoDiario consultarAvaliacao(String codUsuario, String codDiario);
+    public int consultarNumAvPositivas(Long codDiario);
+    public int consultarNumAvNegativas(Long codDiario);
+    public boolean haAvaliacao(Long codUsuario, Long codDiario);
+    public AvaliacaoDiario consultarAvaliacao(Long codUsuario, Long codDiario);
 }

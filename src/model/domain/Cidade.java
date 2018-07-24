@@ -11,45 +11,45 @@ package model.domain;
  */
 public class Cidade {
     
-    private String codCidade;
-    private String codEsstado;
+    private Long codCidade;
+    private Long codEstado;
     private String nomCidade;
 
     public Cidade() {
     }
 
-    public Cidade(String codCidade, String codEsstado, String nomCidade) {
+    public Cidade(Long codCidade, Long codEstado, String nomCidade) {
         this.codCidade = codCidade;
-        this.codEsstado = codEsstado;
+        this.codEstado = codEstado;
         this.nomCidade = nomCidade;
     }
 
     /**
      * @return the codCidade
      */
-    public String getCodCidade() {
+    public Long getCodCidade() {
         return codCidade;
     }
 
     /**
      * @param codCidade the codCidade to set
      */
-    public void setCodCidade(String codCidade) {
+    public void setCodCidade(Long codCidade) {
         this.codCidade = codCidade;
     }
 
     /**
      * @return the codEsstado
      */
-    public String getCodEsstado() {
-        return codEsstado;
+    public Long getCodEstado() {
+        return codEstado;
     }
 
     /**
      * @param codEsstado the codEsstado to set
      */
-    public void setCodEsstado(String codEsstado) {
-        this.codEsstado = codEsstado;
+    public void setCodEsstado(Long codEstado) {
+        this.codEstado = codEstado;
     }
 
     /**

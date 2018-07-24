@@ -13,16 +13,16 @@ import java.util.Date;
  */
 public class Comentario {
     
-    private String seqComentario;
-    private String codDiario;
-    private String codAutorComentario;
+    private Long seqComentario;
+    private Long codDiario;
+    private Long codAutorComentario;
     private Date datPublicacao;
     private String txtComentario;
 
     public Comentario() {
     }
 
-    public Comentario(String seqComentario, String codDiario, String codAutorComentario, Date datPublicacao, String txtComentario) {
+    public Comentario(Long seqComentario, Long codDiario, Long codAutorComentario, Date datPublicacao, String txtComentario) {
         this.seqComentario = seqComentario;
         this.codDiario = codDiario;
         this.codAutorComentario = codAutorComentario;
@@ -35,28 +35,28 @@ public class Comentario {
     /**
      * @return the codDiario
      */
-    public String getCodDiario() {
+    public Long getCodDiario() {
         return codDiario;
     }
 
     /**
      * @param codDiario the codDiario to set
      */
-    public void setCodDiario(String codDiario) {
+    public void setCodDiario(Long codDiario) {
         this.codDiario = codDiario;
     }
 
     /**
      * @return the codAutorComentario
      */
-    public String getCodAutorComentario() {
+    public Long getCodAutorComentario() {
         return codAutorComentario;
     }
 
     /**
      * @param codAutorComentario the codAutorComentario to set
      */
-    public void setCodAutorComentario(String codAutorComentario) {
+    public void setCodAutorComentario(Long codAutorComentario) {
         this.codAutorComentario = codAutorComentario;
     }
 
@@ -91,14 +91,14 @@ public class Comentario {
     /**
      * @return the seqComentario
      */
-    public String getSeqComentario() {
+    public Long getSeqComentario() {
         return seqComentario;
     }
 
     /**
      * @param seqComentario the seqComentario to set
      */
-    public void setSeqComentario(String seqComentario) {
+    public void setSeqComentario(Long seqComentario) {
         this.seqComentario = seqComentario;
     }
 

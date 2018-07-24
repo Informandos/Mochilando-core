@@ -13,10 +13,10 @@ import model.domain.Comentario;
  * @author Juliana
  */
 public interface InterfaceComentarioDAO {
-    public String inserir(Comentario comentario);
+    public Long inserir(Comentario comentario);
     public boolean alterar(Comentario comentario);
-    public boolean excluir(String codComentario);
-    public Comentario obterComentarioPorId(String seqComentario);
-    public List<Comentario> listarPorDiario(String codDiario);
+    public boolean excluir(Long codComentario);
+    public Comentario obterComentarioPorId(Long seqComentario);
+    public List<Comentario> listarPorDiario(Long codDiario);
     public List<Comentario> listarTudo();
 }

@@ -14,12 +14,12 @@ import model.domain.AvaliacaoComentario;
  * @author Juliana
  */
 public interface InterfaceAvaliacaoComentarioDAO {
-    public String inserir(AvaliacaoComentario avaliacaoComenario);
+    public Long inserir(AvaliacaoComentario avaliacaoComenario);
     public boolean alterar(AvaliacaoComentario avaliacaoComenario);
     public boolean excluir(AvaliacaoComentario avaliacaoComenario);
-    public int consultarNumAvPositivas(String codComentario);
-    public int consultarNumAvNegativas(String codComentario);
-    public boolean haAvaliacao(String codUsuario, String codComentario);
-    public AvaliacaoComentario consultar(String codUsuario, String codComentario);
+    public int consultarNumAvPositivas(Long codComentario);
+    public int consultarNumAvNegativas(Long codComentario);
+    public boolean haAvaliacao(Long codUsuario, Long codComentario);
+    public AvaliacaoComentario consultar(Long codUsuario, Long codComentario);
     public List <AvaliacaoComentario> listarTudo();
 }
