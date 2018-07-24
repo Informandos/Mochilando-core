@@ -13,7 +13,7 @@ public interface InterfaceAtracaoDAO {
     public boolean alterar(Atracao atracao);
     public boolean excluir(Atracao atracao);
     public Atracao consultarPorId(String codAtracao);
-    public List<Atracao> listarPorCodCidade();
-    public List<Atracao> listarPorCodEstado();
+    public List<Atracao> listarPorCodCidade(String codCidade);
+    public List<Atracao> listarPorCodEstado(String codEstado);
     public List<Atracao> listarTudo();
 }

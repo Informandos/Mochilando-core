@@ -20,6 +20,6 @@ public interface InterfaceAvaliacaoComentarioDAO {
     public int consultarNumAvPositivas(String codComentario);
     public int consultarNumAvNegativas(String codComentario);
     public boolean haAvaliacao(String codUsuario, String codComentario);
-    public AvaliacaoComentario consultarAvaliacao(String codUsuario, String codComentario);
+    public AvaliacaoComentario consultar(String codUsuario, String codComentario);
     public List <AvaliacaoComentario> listarTudo();
 }
