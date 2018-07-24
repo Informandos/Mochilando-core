@@ -16,17 +16,23 @@ public class Usuario {
     private String txtEmail;
     private String txtSenha;
     private byte[] imgPerfil;
+    private String sexo;
+    private String datNascimento;
+    private String codCidade;
 
     public Usuario() {
     }
 
-    public Usuario(String codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil) {
+    public Usuario(String codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, String codCidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
         this.txtEmail = txtEmail;
         this.txtSenha = txtSenha;
         this.imgPerfil = imgPerfil;
+        this.sexo = sexo;
+        this.datNascimento = datNascimento;
+        this.codCidade = codCidade;
     }
 
     /**
@@ -111,6 +117,48 @@ public class Usuario {
      */
     public void setImgPerfil(byte[] imgPerfil) {
         this.imgPerfil = imgPerfil;
+    }
+
+    /**
+     * @return the sexo
+     */
+    public String getSexo() {
+        return sexo;
+    }
+
+    /**
+     * @param sexo the sexo to set
+     */
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    /**
+     * @return the datNascimento
+     */
+    public String getDatNascimento() {
+        return datNascimento;
+    }
+
+    /**
+     * @param datNascimento the datNascimento to set
+     */
+    public void setDatNascimento(String datNascimento) {
+        this.datNascimento = datNascimento;
+    }
+
+    /**
+     * @return the codCidade
+     */
+    public String getCodCidade() {
+        return codCidade;
+    }
+
+    /**
+     * @param codCidade the codCidade to set
+     */
+    public void setCodCidade(String codCidade) {
+        this.codCidade = codCidade;
     }
     
 }
