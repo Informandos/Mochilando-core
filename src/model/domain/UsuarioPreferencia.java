@@ -10,13 +10,15 @@ package model.domain;
  * @author Juliana
  */
 public class UsuarioPreferencia {
+    private String seqUsuarioPreferencia;
     private String codUsuario;
     private String codPreferencia;
 
     public UsuarioPreferencia() {
     }
 
-    public UsuarioPreferencia(String codUsuario, String codPreferencia) {
+    public UsuarioPreferencia(String seqUsuarioPreferencia, String codUsuario, String codPreferencia) {
+        this.seqUsuarioPreferencia = seqUsuarioPreferencia;
         this.codUsuario = codUsuario;
         this.codPreferencia = codPreferencia;
     }
@@ -47,6 +49,20 @@ public class UsuarioPreferencia {
      */
     public void setCodPreferencia(String codPreferencia) {
         this.codPreferencia = codPreferencia;
+    }
+
+    /**
+     * @return the seqUsuarioPreferencia
+     */
+    public String getSeqUsuarioPreferencia() {
+        return seqUsuarioPreferencia;
+    }
+
+    /**
+     * @param seqUsuarioPreferencia the seqUsuarioPreferencia to set
+     */
+    public void setSeqUsuarioPreferencia(String seqUsuarioPreferencia) {
+        this.seqUsuarioPreferencia = seqUsuarioPreferencia;
     }
     
 }

@@ -10,14 +10,15 @@ package model.domain;
  * @author Juliana
  */
 public class DiaAtracao {
-    
+    private String seqDiaAtracao;
     private String seqAtracao;
     private String seqDia;
 
     public DiaAtracao() {
     }
 
-    public DiaAtracao(String seqAtracao, String seqDia) {
+    public DiaAtracao(String seqDiaAtracao, String seqAtracao, String seqDia) {
+        this.seqDiaAtracao = seqDiaAtracao;
         this.seqAtracao = seqAtracao;
         this.seqDia = seqDia;
     }
@@ -48,6 +49,20 @@ public class DiaAtracao {
      */
     public void setSeqDia(String seqDia) {
         this.seqDia = seqDia;
+    }
+
+    /**
+     * @return the seqDiaAtracao
+     */
+    public String getSeqDiaAtracao() {
+        return seqDiaAtracao;
+    }
+
+    /**
+     * @param seqDiaAtracao the seqDiaAtracao to set
+     */
+    public void setSeqDiaAtracao(String seqDiaAtracao) {
+        this.seqDiaAtracao = seqDiaAtracao;
     }
     
     
