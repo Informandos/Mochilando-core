@@ -10,6 +10,8 @@ package model.domain;
  * @author Juliana
  */
 public class AvaliacaoDiario {
+
+    private String seqAvaliacao;
     private String codDiario;
     private String codUsuarioAvaliador;
     private String avaliacao; //limitar em dois valores
@@ -17,7 +19,8 @@ public class AvaliacaoDiario {
     public AvaliacaoDiario() {
     }
 
-    public AvaliacaoDiario(String codDiario, String codUsuarioAvaliador, String avaliacao) {
+    public AvaliacaoDiario(String seqAvaliacao, String codDiario, String codUsuarioAvaliador, String avaliacao) {
+        this.seqAvaliacao = seqAvaliacao;
         this.codDiario = codDiario;
         this.codUsuarioAvaliador = codUsuarioAvaliador;
         this.avaliacao = avaliacao;
@@ -64,6 +67,19 @@ public class AvaliacaoDiario {
     public void setAvaliacao(String avaliacao) {
         this.avaliacao = avaliacao;
     }
-    
-    
+
+    /**
+     * @return the seqAvaliacao
+     */
+    public String getSeqAvaliacao() {
+        return seqAvaliacao;
+    }
+
+    /**
+     * @param seqAvaliacao the seqAvaliacao to set
+     */
+    public void setSeqAvaliacao(String seqAvaliacao) {
+        this.seqAvaliacao = seqAvaliacao;
+    }
+
 }

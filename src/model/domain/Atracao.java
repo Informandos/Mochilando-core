@@ -12,20 +12,20 @@ package model.domain;
 public class Atracao {
     
     private String seqAtracao;
-    private String codTipoAtracao;
     private String codCidadeAtracao;
-    private String desAtracao;
+    private String codTipoAtracao;
+    private String nomAtracao;
     private double nroLatitude;
     private double nroLongitude;
 
     public Atracao() {
     }
 
-    public Atracao(String seqAtracao, String codTipoAtracao, String codCidadeAtracao, String desAtracao, double nroLatitude, double nroLongitude) {
+    public Atracao(String seqAtracao, String codTipoAtracao, String codCidadeAtracao, String nomAtracao, double nroLatitude, double nroLongitude) {
         this.seqAtracao = seqAtracao;
         this.codTipoAtracao = codTipoAtracao;
         this.codCidadeAtracao = codCidadeAtracao;
-        this.desAtracao = desAtracao;
+        this.nomAtracao = nomAtracao;
         this.nroLatitude = nroLatitude;
         this.nroLongitude = nroLongitude;
     }
@@ -76,15 +76,15 @@ public class Atracao {
     /**
      * @return the desAtracao
      */
-    public String getDesAtracao() {
-        return desAtracao;
+    public String getNomAtracao() {
+        return nomAtracao;
     }
 
     /**
      * @param desAtracao the desAtracao to set
      */
-    public void setDesAtracao(String desAtracao) {
-        this.desAtracao = desAtracao;
+    public void setNomAtracao(String desAtracao) {
+        this.nomAtracao = desAtracao;
     }
 
     /**

@@ -20,7 +20,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String codUsuario, String codTipoAtracao, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil) {
+    public Usuario(String codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -42,7 +42,6 @@ public class Usuario {
     public void setCodUsuario(String codUsuario) {
         this.codUsuario = codUsuario;
     }
-
 
     /**
      * @return the nomUsuario
@@ -113,6 +112,5 @@ public class Usuario {
     public void setImgPerfil(byte[] imgPerfil) {
         this.imgPerfil = imgPerfil;
     }
-    
     
 }

@@ -10,16 +10,17 @@ package model.domain;
  * @author Juliana
  */
 public class Dia {
+    
+    private String seqDia;
     private String codDiario;
-    private String seqDiaDiario;
     private String txtDia;
 
     public Dia() {
     }
 
-    public Dia(String codDiario, String seqDiaDiario, String txtDia) {
+    public Dia(String seqDia, String codDiario, String txtDia) {
         this.codDiario = codDiario;
-        this.seqDiaDiario = seqDiaDiario;
+        this.seqDia = seqDia;
         this.txtDia = txtDia;
     }
 
@@ -38,17 +39,17 @@ public class Dia {
     }
 
     /**
-     * @return the seqDiaDiario
+     * @return the seqDia
      */
     public String getSeqDiaDiario() {
-        return seqDiaDiario;
+        return seqDia;
     }
 
     /**
-     * @param seqDiaDiario the seqDiaDiario to set
+     * @param seqDia the seqDia to set
      */
-    public void setSeqDiaDiario(String seqDiaDiario) {
-        this.seqDiaDiario = seqDiaDiario;
+    public void setSeqDiaDiario(String seqDia) {
+        this.seqDia = seqDia;
     }
 
     /**

@@ -11,31 +11,33 @@ package model.domain;
  */
 public class AvaliacaoComentario {
     
-    private String codComentario;
+    private String seqAvaliacao;
+    private String seqComentario;
     private String codUsuarioAvaliador;
     private String avaliacao; //limitar em dois valores
 
     public AvaliacaoComentario() {
     }
 
-    public AvaliacaoComentario(String codComentario, String codUsuarioAvaliador, String avaliacao) {
-        this.codComentario = codComentario;
+    public AvaliacaoComentario(String seqAvaliacao, String seqComentario, String codUsuarioAvaliador, String avaliacao) {
+        this.seqAvaliacao = seqAvaliacao;
+        this.seqComentario = seqComentario;
         this.codUsuarioAvaliador = codUsuarioAvaliador;
         this.avaliacao = avaliacao;
     }
 
     /**
-     * @return the codComentario
+     * @return the seqComentario
      */
-    public String getCodComentario() {
-        return codComentario;
+    public String getSeqComentario() {
+        return seqComentario;
     }
 
     /**
-     * @param codComentario the codComentario to set
+     * @param seqComentario the seqComentario to set
      */
-    public void setCodComentario(String codComentario) {
-        this.codComentario = codComentario;
+    public void setSeqComentario(String seqComentario) {
+        this.seqComentario = seqComentario;
     }
 
     /**
@@ -64,6 +66,20 @@ public class AvaliacaoComentario {
      */
     public void setAvaliacao(String avaliacao) {
         this.avaliacao = avaliacao;
+    }
+
+    /**
+     * @return the seqAvaliacao
+     */
+    public String getSeqAvaliacao() {
+        return seqAvaliacao;
+    }
+
+    /**
+     * @param seqAvaliacao the seqAvaliacao to set
+     */
+    public void setSeqAvaliacao(String seqAvaliacao) {
+        this.seqAvaliacao = seqAvaliacao;
     }
     
     

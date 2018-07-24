@@ -12,33 +12,18 @@ import java.awt.image.BufferedImage;
  * @author Juliana
  */
 public class Foto {
-    private String codAtracaoVisitada;
+
     private String seqFoto;
-    private byte[] byteImgAtracao;
-    private String codTipoAtracao;
+    private String seqDia;
+    private byte[] byteFoto;
 
     public Foto() {
     }
 
-    public Foto(String codAtracaoVisitada, String seqFoto, byte[] byteImgAtracao, String codTipoAtracao) {
-        this.codAtracaoVisitada = codAtracaoVisitada;
+    public Foto(String seqFoto, String seqDia, byte[] byteFoto) {
         this.seqFoto = seqFoto;
-        this.byteImgAtracao = byteImgAtracao;
-        this.codTipoAtracao = codTipoAtracao;
-    }
-
-    /**
-     * @return the codAtracaoVisitada
-     */
-    public String getCodAtracaoVisitada() {
-        return codAtracaoVisitada;
-    }
-
-    /**
-     * @param codAtracaoVisitada the codAtracaoVisitada to set
-     */
-    public void setCodAtracaoVisitada(String codAtracaoVisitada) {
-        this.codAtracaoVisitada = codAtracaoVisitada;
+        this.seqDia = seqDia;
+        this.byteFoto = byteFoto;
     }
 
     /**
@@ -56,30 +41,30 @@ public class Foto {
     }
 
     /**
-     * @return the byteImgAtracao
+     * @return the seqDia
      */
-    public byte[] getByteImgAtracao() {
-        return byteImgAtracao;
+    public String getSeqDia() {
+        return seqDia;
     }
 
     /**
-     * @param byteImgAtracao the byteImgAtracao to set
+     * @param seqDia the seqDia to set
      */
-    public void setByteImgAtracao(byte[] byteImgAtracao) {
-        this.byteImgAtracao = byteImgAtracao;
+    public void setSeqDia(String seqDia) {
+        this.seqDia = seqDia;
     }
 
     /**
-     * @return the codTipoAtracao
+     * @return the byteFoto
      */
-    public String getCodTipoAtracao() {
-        return codTipoAtracao;
+    public byte[] getByteFoto() {
+        return byteFoto;
     }
 
     /**
-     * @param codTipoAtracao the codTipoAtracao to set
+     * @param byteFoto the byteFoto to set
      */
-    public void setCodTipoAtracao(String codTipoAtracao) {
-        this.codTipoAtracao = codTipoAtracao;
+    public void setByteFoto(byte[] byteFoto) {
+        this.byteFoto = byteFoto;
     }
 }

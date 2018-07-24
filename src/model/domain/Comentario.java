@@ -12,19 +12,20 @@ import java.util.Date;
  * @author Juliana
  */
 public class Comentario {
+    
+    private String seqComentario;
     private String codDiario;
     private String codAutorComentario;
-    private String seqComentario;
     private Date datPublicacao;
     private String txtComentario;
 
     public Comentario() {
     }
 
-    public Comentario(String codDiario, String codAutorComentario, String seqComentario, Date datPublicacao, String txtComentario) {
+    public Comentario(String seqComentario, String codDiario, String codAutorComentario, Date datPublicacao, String txtComentario) {
+        this.seqComentario = seqComentario;
         this.codDiario = codDiario;
         this.codAutorComentario = codAutorComentario;
-        this.seqComentario = seqComentario;
         this.datPublicacao = datPublicacao;
         this.txtComentario = txtComentario;
     }
