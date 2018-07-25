@@ -14,92 +14,61 @@ import java.util.Date;
 public class Comentario {
     
     private Long seqComentario;
-    private Long codDiario;
-    private Long codAutorComentario;
+    private Diario diario;
+    private Usuario usuario;
     private Date datPublicacao;
     private String txtComentario;
 
     public Comentario() {
     }
 
-    public Comentario(Long seqComentario, Long codDiario, Long codAutorComentario, Date datPublicacao, String txtComentario) {
+    public Comentario(Long seqComentario, Diario diario, Usuario usuario, Date datPublicacao, String txtComentario) {
         this.seqComentario = seqComentario;
-        this.codDiario = codDiario;
-        this.codAutorComentario = codAutorComentario;
+        this.diario = diario;
+        this.usuario = usuario;
         this.datPublicacao = datPublicacao;
         this.txtComentario = txtComentario;
     }
-    
-    
 
-    /**
-     * @return the codDiario
-     */
-    public Long getCodDiario() {
-        return codDiario;
-    }
-
-    /**
-     * @param codDiario the codDiario to set
-     */
-    public void setCodDiario(Long codDiario) {
-        this.codDiario = codDiario;
-    }
-
-    /**
-     * @return the codAutorComentario
-     */
-    public Long getCodAutorComentario() {
-        return codAutorComentario;
-    }
-
-    /**
-     * @param codAutorComentario the codAutorComentario to set
-     */
-    public void setCodAutorComentario(Long codAutorComentario) {
-        this.codAutorComentario = codAutorComentario;
-    }
-
-    /**
-     * @return the datPublicacao
-     */
-    public Date getDatPublicacao() {
-        return datPublicacao;
-    }
-
-    /**
-     * @param datPublicacao the datPublicacao to set
-     */
-    public void setDatPublicacao(Date datPublicacao) {
-        this.datPublicacao = datPublicacao;
-    }
-
-    /**
-     * @return the txtComentario
-     */
-    public String getTxtComentario() {
-        return txtComentario;
-    }
-
-    /**
-     * @param txtComentario the txtComentario to set
-     */
-    public void setTxtComentario(String txtComentario) {
-        this.txtComentario = txtComentario;
-    }
-
-    /**
-     * @return the seqComentario
-     */
     public Long getSeqComentario() {
         return seqComentario;
     }
 
-    /**
-     * @param seqComentario the seqComentario to set
-     */
     public void setSeqComentario(Long seqComentario) {
         this.seqComentario = seqComentario;
     }
+
+    public Diario getDiario() {
+        return diario;
+    }
+
+    public void setDiario(Diario diario) {
+        this.diario = diario;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Date getDatPublicacao() {
+        return datPublicacao;
+    }
+
+    public void setDatPublicacao(Date datPublicacao) {
+        this.datPublicacao = datPublicacao;
+    }
+
+    public String getTxtComentario() {
+        return txtComentario;
+    }
+
+    public void setTxtComentario(String txtComentario) {
+        this.txtComentario = txtComentario;
+    }
+
 
 }

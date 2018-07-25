@@ -18,5 +18,5 @@ public interface InterfaceUsuarioPreferencia {
     public boolean excluir(UsuarioPreferencia usuarioPreferencia);
     public UsuarioPreferencia consultarPorId(Long seqUsuarioPreferencia);
     public List<UsuarioPreferencia> listarTudo();
-    public List<UsuarioPreferencia> listarTudoPorUsuario(Long codUsuario);
+    public List<UsuarioPreferencia> listarPorUsuario(Long codUsuario);
 }

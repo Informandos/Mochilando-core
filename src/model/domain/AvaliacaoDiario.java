@@ -12,59 +12,17 @@ package model.domain;
 public class AvaliacaoDiario {
 
     private Long seqAvaliacao;
-    private Long codDiario;
-    private Long codUsuarioAvaliador;
+    private Diario diario;
+    private Usuario usuario;
     private String avaliacao; //limitar em dois valores
 
     public AvaliacaoDiario() {
     }
 
-    public AvaliacaoDiario(Long seqAvaliacao, Long codDiario, Long codUsuarioAvaliador, String avaliacao) {
+    public AvaliacaoDiario(Long seqAvaliacao, Diario diario, Usuario usuario, String avaliacao) {
         this.seqAvaliacao = seqAvaliacao;
-        this.codDiario = codDiario;
-        this.codUsuarioAvaliador = codUsuarioAvaliador;
-        this.avaliacao = avaliacao;
-    }
-
-    /**
-     * @return the codDiario
-     */
-    public Long getCodDiario() {
-        return codDiario;
-    }
-
-    /**
-     * @param codDiario the codDiario to set
-     */
-    public void setCodDiario(Long codDiario) {
-        this.codDiario = codDiario;
-    }
-
-    /**
-     * @return the codUsuarioAvaliador
-     */
-    public Long getCodUsuarioAvaliador() {
-        return codUsuarioAvaliador;
-    }
-
-    /**
-     * @param codUsuarioAvaliador the codUsuarioAvaliador to set
-     */
-    public void setCodUsuarioAvaliador(Long codUsuarioAvaliador) {
-        this.codUsuarioAvaliador = codUsuarioAvaliador;
-    }
-
-    /**
-     * @return the avaliacao
-     */
-    public String getAvaliacao() {
-        return avaliacao;
-    }
-
-    /**
-     * @param avaliacao the avaliacao to set
-     */
-    public void setAvaliacao(String avaliacao) {
+        this.diario = diario;
+        this.usuario = usuario;
         this.avaliacao = avaliacao;
     }
 
@@ -81,5 +39,48 @@ public class AvaliacaoDiario {
     public void setSeqAvaliacao(Long seqAvaliacao) {
         this.seqAvaliacao = seqAvaliacao;
     }
+
+    /**
+     * @return the diario
+     */
+    public Diario getDiario() {
+        return diario;
+    }
+
+    /**
+     * @param diario the diario to set
+     */
+    public void setDiario(Diario diario) {
+        this.diario = diario;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * @return the avaliacao
+     */
+    public String getAvaliacao() {
+        return avaliacao;
+    }
+
+    /**
+     * @param avaliacao the avaliacao to set
+     */
+    public void setAvaliacao(String avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
 
 }

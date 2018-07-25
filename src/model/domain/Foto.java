@@ -14,57 +14,40 @@ import java.awt.image.BufferedImage;
 public class Foto {
 
     private Long seqFoto;
-    private Long seqDia;
+    private Dia dia;
     private byte[] byteFoto;
 
     public Foto() {
     }
 
-    public Foto(Long seqFoto, Long seqDia, byte[] byteFoto) {
+    public Foto(Long seqFoto, Dia dia, byte[] byteFoto) {
         this.seqFoto = seqFoto;
-        this.seqDia = seqDia;
+        this.dia = dia;
         this.byteFoto = byteFoto;
     }
 
-    /**
-     * @return the seqFoto
-     */
     public Long getSeqFoto() {
         return seqFoto;
     }
 
-    /**
-     * @param seqFoto the seqFoto to set
-     */
     public void setSeqFoto(Long seqFoto) {
         this.seqFoto = seqFoto;
     }
 
-    /**
-     * @return the seqDia
-     */
-    public Long getSeqDia() {
-        return seqDia;
+    public Dia getDia() {
+        return dia;
     }
 
-    /**
-     * @param seqDia the seqDia to set
-     */
-    public void setSeqDia(Long seqDia) {
-        this.seqDia = seqDia;
+    public void setDia(Dia dia) {
+        this.dia = dia;
     }
 
-    /**
-     * @return the byteFoto
-     */
     public byte[] getByteFoto() {
         return byteFoto;
     }
 
-    /**
-     * @param byteFoto the byteFoto to set
-     */
     public void setByteFoto(byte[] byteFoto) {
         this.byteFoto = byteFoto;
     }
+
 }

@@ -11,16 +11,16 @@ package model.domain;
  */
 public class DiaAtracao {
     private Long seqDiaAtracao;
-    private Long seqAtracao;
-    private Long seqDia;
+    private Atracao atracao;
+    private Dia dia;
 
     public DiaAtracao() {
     }
 
-    public DiaAtracao(Long seqDiaAtracao, Long seqAtracao, Long seqDia) {
+    public DiaAtracao(Long seqDiaAtracao, Atracao atracao, Dia dia) {
         this.seqDiaAtracao = seqDiaAtracao;
-        this.seqAtracao = seqAtracao;
-        this.seqDia = seqDia;
+        this.atracao = atracao;
+        this.dia = dia;
     }
 
     /**
@@ -38,30 +38,32 @@ public class DiaAtracao {
     }
 
     /**
-     * @return the seqAtracao
+     * @return the atracao
      */
-    public Long getSeqAtracao() {
-        return seqAtracao;
+    public Atracao getAtracao() {
+        return atracao;
     }
 
     /**
-     * @param seqAtracao the seqAtracao to set
+     * @param atracao the atracao to set
      */
-    public void setSeqAtracao(Long seqAtracao) {
-        this.seqAtracao = seqAtracao;
+    public void setAtracao(Atracao atracao) {
+        this.atracao = atracao;
     }
 
     /**
-     * @return the seqDia
+     * @return the dia
      */
-    public Long getSeqDia() {
-        return seqDia;
+    public Dia getDia() {
+        return dia;
     }
 
     /**
-     * @param seqDia the seqDia to set
+     * @param dia the dia to set
      */
-    public void setSeqDia(Long seqDia) {
-        this.seqDia = seqDia;
+    public void setDia(Dia dia) {
+        this.dia = dia;
     }
+
+    
 }

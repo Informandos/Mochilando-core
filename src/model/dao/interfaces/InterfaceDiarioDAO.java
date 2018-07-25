@@ -6,7 +6,10 @@
 package model.dao.interfaces;
 
 import java.util.List;
+import model.domain.Cidade;
 import model.domain.Diario;
+import model.domain.Estado;
+import model.domain.Usuario;
 
 /**
  *
@@ -15,10 +18,10 @@ import model.domain.Diario;
 public interface InterfaceDiarioDAO {
     public Long inserir(Diario diario);
     public boolean alterar(Diario diario);
-    public boolean remover(Long codDiario);
-    public Diario obterDiarioPorId(Long codDiario);
+    public boolean excluir(Diario diario);
+    public Diario consultarDiarioPorId(Long codDiario);
     public List<Diario> listarTudo();
-    public List<Diario> listarTudoPorUsuario(Long codUsuario);
-    public List<Diario> listarTudoPorCidade(Long codCidade);
-    public List<Diario> listarTudoPorEstado(Long codEstado);
+    public List<Diario> listarPorUsuario(Usuario usuario);
+    public List<Diario> listarPorCidade(Cidade cidade);
+    public List<Diario> listarPorEstado(Estado estado);
 }

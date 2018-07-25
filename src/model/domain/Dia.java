@@ -12,44 +12,44 @@ package model.domain;
 public class Dia {
     
     private Long seqDia;
-    private Long codDiario;
+    private Diario diario;
     private String txtDia;
 
     public Dia() {
     }
 
-    public Dia(Long seqDia, Long codDiario, String txtDia) {
-        this.codDiario = codDiario;
+    public Dia(Long seqDia, Diario diario, String txtDia) {
         this.seqDia = seqDia;
+        this.diario = diario;
         this.txtDia = txtDia;
-    }
-
-    /**
-     * @return the codDiario
-     */
-    public Long getCodDiario() {
-        return codDiario;
-    }
-
-    /**
-     * @param codDiario the codDiario to set
-     */
-    public void setCodDiario(Long codDiario) {
-        this.codDiario = codDiario;
     }
 
     /**
      * @return the seqDia
      */
-    public Long getSeqDiaDiario() {
+    public Long getSeqDia() {
         return seqDia;
     }
 
     /**
      * @param seqDia the seqDia to set
      */
-    public void setSeqDiaDiario(Long seqDia) {
+    public void setSeqDia(Long seqDia) {
         this.seqDia = seqDia;
+    }
+
+    /**
+     * @return the diario
+     */
+    public Diario getDiario() {
+        return diario;
+    }
+
+    /**
+     * @param diario the diario to set
+     */
+    public void setDiario(Diario diario) {
+        this.diario = diario;
     }
 
     /**
@@ -65,4 +65,5 @@ public class Dia {
     public void setTxtDia(String txtDia) {
         this.txtDia = txtDia;
     }
+    
 }

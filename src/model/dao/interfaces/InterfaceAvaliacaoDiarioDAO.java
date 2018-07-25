@@ -19,5 +19,5 @@ public interface InterfaceAvaliacaoDiarioDAO {
     public int consultarNumAvPositivas(Long codDiario);
     public int consultarNumAvNegativas(Long codDiario);
     public boolean haAvaliacao(Long codUsuario, Long codDiario);
-    public AvaliacaoDiario consultarAvaliacao(Long codUsuario, Long codDiario);
+    public AvaliacaoDiario consultar(Long codUsuario, Long codDiario);
 }

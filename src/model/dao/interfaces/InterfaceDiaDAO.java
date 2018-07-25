@@ -15,7 +15,7 @@ import model.domain.Dia;
 public interface InterfaceDiaDAO {
     public Long inserir(Dia dia);
     public boolean alterar(Dia dia);
-    public boolean remover(Long seqDia);
-    public Dia obterDiaPorId(Long seqDia);
-    public List<Dia> listarTudoPorDiario(Long seqDiario); 
+    public boolean excluir(Dia dia);
+    public Dia consultarDiaPorId(Long seqDia);
+    public List<Dia> listarPorDiario(Long seqDiario); 
 }

@@ -13,25 +13,23 @@ import java.util.Date;
  */
 public class Diario {
     private Long codDiario;
-    private Long codUsuarioAutor;
+    private Usuario usuario;
     private String nomDiario;
     private Date datPublicacao;
     private Date datInicioViagem;
     private Date datFimViagem;
-    private String desDiario;
     private String txtDiario;
 
     public Diario() {
     }
 
-    public Diario(Long codDiario, Long codUsuarioAutor, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String desDiario, String txtDiario) {
+    public Diario(Long codDiario, Usuario usuario, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String txtDiario) {
         this.codDiario = codDiario;
-        this.codUsuarioAutor = codUsuarioAutor;
+        this.usuario = usuario;
         this.nomDiario = nomDiario;
         this.datPublicacao = datPublicacao;
         this.datInicioViagem = datInicioViagem;
         this.datFimViagem = datFimViagem;
-        this.desDiario = desDiario;
         this.txtDiario = txtDiario;
     }
 
@@ -50,17 +48,17 @@ public class Diario {
     }
 
     /**
-     * @return the codUsuarioAutor
+     * @return the usuario
      */
-    public Long getCodUsuarioAutor() {
-        return codUsuarioAutor;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     /**
-     * @param codUsuarioAutor the codUsuarioAutor to set
+     * @param usuario the usuario to set
      */
-    public void setCodUsuarioAutor(Long codUsuarioAutor) {
-        this.codUsuarioAutor = codUsuarioAutor;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     /**
@@ -120,20 +118,6 @@ public class Diario {
     }
 
     /**
-     * @return the desDiario
-     */
-    public String getDesDiario() {
-        return desDiario;
-    }
-
-    /**
-     * @param desDiario the desDiario to set
-     */
-    public void setDesDiario(String desDiario) {
-        this.desDiario = desDiario;
-    }
-
-    /**
      * @return the txtDiario
      */
     public String getTxtDiario() {
@@ -146,5 +130,7 @@ public class Diario {
     public void setTxtDiario(String txtDiario) {
         this.txtDiario = txtDiario;
     }
+
+    
     
 }

@@ -18,12 +18,12 @@ public class Usuario {
     private byte[] imgPerfil;
     private String sexo;
     private String datNascimento;
-    private String codCidade;
+    private Cidade cidade;
 
     public Usuario() {
     }
 
-    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, String codCidade) {
+    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, Cidade cidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -32,7 +32,7 @@ public class Usuario {
         this.imgPerfil = imgPerfil;
         this.sexo = sexo;
         this.datNascimento = datNascimento;
-        this.codCidade = codCidade;
+        this.cidade = cidade;
     }
 
     /**
@@ -150,15 +150,15 @@ public class Usuario {
     /**
      * @return the codCidade
      */
-    public String getCodCidade() {
-        return codCidade;
+    public Cidade getCidade() {
+        return cidade;
     }
 
     /**
      * @param codCidade the codCidade to set
      */
-    public void setCodCidade(String codCidade) {
-        this.codCidade = codCidade;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
     
 }

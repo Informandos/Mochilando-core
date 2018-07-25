@@ -19,5 +19,5 @@ public interface InterfaceDiaAtracao {
     public boolean excluir(DiaAtracao diaAtracao);
     public DiaAtracao consultarPorId(Long seqDiaAtracao);
     public List<DiaAtracao> listarTudo();
-    public List<DiaAtracao> listarTudoPorDia(Long seqDia);
+    public List<DiaAtracao> listarPorDia(Long seqDia);
 }

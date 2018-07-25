@@ -15,7 +15,7 @@ import model.domain.Comentario;
 public interface InterfaceComentarioDAO {
     public Long inserir(Comentario comentario);
     public boolean alterar(Comentario comentario);
-    public boolean excluir(Long codComentario);
+    public boolean excluir(Comentario comentario);
     public Comentario obterComentarioPorId(Long seqComentario);
     public List<Comentario> listarPorDiario(Long codDiario);
     public List<Comentario> listarTudo();

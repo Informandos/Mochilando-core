@@ -10,10 +10,10 @@ package model.domain;
  * @author Juliana
  */
 public class Atracao {
-    
+
     private Long seqAtracao;
-    private Long codCidadeAtracao;
-    private Long codTipoAtracao;
+    private Cidade cidade;
+    private TipoAtracao tipoAtracao;
     private String nomAtracao;
     private double nroLatitude;
     private double nroLongitude;
@@ -21,15 +21,14 @@ public class Atracao {
     public Atracao() {
     }
 
-    public Atracao(Long seqAtracao, Long codTipoAtracao, Long codCidadeAtracao, String nomAtracao, double nroLatitude, double nroLongitude) {
+    public Atracao(Long seqAtracao, Cidade cidade, TipoAtracao tipoAtracao, String nomAtracao, double nroLatitude, double nroLongitude) {
         this.seqAtracao = seqAtracao;
-        this.codTipoAtracao = codTipoAtracao;
-        this.codCidadeAtracao = codCidadeAtracao;
+        this.cidade = cidade;
+        this.tipoAtracao = tipoAtracao;
         this.nomAtracao = nomAtracao;
         this.nroLatitude = nroLatitude;
         this.nroLongitude = nroLongitude;
     }
-    
 
     /**
      * @return the seqAtracao
@@ -46,45 +45,45 @@ public class Atracao {
     }
 
     /**
-     * @return the codTipoAtracao
+     * @return the cidade
      */
-    public Long getCodTipoAtracao() {
-        return codTipoAtracao;
+    public Cidade getCidade() {
+        return cidade;
     }
 
     /**
-     * @param codTipoAtracao the codTipoAtracao to set
+     * @param cidade the cidade to set
      */
-    public void setCodTipoAtracao(Long codTipoAtracao) {
-        this.codTipoAtracao = codTipoAtracao;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     /**
-     * @return the codCidadeAtracao
+     * @return the tipoAtracao
      */
-    public Long getCodCidadeAtracao() {
-        return codCidadeAtracao;
+    public TipoAtracao getTipoAtracao() {
+        return tipoAtracao;
     }
 
     /**
-     * @param codCidadeAtracao the codCidadeAtracao to set
+     * @param tipoAtracao the tipoAtracao to set
      */
-    public void setCodCidadeAtracao(Long codCidadeAtracao) {
-        this.codCidadeAtracao = codCidadeAtracao;
+    public void setTipoAtracao(TipoAtracao tipoAtracao) {
+        this.tipoAtracao = tipoAtracao;
     }
 
     /**
-     * @return the desAtracao
+     * @return the nomAtracao
      */
     public String getNomAtracao() {
         return nomAtracao;
     }
 
     /**
-     * @param desAtracao the desAtracao to set
+     * @param nomAtracao the nomAtracao to set
      */
-    public void setNomAtracao(String desAtracao) {
-        this.nomAtracao = desAtracao;
+    public void setNomAtracao(String nomAtracao) {
+        this.nomAtracao = nomAtracao;
     }
 
     /**
@@ -114,5 +113,5 @@ public class Atracao {
     public void setNroLongitude(double nroLongitude) {
         this.nroLongitude = nroLongitude;
     }
-    
+
 }

@@ -11,58 +11,41 @@ package model.domain;
  */
 public class UsuarioPreferencia {
     private Long seqUsuarioPreferencia;
-    private Long codUsuario;
-    private String codPreferencia;
+    private Usuario usuario;
+    private Preferencia preferencia;
 
     public UsuarioPreferencia() {
     }
 
-    public UsuarioPreferencia(Long seqUsuarioPreferencia, Long codUsuario, String codPreferencia) {
+    public UsuarioPreferencia(Long seqUsuarioPreferencia, Usuario usuario, Preferencia preferencia) {
         this.seqUsuarioPreferencia = seqUsuarioPreferencia;
-        this.codUsuario = codUsuario;
-        this.codPreferencia = codPreferencia;
+        this.usuario = usuario;
+        this.preferencia = preferencia;
     }
 
-    /**
-     * @return the codUsuario
-     */
-    public Long getCodUsuario() {
-        return codUsuario;
-    }
-
-    /**
-     * @param codUsuario the codUsuario to set
-     */
-    public void setCodUsuario(Long codUsuario) {
-        this.codUsuario = codUsuario;
-    }
-
-    /**
-     * @return the codPreferencia
-     */
-    public String getCodPreferencia() {
-        return codPreferencia;
-    }
-
-    /**
-     * @param codPreferencia the codPreferencia to set
-     */
-    public void setCodPreferencia(String codPreferencia) {
-        this.codPreferencia = codPreferencia;
-    }
-
-    /**
-     * @return the seqUsuarioPreferencia
-     */
     public Long getSeqUsuarioPreferencia() {
         return seqUsuarioPreferencia;
     }
 
-    /**
-     * @param seqUsuarioPreferencia the seqUsuarioPreferencia to set
-     */
     public void setSeqUsuarioPreferencia(Long seqUsuarioPreferencia) {
         this.seqUsuarioPreferencia = seqUsuarioPreferencia;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Preferencia getPreferencia() {
+        return preferencia;
+    }
+
+    public void setPreferencia(Preferencia preferencia) {
+        this.preferencia = preferencia;
+    }
+
     
 }

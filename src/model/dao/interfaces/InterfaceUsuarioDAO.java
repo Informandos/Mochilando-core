@@ -15,7 +15,7 @@ import model.domain.Usuario;
 public interface InterfaceUsuarioDAO {
     public Long inserir(Usuario usuario);
     public boolean alterar(Usuario usuario);
-    public boolean remover(Long codUsuario);
+    public boolean excluir(Usuario usuario);
     public Usuario consultarUsuarioPorId(Long codUsuario);
     public Usuario consultarUsuarioPorEmail(String txtEmail);
     public List<Usuario> listarTudo();

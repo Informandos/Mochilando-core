@@ -12,59 +12,17 @@ package model.domain;
 public class AvaliacaoComentario {
     
     private Long seqAvaliacao;
-    private Long seqComentario;
-    private Long codUsuarioAvaliador;
+    private Comentario comentario;
+    private Usuario usuario;
     private String avaliacao; //limitar em dois valores
 
     public AvaliacaoComentario() {
     }
 
-    public AvaliacaoComentario(Long seqAvaliacao, Long seqComentario, Long codUsuarioAvaliador, String avaliacao) {
+    public AvaliacaoComentario(Long seqAvaliacao, Comentario comentario, Usuario usuario, String avaliacao) {
         this.seqAvaliacao = seqAvaliacao;
-        this.seqComentario = seqComentario;
-        this.codUsuarioAvaliador = codUsuarioAvaliador;
-        this.avaliacao = avaliacao;
-    }
-
-    /**
-     * @return the seqComentario
-     */
-    public Long getSeqComentario() {
-        return seqComentario;
-    }
-
-    /**
-     * @param seqComentario the seqComentario to set
-     */
-    public void setSeqComentario(Long seqComentario) {
-        this.seqComentario = seqComentario;
-    }
-
-    /**
-     * @return the codUsuarioAvaliador
-     */
-    public Long getCodUsuarioAvaliador() {
-        return codUsuarioAvaliador;
-    }
-
-    /**
-     * @param codUsuarioAvaliador the codUsuarioAvaliador to set
-     */
-    public void setCodUsuarioAvaliador(Long codUsuarioAvaliador) {
-        this.codUsuarioAvaliador = codUsuarioAvaliador;
-    }
-
-    /**
-     * @return the avaliacao
-     */
-    public String getAvaliacao() {
-        return avaliacao;
-    }
-
-    /**
-     * @param avaliacao the avaliacao to set
-     */
-    public void setAvaliacao(String avaliacao) {
+        this.comentario = comentario;
+        this.usuario = usuario;
         this.avaliacao = avaliacao;
     }
 
@@ -81,6 +39,49 @@ public class AvaliacaoComentario {
     public void setSeqAvaliacao(Long seqAvaliacao) {
         this.seqAvaliacao = seqAvaliacao;
     }
+
+    /**
+     * @return the comentario
+     */
+    public Comentario getComentario() {
+        return comentario;
+    }
+
+    /**
+     * @param comentario the comentario to set
+     */
+    public void setComentario(Comentario comentario) {
+        this.comentario = comentario;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * @return the avaliacao
+     */
+    public String getAvaliacao() {
+        return avaliacao;
+    }
+
+    /**
+     * @param avaliacao the avaliacao to set
+     */
+    public void setAvaliacao(String avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+    
     
     
 }

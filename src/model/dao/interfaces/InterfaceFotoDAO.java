@@ -15,8 +15,8 @@ import model.domain.Foto;
 public interface InterfaceFotoDAO {
     public Long inserir(Foto foto);
     public boolean alterar(Foto foto);
-    public boolean excluir(Long seqFoto);
+    public boolean excluir(Foto foto);
     public Foto obterFotoPorId(Long seqFoto);
     public List<Foto> listarTudo();
-    public List<Foto> listarTudoPorDia(Long seqDia);
+    public List<Foto> listarPorDia(Long seqDia);
 }
