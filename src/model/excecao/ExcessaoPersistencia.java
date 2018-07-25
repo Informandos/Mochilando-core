@@ -13,4 +13,8 @@ public class ExcessaoPersistencia extends Exception {
     public ExcessaoPersistencia(String mensagem){
         super(mensagem);
     }
+    
+    public ExcessaoPersistencia(Exception ex) {
+        super(ex);
+    }
 }

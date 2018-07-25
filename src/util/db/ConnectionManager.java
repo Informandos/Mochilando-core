@@ -12,25 +12,25 @@ import java.sql.SQLException;
  *
  * @author Juliana
  */
-public class GerenciadorConexao {
+public class ConnectionManager {
 
-    private static GerenciadorConexao conexao;
+    private static ConnectionManager conexao;
     private static ConnectionFactory cf;
 
-    private GerenciadorConexao() {
-         GerenciadorConexao.cf = new PostgresqlConnection();
+    private ConnectionManager() {
+         ConnectionManager.cf = new PostgresqlConnection();
     }
 
-    public static GerenciadorConexao getInstance() {
+    public static ConnectionManager getInstance() {
         if(conexao == null)
-            conexao = new GerenciadorConexao();
+            conexao = new ConnectionManager();
 
         return conexao;
     }
 
-    public Connection getConexao() throws ClassNotFoundException, SQLException {
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
 
-        return GerenciadorConexao.cf.getConexao();
+        return ConnectionManager.cf.getConexao();
     }
     
 }
