@@ -3,37 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Cidade.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/UsuarioPreferencia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/ConnectionFactory.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Dia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceFotoDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfacePreferenciaDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/PostgresqlConnection.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceCidadeDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Foto.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Preferencia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Diario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceDiaAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/excecao/ExcessaoPersistencia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceDiaDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/DataSourceConnection.java</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceDiarioDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceUsuarioPreferencia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceEstadoDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceTipoAtracaoDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/AvaliacaoComentario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceAvaliacaoDiarioDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/TipoAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceComentarioDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/DiaAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/GerenciadorConexao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceUsuarioDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/DadosAutenticarConexao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Usuario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceAtracaoDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceAvaliacaoComentarioDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/domain/Comentario.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/DiarioDAO.java</file>
         </group>
     </open-files>
 </project-private>

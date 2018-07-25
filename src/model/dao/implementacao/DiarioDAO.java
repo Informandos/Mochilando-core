@@ -43,8 +43,8 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO Diario (cod_Usuario_Autor, nom_Diario, dat_Publicacao, dat_Inicio_Viagem, dat_Fim_Viagem, txt_Diario) "
-                    + "VALUES(?,?,?,?,?,?) RETURNING cod_Diario";
+            String sql = "INSERT INTO diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_Diario) "
+                    + "VALUES(?,?,?,?,?,?) RETURNING cod_diario";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -58,7 +58,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                codDiario = rs.getLong("cod_Diario");
+                codDiario = rs.getLong("cod_diario");
             }
 
             rs.close();
@@ -82,14 +82,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "UPDATE Diario "
-                    + "   SET cod_Usuario_Autor = ?, "
-                    + "       nom_Diario = ?, "
-                    + "       dat_Publicacao = ?, "
-                    + "       dat_Inicio_Viagem = ?, "
-                    + "       dat_Fim_Viagem = ?, "
-                    + "       txt_Diario= ?, "
-                    + " WHERE cod_Diario = ?;";
+            String sql = "UPDATE diario "
+                    + "   SET cod_usuario = ?, "
+                    + "       nom_diario = ?, "
+                    + "       dat_publicacao = ?, "
+                    + "       dat_inicio_viagem = ?, "
+                    + "       dat_fim_viagem = ?, "
+                    + "       txt_diario= ?, "
+                    + " WHERE cod_diario = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -122,7 +122,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "DELETE FROM Diario WHERE cod_diario = ?";
+            String sql = "DELETE FROM diario WHERE cod_diario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, diario.getCodDiario());
@@ -147,7 +147,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM Diario WHERE cod_Diario = ?";
+            String sql = "SELECT * FROM Diario WHERE cod_diario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, codDiario);
@@ -157,15 +157,15 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             InterfaceUsuarioDAO usuarioDAO = new UsuarioDAO();
             if (rs.next()) {
                 diario = new Diario();
-                diario.setCodDiario(rs.getLong("cod_Diario"));
+                diario.setCodDiario(rs.getLong("cod_diario"));
                 Usuario usuario;
-                usuario = usuarioDAO.consultarUsuarioPorId( rs.getLong("cod_Usuario") );
+                usuario = usuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
                 diario.setUsuario(usuario);
-                diario.setNomDiario(rs.getString("nom_Diario"));
-                diario.setDatPublicacao(rs.getDate("dat_Publicacao"));
-                diario.setDatInicioViagem(rs.getDate("dat_Inicio_Viagem"));
-                diario.setDatFimViagem(rs.getDate("dat_Fim_Viagem"));
-                diario.setTxtDiario(rs.getString("txt_Diario"));
+                diario.setNomDiario(rs.getString("nom_diario"));
+                diario.setDatPublicacao(rs.getDate("dat_publicacao"));
+                diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
+                diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
+                diario.setTxtDiario(rs.getString("txt_diario"));
             }
 
             rs.close();
@@ -189,26 +189,26 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM Diario ORDER BY nom_diario";
+            String sql = "SELECT * FROM diario ORDER BY nom_diario";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
 
             ArrayList<Diario> listarTudo = null;
-            UsuarioDAO UsuarioDAO = new UsuarioDAO();
+            InterfaceUsuarioDAO UsuarioDAO = new UsuarioDAO();
             if (rs.next()) {
                 listarTudo = new ArrayList<>();
                 do {
                     Diario diario = new Diario();
-                    diario.setCodDiario(rs.getLong("cod_Diario"));
-                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_Usuario"));
+                    diario.setCodDiario(rs.getLong("cod_diario"));
+                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
                     diario.setUsuario(usuario);
-                    diario.setNomDiario(rs.getString("nom_Diario"));
-                    diario.setDatPublicacao(rs.getDate("dat_Publicacao"));
-                    diario.setDatInicioViagem(rs.getDate("dat_Inicio_Viagem"));
-                    diario.setDatFimViagem(rs.getDate("dat_Fim_Viagem"));
-                    diario.setTxtDiario(rs.getString("txt_Diario"));
-                    
+                    diario.setNomDiario(rs.getString("nom_diario"));
+                    diario.setDatPublicacao(rs.getDate("dat_publicacao"));
+                    diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
+                    diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
+                    diario.setTxtDiario(rs.getString("txt_diario"));
+
                     listarTudo.add(diario);
                 } while (rs.next());
 
@@ -235,7 +235,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM Diario WHERE cod_Usuario_Autor = ?";
+            String sql = "SELECT * FROM diario WHERE cod_usuario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, usuario.getCodUsuario());
@@ -246,14 +246,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 listarPorUsuario = new ArrayList<>();
                 do {
                     Diario diario = new Diario();
-                    diario.setCodDiario(rs.getLong("cod_Diario"));
+                    diario.setCodDiario(rs.getLong("cod_diario"));
                     diario.setUsuario(usuario);
-                    diario.setNomDiario(rs.getString("nom_Diario"));
-                    diario.setDatPublicacao(rs.getDate("dat_Publicacao"));
-                    diario.setDatInicioViagem(rs.getDate("dat_Inicio_Viagem"));
-                    diario.setDatFimViagem(rs.getDate("dat_Fim_Viagem"));
-                    diario.setTxtDiario(rs.getString("txt_Diario"));
-                    
+                    diario.setNomDiario(rs.getString("nom_diario"));
+                    diario.setDatPublicacao(rs.getDate("dat_publicacao"));
+                    diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
+                    diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
+                    diario.setTxtDiario(rs.getString("txt_diario"));
+
                     listarPorUsuario.add(diario);
                 } while (rs.next());
 
@@ -277,12 +277,109 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
     @Override
     public List<Diario> listarPorCidade(Cidade cidade) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT A.* FROM diario A "
+                    + "JOIN dia B ON A.cod_diario = B.cod_diario "
+                    + "JOIN dia_atracao C ON B.seq_dia = C.seq_dia "
+                    + "JOIN atracao D ON C.seq_atracao = D.seq_atracao "
+                    + "JOIN cidade E ON D.cod_cidade_atracao = E.cod_cidade "
+                    + "WHERE E.cod_cidade = ? "
+                    + "GROUP BY 1;";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, cidade.getCodCidade());
+            ResultSet rs = pstmt.executeQuery();
+
+            ArrayList<Diario> listarPorCidade = null;
+            InterfaceUsuarioDAO UsuarioDAO = new UsuarioDAO();
+            if (rs.next()) {
+                listarPorCidade = new ArrayList<>();
+                do {
+                    Diario diario = new Diario();
+                    diario.setCodDiario(rs.getLong("cod_diario"));
+                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                    diario.setUsuario(usuario);
+                    diario.setNomDiario(rs.getString("nom_diario"));
+                    diario.setDatPublicacao(rs.getDate("dat_publicacao"));
+                    diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
+                    diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
+                    diario.setTxtDiario(rs.getString("txt_diario"));
+
+                    listarPorCidade.add(diario);
+                } while (rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return listarPorCidade;
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                throw new ExcessaoPersistencia(e);
+            } catch (ExcessaoPersistencia ex) {
+                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return null;
     }
 
     @Override
     public List<Diario> listarPorEstado(Estado estado) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT A.* FROM diario A "
+                    + "JOIN dia B ON A.cod_diario = B.cod_diario "
+                    + "JOIN dia_atracao C ON B.seq_dia = C.seq_dia "
+                    + "JOIN atracao D ON C.seq_atracao = D.seq_atracao "
+                    + "JOIN cidade E ON D.cod_cidade_atracao = E.cod_cidade "
+                    + "JOIN estado F ON E.cod_estado = F.cod_estado "
+                    + "WHERE E.cod_estado = ? "
+                    + "GROUP BY 1;";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, estado.getCodEstado());
+            ResultSet rs = pstmt.executeQuery();
+
+            ArrayList<Diario> listarPorEstado = null;
+            InterfaceUsuarioDAO UsuarioDAO = new UsuarioDAO();
+            if (rs.next()) {
+                listarPorEstado = new ArrayList<>();
+                do {
+                    Diario diario = new Diario();
+                    diario.setCodDiario(rs.getLong("cod_diario"));
+                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                    diario.setUsuario(usuario);
+                    diario.setNomDiario(rs.getString("nom_diario"));
+                    diario.setDatPublicacao(rs.getDate("dat_publicacao"));
+                    diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
+                    diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
+                    diario.setTxtDiario(rs.getString("txt_diario"));
+
+                    listarPorEstado.add(diario);
+                } while (rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return listarPorEstado;
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                throw new ExcessaoPersistencia(e);
+            } catch (ExcessaoPersistencia ex) {
+                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return null;
     }
 
 }
