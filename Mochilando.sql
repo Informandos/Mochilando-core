@@ -10,57 +10,57 @@ CREATE DATABASE "bd_Mochilando" WITH TEMPLATE = template0 ENCODING = 6 TABLESPAC
 -- Structure for table Atracao (OID = 17779):
 SET search_path = public, pg_catalog;
 CREATE TABLE "Atracao" (
-    "seq_Atracao" varchar(10) NOT NULL,
-    "cod_Cidade_Atracao" varchar(4) NOT NULL,
-    cod_tipo_atracao varchar(5) NOT NULL,
+    "seq_Atracao" SERIAL NOT NULL,
+    "cod_Cidade_Atracao" SERIAL NOT NULL,
+    cod_tipo_atracao SERIAL NOT NULL,
     "nom_Atracao" varchar(100) NOT NULL,
     "nro_Latitude" numeric(5,0) NOT NULL,
     "nro_Longitude" numeric(5,0) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Avaliacao_Comentario (OID = 17782):
 CREATE TABLE "Avaliacao_Comentario" (
-    "seq_Avaliacao" varchar(15) NOT NULL,
-    "seq_Comentario" varchar(10) NOT NULL,
-    "cod_Usuario_Avaliador" varchar(5) NOT NULL,
+    "seq_Avaliacao" SERIAL NOT NULL,
+    "seq_Comentario" SERIAL NOT NULL,
+    "cod_Usuario_Avaliador" SERIAL NOT NULL,
     avaliacao char(1) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Avaliacao_Diario (OID = 17785):
 CREATE TABLE "Avaliacao_Diario" (
-    seq_avaliacao varchar(15) NOT NULL,
-    "cod_Diario" varchar(10) NOT NULL,
-    "cod_Usuario_Avaliador" varchar(5) NOT NULL,
+    seq_avaliacao SERIAL NOT NULL,
+    "cod_Diario" SERIAL NOT NULL,
+    "cod_Usuario_Avaliador" SERIAL NOT NULL,
     avaliacao char(1)
 ) WITHOUT OIDS;
 -- Structure for table Cidade (OID = 17788):
 CREATE TABLE "Cidade" (
-    "cod_Cidade" varchar(4) NOT NULL,
-    "cod_Estado" varchar(2) NOT NULL,
+    "cod_Cidade" SERIAL NOT NULL,
+    "cod_Estado" SERIAL NOT NULL,
     "nom_Cidade" varchar(40) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Comentario (OID = 17791):
 CREATE TABLE "Comentario" (
-    "seq_Comentario" varchar(10) NOT NULL,
-    "cod_Diario" varchar(10) NOT NULL,
-    "cod_Autor_Comentario" varchar(5) NOT NULL,
+    "seq_Comentario" SERIAL NOT NULL,
+    "cod_Diario" SERIAL NOT NULL,
+    "cod_Autor_Comentario" SERIAL NOT NULL,
     "dat_Publicacao" date NOT NULL,
     "txt_Comentario" varchar(2000) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Dia (OID = 17797):
 CREATE TABLE "Dia" (
-    seq_dia varchar(20) NOT NULL,
-    "cod_Diario" varchar(10) NOT NULL,
+    seq_dia SERIAL NOT NULL,
+    "cod_Diario" SERIAL NOT NULL,
     "txt_Dia" text NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Dia_Atracao (OID = 17803):
 CREATE TABLE "Dia_Atracao" (
-    seq_dia_atracao varchar(30) NOT NULL,
-    "seq_Atracao" varchar(10) NOT NULL,
-    seq_dia varchar(20) NOT NULL
+    seq_dia_atracao SERIAL NOT NULL,
+    "seq_Atracao" SERIAL NOT NULL,
+    seq_dia SERIAL NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Diario (OID = 17806):
 CREATE TABLE "Diario" (
-    "cod_Diario" varchar(10) NOT NULL,
-    "cod_Usuario_Autor" varchar(5) NOT NULL,
+    "cod_Diario" SERIAL NOT NULL,
+    "cod_Usuario_Autor" SERIAL NOT NULL,
     "nom_Diario" varchar(30) NOT NULL,
     "dat_Publicacao" date NOT NULL,
     "dat_Inicio_Viagem" date NOT NULL,
@@ -69,28 +69,29 @@ CREATE TABLE "Diario" (
 ) WITHOUT OIDS;
 -- Structure for table Estado (OID = 17812):
 CREATE TABLE "Estado" (
-    "cod_Estado" varchar(2) NOT NULL,
+    "cod_Estado" SERIAL NOT NULL,
+    sigla varchar(2) NOT NULL,
     "nom_Estado" varchar(20) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Foto (OID = 17815):
 CREATE TABLE "Foto" (
-    "seq_Foto" integer NOT NULL,
-    seq_dia varchar(20) NOT NULL,
+    "seq_Foto" SERIAL NOT NULL,
+    seq_dia SERIAL NOT NULL,
     foto bytea NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Preferencia (OID = 17821):
 CREATE TABLE "Preferencia" (
-    cod_preferencia varchar(20) NOT NULL,
+    cod_preferencia SERIAL NOT NULL,
     desc_preferencia varchar(50) NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Tipo_Atracao (OID = 17824):
 CREATE TABLE "Tipo_Atracao" (
-    cod_tipo_atracao varchar(5) NOT NULL,
+    cod_tipo_atracao SERIAL NOT NULL,
     desc_tipo_atracao varchar(100)
 ) WITHOUT OIDS;
 -- Structure for table Usuario (OID = 17827):
 CREATE TABLE "Usuario" (
-    "cod_Usuario" varchar(5) NOT NULL,
+    "cod_Usuario" SERIAL NOT NULL,
     "nom_Usuario" varchar(20) NOT NULL,
     "sobrenome_Usuario" varchar(20) NOT NULL,
     "txt_Email" varchar(200) NOT NULL,
@@ -98,13 +99,13 @@ CREATE TABLE "Usuario" (
     "img_Perfil" bytea,
     sexo varchar(9) NOT NULL,
     dat_nascimento date NOT NULL,
-    cod_cidade varchar(4) NOT NULL
+    cod_cidade SERIAL NOT NULL
 ) WITHOUT OIDS;
 -- Structure for table Usuario_Preferencia (OID = 17833):
 CREATE TABLE "Usuario_Preferencia" (
-    "Cod_Usuario_Preferencia" varchar(15) NOT NULL,
-    "cod_Usuario" varchar(10) NOT NULL,
-    "cod_Preferencia" varchar(5) NOT NULL
+    "Cod_Usuario_Preferencia" SERIAL NOT NULL,
+    "cod_Usuario" SERIAL NOT NULL,
+    "cod_Preferencia" SERIAL NOT NULL
 ) WITHOUT OIDS;
 -- Definition for index IX_Relationship1 (OID = 17888):
 CREATE INDEX "IX_Relationship1" ON public."Diario" USING btree ("cod_Usuario_Autor");
