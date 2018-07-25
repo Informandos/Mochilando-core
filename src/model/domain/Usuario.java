@@ -155,7 +155,7 @@ public class Usuario {
     }
 
     /**
-     * @param codCidade the codCidade to set
+     * @param cidade the Cidade to set
      */
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
