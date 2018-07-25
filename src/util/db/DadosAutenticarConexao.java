@@ -10,7 +10,7 @@ package util.db;
  * @author Juliana
  */
 public class DadosAutenticarConexao {
-    protected final static String URL = "jdbc:postgresql://localhost:5432/Mochilando_teste";
+    protected final static String URL = "jdbc:postgresql://localhost:5432/Mochilando";
     protected final static String USUARIO = "postgres";
     protected final static String SENHA = "123456";
 }
