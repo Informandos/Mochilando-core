@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceDiarioDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/EstadoDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/busca/interfaces/InterfaceBusca.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/busca/interfaces/BuscarUsuario.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/DAOInterface.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceEstadoDAO.java</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/DiarioDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/DiaDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/interfaces/InterfaceAtracaoDAO.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/busca/interfaces/BuscarDiario.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/busca/interfaces/BuscarAtracao.java</file>
         </group>
     </open-files>
 </project-private>
