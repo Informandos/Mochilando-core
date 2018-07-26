@@ -106,7 +106,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "DELETE FROM usuario WHERE id = ?";
+            String sql = "DELETE FROM usuario WHERE cod_usuario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, usuario.getCodUsuario());
@@ -168,7 +168,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM usuario WHERE id = ?";
+            String sql = "SELECT * FROM usuario WHERE cod_usuario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, id);

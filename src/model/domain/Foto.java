@@ -6,6 +6,7 @@
 package model.domain;
 
 import java.awt.image.BufferedImage;
+import java.sql.Blob;
 
 /**
  *
@@ -15,12 +16,12 @@ public class Foto {
 
     private Long seqFoto;
     private Dia dia;
-    private byte[] byteFoto;
+    private Blob byteFoto;
 
     public Foto() {
     }
 
-    public Foto(Long seqFoto, Dia dia, byte[] byteFoto) {
+    public Foto(Long seqFoto, Dia dia, Blob byteFoto) {
         this.seqFoto = seqFoto;
         this.dia = dia;
         this.byteFoto = byteFoto;
@@ -42,11 +43,11 @@ public class Foto {
         this.dia = dia;
     }
 
-    public byte[] getByteFoto() {
+    public Blob getByteFoto() {
         return byteFoto;
     }
 
-    public void setByteFoto(byte[] byteFoto) {
+    public void setByteFoto( Blob byteFoto) {
         this.byteFoto = byteFoto;
     }
 
