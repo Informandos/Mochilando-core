@@ -11,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.dao.interfaces.InterfaceDiarioDAO;
 import model.dao.interfaces.InterfaceUsuarioDAO;
 import model.domain.Cidade;
@@ -31,9 +29,9 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     @Override
     public Long inserir(Diario diario) throws ExcessaoPersistencia {
         if (diario == null) {
-            
+
             throw new ExcessaoPersistencia("Diario nao pode ser null");
-            
+
         }
 
         Long codDiario = null;
@@ -78,8 +76,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "UPDATE diario "
-                    + "   SET cod_usuario = ?, "
-                    + "       nom_diario = ?, "
+                    + "   SET nom_diario = ?, "
                     + "       dat_publicacao = ?, "
                     + "       dat_inicio_viagem = ?, "
                     + "       dat_fim_viagem = ?, "
@@ -203,7 +200,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return listarTudo;
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
 
             throw new ExcessaoPersistencia(e.getMessage(), e);
 
@@ -211,22 +208,24 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public List<Diario> listarPorUsuario(Usuario usuario) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "SELECT * FROM diario WHERE cod_usuario = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, usuario.getCodUsuario());
+            pstmt.setLong(1, codUsuario);
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<Diario> listarPorUsuario = null;
+            ArrayList<Diario> listarPorCodUsuario = null;
+            InterfaceUsuarioDAO UsuarioDAO = new UsuarioDAO();
             if (rs.next()) {
-                listarPorUsuario = new ArrayList<>();
+                listarPorCodUsuario = new ArrayList<>();
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
+                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(codUsuario);
                     diario.setUsuario(usuario);
                     diario.setNomDiario(rs.getString("nom_diario"));
                     diario.setDatPublicacao(rs.getDate("dat_publicacao"));
@@ -234,7 +233,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
                     diario.setTxtDiario(rs.getString("txt_diario"));
 
-                    listarPorUsuario.add(diario);
+                    listarPorCodUsuario.add(diario);
                 } while (rs.next());
 
             }
@@ -243,7 +242,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.close();
             connection.close();
 
-            return listarPorUsuario;
+            return listarPorCodUsuario;
         } catch (Exception e) {
 
             throw new ExcessaoPersistencia(e.getMessage(), e);
@@ -252,7 +251,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public List<Diario> listarPorCidade(Cidade cidade) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -265,13 +264,13 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     + "GROUP BY 1;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, cidade.getCodCidade());
+            pstmt.setLong(1, codCidade);
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<Diario> listarPorCidade = null;
+            ArrayList<Diario> listarPorCodCidade = null;
             InterfaceUsuarioDAO UsuarioDAO = new UsuarioDAO();
             if (rs.next()) {
-                listarPorCidade = new ArrayList<>();
+                listarPorCodCidade = new ArrayList<>();
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
@@ -283,7 +282,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
                     diario.setTxtDiario(rs.getString("txt_diario"));
 
-                    listarPorCidade.add(diario);
+                    listarPorCodCidade.add(diario);
                 } while (rs.next());
 
             }
@@ -292,8 +291,8 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.close();
             connection.close();
 
-            return listarPorCidade;
-        } catch (Exception e) {
+            return listarPorCodCidade;
+        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
 
             throw new ExcessaoPersistencia(e.getMessage(), e);
 
@@ -301,7 +300,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public List<Diario> listarPorEstado(Estado estado) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -315,7 +314,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     + "GROUP BY 1;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, estado.getCodEstado());
+            pstmt.setLong(1, codEstado);
             ResultSet rs = pstmt.executeQuery();
 
             ArrayList<Diario> listarPorEstado = null;
@@ -343,7 +342,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return listarPorEstado;
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
 
             throw new ExcessaoPersistencia(e.getMessage(), e);
 
