@@ -19,5 +19,5 @@ public interface InterfaceUsuarioPreferencia {
     public boolean excluir(UsuarioPreferencia usuarioPreferencia) throws ExcessaoPersistencia;
     public UsuarioPreferencia consultarPorId(Long seqUsuarioPreferencia) throws ExcessaoPersistencia;
     public List<UsuarioPreferencia> listarTudo() throws ExcessaoPersistencia;
-    public List<UsuarioPreferencia> listarPorUsuario(Long codUsuario) throws ExcessaoPersistencia;
+    public List<UsuarioPreferencia> listarPorCodUsuario(Long codUsuario) throws ExcessaoPersistencia;
 }

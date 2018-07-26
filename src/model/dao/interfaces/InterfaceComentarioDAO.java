@@ -18,6 +18,6 @@ public interface InterfaceComentarioDAO {
     public boolean alterar(Comentario comentario) throws ExcessaoPersistencia;
     public boolean excluir(Comentario comentario) throws ExcessaoPersistencia;
     public Comentario obterComentarioPorId(Long seqComentario) throws ExcessaoPersistencia;
-    public List<Comentario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
+    public List<Comentario> listarPorCodDiario(Long codDiario) throws ExcessaoPersistencia;
     public List<Comentario> listarTudo() throws ExcessaoPersistencia;
 }

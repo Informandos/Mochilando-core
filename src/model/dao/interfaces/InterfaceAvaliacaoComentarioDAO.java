@@ -22,5 +22,5 @@ public interface InterfaceAvaliacaoComentarioDAO {
     public int consultarNumAvNegativas(Long codComentario) throws ExcessaoPersistencia;
     public boolean haAvaliacao(Long codUsuario, Long codComentario) throws ExcessaoPersistencia;
     public AvaliacaoComentario consultar(Long codUsuario, Long codComentario) throws ExcessaoPersistencia;
-    public List <AvaliacaoComentario> listarTudo() throws ExcessaoPersistencia;
+    public List <AvaliacaoComentario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
 }

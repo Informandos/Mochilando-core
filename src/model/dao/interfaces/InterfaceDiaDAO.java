@@ -18,5 +18,5 @@ public interface InterfaceDiaDAO {
     public boolean alterar(Dia dia) throws ExcessaoPersistencia;
     public boolean excluir(Dia dia) throws ExcessaoPersistencia;
     public Dia consultarDiaPorId(Long seqDia) throws ExcessaoPersistencia;
-    public List<Dia> listarPorDiario(Long seqDiario) throws ExcessaoPersistencia; 
+    public List<Dia> listarPorCodDiario(Long codDiario) throws ExcessaoPersistencia; 
 }

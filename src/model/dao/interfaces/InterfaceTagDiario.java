@@ -19,5 +19,5 @@ public interface InterfaceTagDiario {
     public boolean excluir(TagDiario tagDiario) throws ExcessaoPersistencia;
     public TagDiario consultarPorId(Long seqTagDiario) throws ExcessaoPersistencia;
     public List<TagDiario> listarTudo() throws ExcessaoPersistencia;
-    public List<TagDiario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
+    public List<TagDiario> listarPorCodDiario(Long codDiario) throws ExcessaoPersistencia;
 }

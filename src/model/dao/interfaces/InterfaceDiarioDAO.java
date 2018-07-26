@@ -22,7 +22,7 @@ public interface InterfaceDiarioDAO {
     public boolean excluir(Diario diario) throws ExcessaoPersistencia;
     public Diario consultarDiarioPorId(Long codDiario) throws ExcessaoPersistencia;
     public List<Diario> listarTudo() throws ExcessaoPersistencia;
-    public List<Diario> listarPorUsuario(Usuario usuario) throws ExcessaoPersistencia;
-    public List<Diario> listarPorCidade(Cidade cidade) throws ExcessaoPersistencia;
-    public List<Diario> listarPorEstado(Estado estado) throws ExcessaoPersistencia;
+    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcessaoPersistencia;
+    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcessaoPersistencia;
+    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcessaoPersistencia;
 }

@@ -18,6 +18,6 @@ public interface InterfaceEstadoDAO {
     public boolean alterar(Estado estado) throws ExcessaoPersistencia;
     public boolean excluir(Estado estado) throws ExcessaoPersistencia;
     public Estado consultarPorId(Long codEstado) throws ExcessaoPersistencia;
-    public Estado consultarPorSigla(Long codEstado) throws ExcessaoPersistencia;
+    public Estado consultarPorSigla(String sigla) throws ExcessaoPersistencia;
     public List<Estado> listarTudo() throws ExcessaoPersistencia;
 }
