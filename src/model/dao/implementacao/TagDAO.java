@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.dao.interfaces.InterfaceTagDAO;
 import model.domain.Tag;
-import model.excecao.ExcecaoPersistencia;
+import util.db.exception.ExcecaoPersistencia;
 import util.db.ConnectionManager;
 
 /**

@@ -16,7 +16,7 @@ import model.dao.interfaces.InterfaceEstadoDAO;
 import model.domain.Dia;
 import model.domain.Diario;
 import model.domain.Estado;
-import model.excecao.ExcecaoPersistencia;
+import util.db.exception.ExcecaoPersistencia;
 import util.db.ConnectionManager;
 
 /**

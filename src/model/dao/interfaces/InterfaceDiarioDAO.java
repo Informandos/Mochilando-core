@@ -10,7 +10,7 @@ import model.domain.Cidade;
 import model.domain.Diario;
 import model.domain.Estado;
 import model.domain.Usuario;
-import model.excecao.ExcecaoPersistencia;
+import util.db.exception.ExcecaoPersistencia;
 
 /**
  *

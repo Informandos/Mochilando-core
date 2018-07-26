@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.domain.Dia;
-import model.excecao.ExcecaoPersistencia;
+import util.db.exception.ExcecaoPersistencia;
 import util.db.ConnectionFactory;
 import util.db.ConnectionManager;
 import model.dao.implementacao.DiaDAO;
