@@ -15,7 +15,7 @@ import model.dao.interfaces.InterfaceDiaDAO;
 import model.dao.interfaces.InterfaceDiarioDAO;
 import model.domain.Dia;
 import model.domain.Diario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 import util.db.ConnectionManager;
 
 /**
@@ -25,10 +25,10 @@ import util.db.ConnectionManager;
 public class DiaDAO implements InterfaceDiaDAO {
 
     @Override
-    public Long inserir(Dia dia)  throws ExcessaoPersistencia{
+    public Long inserir(Dia dia)  throws ExcecaoPersistencia{
         if (dia == null) {
 
-            throw new ExcessaoPersistencia("Dia nao pode ser null");
+            throw new ExcecaoPersistencia("Dia nao pode ser null");
 
         }
 
@@ -58,13 +58,13 @@ public class DiaDAO implements InterfaceDiaDAO {
 
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public boolean alterar(Dia dia)  throws ExcessaoPersistencia{
+    public boolean alterar(Dia dia)  throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -87,13 +87,13 @@ public class DiaDAO implements InterfaceDiaDAO {
 
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public boolean excluir(Dia dia) throws ExcessaoPersistencia{
+    public boolean excluir(Dia dia) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -108,13 +108,13 @@ public class DiaDAO implements InterfaceDiaDAO {
             return true;
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public Dia consultarDiaPorId(Long seqDia)  throws ExcessaoPersistencia{
+    public Dia consultarDiaPorId(Long seqDia)  throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -142,13 +142,13 @@ public class DiaDAO implements InterfaceDiaDAO {
             return dia;
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public List<Dia> listarPorCodDiario(Long codDiario)  throws ExcessaoPersistencia{
+    public List<Dia> listarPorCodDiario(Long codDiario)  throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -181,7 +181,7 @@ public class DiaDAO implements InterfaceDiaDAO {
             return listarPorCodDiario;
         } catch (Exception e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }

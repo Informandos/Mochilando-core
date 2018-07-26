@@ -7,16 +7,16 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Dia;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceDiaDAO {
-    public Long inserir(Dia dia) throws ExcessaoPersistencia;
-    public boolean alterar(Dia dia) throws ExcessaoPersistencia;
-    public boolean excluir(Dia dia) throws ExcessaoPersistencia;
-    public Dia consultarDiaPorId(Long seqDia) throws ExcessaoPersistencia;
-    public List<Dia> listarPorCodDiario(Long codDiario) throws ExcessaoPersistencia; 
+    public Long inserir(Dia dia) throws ExcecaoPersistencia;
+    public boolean alterar(Dia dia) throws ExcecaoPersistencia;
+    public boolean excluir(Dia dia) throws ExcecaoPersistencia;
+    public Dia consultarDiaPorId(Long seqDia) throws ExcecaoPersistencia;
+    public List<Dia> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia; 
 }

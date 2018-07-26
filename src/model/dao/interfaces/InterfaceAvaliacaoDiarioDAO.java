@@ -7,19 +7,19 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.AvaliacaoDiario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceAvaliacaoDiarioDAO {
-    public Long inserir(AvaliacaoDiario avaliacaoDiario) throws ExcessaoPersistencia;
-    public boolean alterar(AvaliacaoDiario avaliacaoDiario) throws ExcessaoPersistencia;
-    public boolean remover(AvaliacaoDiario avaliacaoDiario) throws ExcessaoPersistencia;
-    public int consultarNumAvPositivas(Long codDiario) throws ExcessaoPersistencia;
-    public int consultarNumAvNegativas(Long codDiario) throws ExcessaoPersistencia;
-    public boolean haAvaliacao(Long codUsuario, Long codDiario) throws ExcessaoPersistencia;
-    public AvaliacaoDiario consultar(Long codUsuario, Long codDiario) throws ExcessaoPersistencia;
-    public List<AvaliacaoDiario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
+    public Long inserir(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
+    public boolean alterar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
+    public boolean remover(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
+    public int consultarNumAvPositivas(Long codDiario) throws ExcecaoPersistencia;
+    public int consultarNumAvNegativas(Long codDiario) throws ExcecaoPersistencia;
+    public boolean haAvaliacao(Long codUsuario, Long codDiario) throws ExcecaoPersistencia;
+    public AvaliacaoDiario consultar(Long codUsuario, Long codDiario) throws ExcecaoPersistencia;
+    public List<AvaliacaoDiario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
 }

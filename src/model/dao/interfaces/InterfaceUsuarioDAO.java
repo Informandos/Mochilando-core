@@ -7,17 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Usuario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceUsuarioDAO {
-    public Long inserir(Usuario usuario) throws ExcessaoPersistencia;
-    public boolean alterar(Usuario usuario) throws ExcessaoPersistencia;
-    public boolean excluir(Usuario usuario) throws ExcessaoPersistencia;
-    public Usuario consultarUsuarioPorId(Long codUsuario) throws ExcessaoPersistencia;
-    public Usuario consultarUsuarioPorEmail(String txtEmail) throws ExcessaoPersistencia;
-    public List<Usuario> listarTudo() throws ExcessaoPersistencia;
+    public Long inserir(Usuario usuario) throws ExcecaoPersistencia;
+    public boolean alterar(Usuario usuario) throws ExcecaoPersistencia;
+    public boolean excluir(Usuario usuario) throws ExcecaoPersistencia;
+    public Usuario consultarUsuarioPorId(Long codUsuario) throws ExcecaoPersistencia;
+    public Usuario consultarUsuarioPorEmail(String txtEmail) throws ExcecaoPersistencia;
+    public List<Usuario> listarTudo() throws ExcecaoPersistencia;
 }

@@ -7,7 +7,7 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.AvaliacaoComentario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 
 /**
@@ -15,12 +15,12 @@ import model.excecao.ExcessaoPersistencia;
  * @author Juliana
  */
 public interface InterfaceAvaliacaoComentarioDAO {
-    public Long inserir(AvaliacaoComentario avaliacaoComenario) throws ExcessaoPersistencia;
-    public boolean alterar(AvaliacaoComentario avaliacaoComenario) throws ExcessaoPersistencia;
-    public boolean excluir(AvaliacaoComentario avaliacaoComenario) throws ExcessaoPersistencia;
-    public int consultarNumAvPositivas(Long codComentario) throws ExcessaoPersistencia;
-    public int consultarNumAvNegativas(Long codComentario) throws ExcessaoPersistencia;
-    public boolean haAvaliacao(Long codUsuario, Long codComentario) throws ExcessaoPersistencia;
-    public AvaliacaoComentario consultar(Long codUsuario, Long codComentario) throws ExcessaoPersistencia;
-    public List <AvaliacaoComentario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
+    public Long inserir(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
+    public boolean alterar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
+    public boolean excluir(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
+    public int consultarNumAvPositivas(Long codComentario) throws ExcecaoPersistencia;
+    public int consultarNumAvNegativas(Long codComentario) throws ExcecaoPersistencia;
+    public boolean haAvaliacao(Long codUsuario, Long codComentario) throws ExcecaoPersistencia;
+    public AvaliacaoComentario consultar(Long codUsuario, Long codComentario) throws ExcecaoPersistencia;
+    public List <AvaliacaoComentario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
 }

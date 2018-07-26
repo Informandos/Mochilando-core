@@ -7,17 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.TagDiario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceTagDiario {
-    public Long inserir(TagDiario tagDiario ) throws ExcessaoPersistencia;
-    public boolean alterar(TagDiario tagDiario) throws ExcessaoPersistencia;
-    public boolean excluir(TagDiario tagDiario) throws ExcessaoPersistencia;
-    public TagDiario consultarPorId(Long seqTagDiario) throws ExcessaoPersistencia;
-    public List<TagDiario> listarTudo() throws ExcessaoPersistencia;
-    public List<TagDiario> listarPorCodDiario(Long codDiario) throws ExcessaoPersistencia;
+    public Long inserir(TagDiario tagDiario ) throws ExcecaoPersistencia;
+    public boolean alterar(TagDiario tagDiario) throws ExcecaoPersistencia;
+    public boolean excluir(TagDiario tagDiario) throws ExcecaoPersistencia;
+    public TagDiario consultarPorId(Long seqTagDiario) throws ExcecaoPersistencia;
+    public List<TagDiario> listarTudo() throws ExcecaoPersistencia;
+    public List<TagDiario> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia;
 }

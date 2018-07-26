@@ -10,19 +10,19 @@ import model.domain.Cidade;
 import model.domain.Diario;
 import model.domain.Estado;
 import model.domain.Usuario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceDiarioDAO {
-    public Long inserir(Diario diario) throws ExcessaoPersistencia;
-    public boolean alterar(Diario diario) throws ExcessaoPersistencia;
-    public boolean excluir(Diario diario) throws ExcessaoPersistencia;
-    public Diario consultarDiarioPorId(Long codDiario) throws ExcessaoPersistencia;
-    public List<Diario> listarTudo() throws ExcessaoPersistencia;
-    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcessaoPersistencia;
-    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcessaoPersistencia;
-    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcessaoPersistencia;
+    public Long inserir(Diario diario) throws ExcecaoPersistencia;
+    public boolean alterar(Diario diario) throws ExcecaoPersistencia;
+    public boolean excluir(Diario diario) throws ExcecaoPersistencia;
+    public Diario consultarDiarioPorId(Long codDiario) throws ExcecaoPersistencia;
+    public List<Diario> listarTudo() throws ExcecaoPersistencia;
+    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;
+    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcecaoPersistencia;
+    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcecaoPersistencia;
 }

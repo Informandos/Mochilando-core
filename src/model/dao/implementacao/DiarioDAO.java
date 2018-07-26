@@ -17,7 +17,7 @@ import model.domain.Cidade;
 import model.domain.Diario;
 import model.domain.Estado;
 import model.domain.Usuario;
-import model.excecao.ExcessaoPersistencia;
+import model.excecao.ExcecaoPersistencia;
 import util.db.ConnectionManager;
 
 /**
@@ -27,10 +27,10 @@ import util.db.ConnectionManager;
 public class DiarioDAO implements InterfaceDiarioDAO {
 
     @Override
-    public Long inserir(Diario diario) throws ExcessaoPersistencia {
+    public Long inserir(Diario diario) throws ExcecaoPersistencia {
         if (diario == null) {
 
-            throw new ExcessaoPersistencia("Diario nao pode ser null");
+            throw new ExcecaoPersistencia("Diario nao pode ser null");
 
         }
 
@@ -64,14 +64,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
 
     }
 
     @Override
-    public boolean alterar(Diario diario) throws ExcessaoPersistencia {
+    public boolean alterar(Diario diario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -101,13 +101,13 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public boolean excluir(Diario diario) throws ExcessaoPersistencia {
+    public boolean excluir(Diario diario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -122,13 +122,13 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             return true;
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public Diario consultarDiarioPorId(Long codDiario) throws ExcessaoPersistencia {
+    public Diario consultarDiarioPorId(Long codDiario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -160,13 +160,13 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             return diario;
         } catch (ClassNotFoundException | SQLException e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public List<Diario> listarTudo() throws ExcessaoPersistencia {
+    public List<Diario> listarTudo() throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -200,15 +200,15 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return listarTudo;
-        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
+        } catch (ClassNotFoundException | SQLException | ExcecaoPersistencia e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -245,13 +245,13 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             return listarPorCodUsuario;
         } catch (Exception e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodCidade(Long codCidade) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -292,15 +292,15 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return listarPorCodCidade;
-        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
+        } catch (ClassNotFoundException | SQLException | ExcecaoPersistencia e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
 
     @Override
-    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcessaoPersistencia {
+    public List<Diario> listarPorCodEstado(Long codEstado) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -342,9 +342,9 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return listarPorEstado;
-        } catch (ClassNotFoundException | SQLException | ExcessaoPersistencia e) {
+        } catch (ClassNotFoundException | SQLException | ExcecaoPersistencia e) {
 
-            throw new ExcessaoPersistencia(e.getMessage(), e);
+            throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
     }
