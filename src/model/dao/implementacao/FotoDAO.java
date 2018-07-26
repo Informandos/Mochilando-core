@@ -180,7 +180,36 @@ public class FotoDAO implements InterfaceFotoDAO {
 
     @Override
     public List<Foto> listarPorDia(Long seqDia) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM veiculo WHERE seq_dia = ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, seqDia);
+            ResultSet rs = pstmt.executeQuery();
+
+            Foto foto = null;
+            InterfaceDiaDAO diaDAO = new DiaDAO();
+            
+            if (rs.next()) {
+                
+                   foto = new Foto();
+                    foto.setSeqFoto(rs.getLong("seq_foto"));
+                    Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
+                    foto.setDia(dia);
+                    foto.setByteFoto(rs.getBlob("foto"));
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return (List<Foto>) foto;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
     }
 
 
