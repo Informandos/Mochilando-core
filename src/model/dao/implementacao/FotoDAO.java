@@ -59,7 +59,7 @@ public class FotoDAO implements InterfaceFotoDAO {
 
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "UPDATE usuario "
+            String sql = "UPDATE foto "
                     + "   SET seq_foto = ?, "
                     + "       seq_dia = ?, "
                     + "       foto = ? "    
