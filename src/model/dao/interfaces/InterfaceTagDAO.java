@@ -14,10 +14,10 @@ import model.excecao.ExcecaoPersistencia;
  * @author Juliana
  */
 public interface InterfaceTagDAO {
-    public Long inserir(Tag preferencia) throws ExcecaoPersistencia;
-    public boolean alterar(Tag preferencia) throws ExcecaoPersistencia;
-    public boolean excluir(Tag preferencia) throws ExcecaoPersistencia;
-    public Tag consultarPreferenciaPorId(Long codPreferencia) throws ExcecaoPersistencia;
-    public Tag consultarPreferenciaPorNome(String descPreferencia) throws ExcecaoPersistencia;
+    public Long inserir(Tag tag) throws ExcecaoPersistencia;
+    public boolean alterar(Tag tag) throws ExcecaoPersistencia;
+    public boolean excluir(Tag tag) throws ExcecaoPersistencia;
+    public Tag consultarTagPorId(Long codTag) throws ExcecaoPersistencia;
+    public Tag consultarTagPorNome(String descTag) throws ExcecaoPersistencia;
     public List<Tag> listarTudo() throws ExcecaoPersistencia;
 }

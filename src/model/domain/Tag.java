@@ -10,43 +10,43 @@ package model.domain;
  * @author Juliana
  */
 public class Tag {
-    private Long codPreferencia;
-    private String descPreferencia;
+    private Long codTag;
+    private String descTag;
 
     public Tag() {
     }
 
-    public Tag(Long codPreferencia, String descPreferencia) {
-        this.codPreferencia = codPreferencia;
-        this.descPreferencia = descPreferencia;
+    public Tag(Long codTag, String descTag) {
+        this.codTag = codTag;
+        this.descTag = descTag;
     }
 
     /**
-     * @return the codPreferencia
+     * @return the codTag
      */
-    public Long getCodPreferencia() {
-        return codPreferencia;
+    public Long getCodTag() {
+        return codTag;
     }
 
     /**
-     * @param codPreferencia the codPreferencia to set
+     * @param codTag the codTag to set
      */
-    public void setCodPreferencia(Long codPreferencia) {
-        this.codPreferencia = codPreferencia;
+    public void setCodTag(Long codTag) {
+        this.codTag = codTag;
     }
 
     /**
-     * @return the descPreferencia
+     * @return the descTag
      */
-    public String getDescPreferencia() {
-        return descPreferencia;
+    public String getDescTag() {
+        return descTag;
     }
 
     /**
-     * @param descPreferencia the descPreferencia to set
+     * @param descTag the descTag to set
      */
-    public void setDescPreferencia(String descPreferencia) {
-        this.descPreferencia = descPreferencia;
+    public void setDescTag(String descTag) {
+        this.descTag = descTag;
     }
     
 }
