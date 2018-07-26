@@ -372,7 +372,6 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
             return listarPorEstado;
         } catch (Exception e) {
-            e.printStackTrace();
             try {
                 throw new ExcessaoPersistencia(e);
             } catch (ExcessaoPersistencia ex) {
