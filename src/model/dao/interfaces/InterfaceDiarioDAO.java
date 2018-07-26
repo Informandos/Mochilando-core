@@ -18,8 +18,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceDiarioDAO {
     public Long inserir(Diario diario) throws ExcecaoPersistencia;
-    public boolean alterar(Diario diario) throws ExcecaoPersistencia;
-    public boolean excluir(Diario diario) throws ExcecaoPersistencia;
+    public boolean atualizar(Diario diario) throws ExcecaoPersistencia;
+    public boolean deletar(Diario diario) throws ExcecaoPersistencia;
     public Diario consultarDiarioPorId(Long codDiario) throws ExcecaoPersistencia;
     public List<Diario> listarTudo() throws ExcecaoPersistencia;
     public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;

@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceComentarioDAO {
     public Long inserir(Comentario comentario) throws ExcecaoPersistencia;
-    public boolean alterar(Comentario comentario) throws ExcecaoPersistencia;
-    public boolean excluir(Comentario comentario) throws ExcecaoPersistencia;
+    public boolean atualizar(Comentario comentario) throws ExcecaoPersistencia;
+    public boolean deletar(Comentario comentario) throws ExcecaoPersistencia;
     public Comentario obterComentarioPorId(Long seqComentario) throws ExcecaoPersistencia;
     public List<Comentario> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia;
     public List<Comentario> listarTudo() throws ExcecaoPersistencia;

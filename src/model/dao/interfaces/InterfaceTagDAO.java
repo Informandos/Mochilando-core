@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceTagDAO {
     public Long inserir(Tag tag) throws ExcecaoPersistencia;
-    public boolean alterar(Tag tag) throws ExcecaoPersistencia;
-    public boolean excluir(Tag tag) throws ExcecaoPersistencia;
+    public boolean atualizar(Tag tag) throws ExcecaoPersistencia;
+    public boolean deletar(Tag tag) throws ExcecaoPersistencia;
     public Tag consultarTagPorId(Long codTag) throws ExcecaoPersistencia;
     public Tag consultarTagPorNome(String descTag) throws ExcecaoPersistencia;
     public List<Tag> listarTudo() throws ExcecaoPersistencia;

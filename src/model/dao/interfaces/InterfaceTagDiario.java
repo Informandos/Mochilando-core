@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceTagDiario {
     public Long inserir(TagDiario tagDiario ) throws ExcecaoPersistencia;
-    public boolean alterar(TagDiario tagDiario) throws ExcecaoPersistencia;
-    public boolean excluir(TagDiario tagDiario) throws ExcecaoPersistencia;
+    public boolean atualizar(TagDiario tagDiario) throws ExcecaoPersistencia;
+    public boolean deletar(TagDiario tagDiario) throws ExcecaoPersistencia;
     public TagDiario consultarPorId(Long seqTagDiario) throws ExcecaoPersistencia;
     public List<TagDiario> listarTudo() throws ExcecaoPersistencia;
     public List<TagDiario> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia;

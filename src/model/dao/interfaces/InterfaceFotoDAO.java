@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceFotoDAO {
     public Long inserir(Foto foto) throws ExcecaoPersistencia;
-    public boolean alterar(Foto foto) throws ExcecaoPersistencia;
-    public boolean excluir(Foto foto) throws ExcecaoPersistencia;
+    public boolean atualizar(Foto foto) throws ExcecaoPersistencia;
+    public boolean deletar(Foto foto) throws ExcecaoPersistencia;
     public Foto obterFotoPorId(Long seqFoto) throws ExcecaoPersistencia;
     public List<Foto> listarTudo() throws ExcecaoPersistencia;
     public List<Foto> listarPorDia(Long seqDia) throws ExcecaoPersistencia;

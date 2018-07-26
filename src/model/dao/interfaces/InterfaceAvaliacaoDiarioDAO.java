@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceAvaliacaoDiarioDAO {
     public Long inserir(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
-    public boolean alterar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
-    public boolean remover(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
+    public boolean atualizar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
+    public boolean deletar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
     public int consultarNumAvPositivas(Long codDiario) throws ExcecaoPersistencia;
     public int consultarNumAvNegativas(Long codDiario) throws ExcecaoPersistencia;
     public boolean haAvaliacao(Long codUsuario, Long codDiario) throws ExcecaoPersistencia;

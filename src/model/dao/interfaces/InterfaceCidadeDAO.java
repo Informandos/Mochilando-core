@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceCidadeDAO {
     public Long inserir(Cidade cidade) throws ExcecaoPersistencia;
-    public boolean alterar(Cidade cidade) throws ExcecaoPersistencia;
-    public boolean excluir(Cidade cidade) throws ExcecaoPersistencia;
+    public boolean atualizar(Cidade cidade) throws ExcecaoPersistencia;
+    public boolean deletar(Cidade cidade) throws ExcecaoPersistencia;
     public Cidade consultarCidadePorId(Long codCidade) throws ExcecaoPersistencia;
     public List<Cidade> listarPorCodEstado(Long codEstado) throws ExcecaoPersistencia;
     public List<Cidade> listarTudo() throws ExcecaoPersistencia;

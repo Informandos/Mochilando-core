@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceDiaDAO {
     public Long inserir(Dia dia) throws ExcecaoPersistencia;
-    public boolean alterar(Dia dia) throws ExcecaoPersistencia;
-    public boolean excluir(Dia dia) throws ExcecaoPersistencia;
+    public boolean atualizar(Dia dia) throws ExcecaoPersistencia;
+    public boolean deletar(Dia dia) throws ExcecaoPersistencia;
     public Dia consultarDiaPorId(Long seqDia) throws ExcecaoPersistencia;
     public List<Dia> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia; 
 }

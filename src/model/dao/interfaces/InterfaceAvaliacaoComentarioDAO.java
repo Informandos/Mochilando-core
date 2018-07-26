@@ -16,8 +16,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceAvaliacaoComentarioDAO {
     public Long inserir(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
-    public boolean alterar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
-    public boolean excluir(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
+    public boolean atualizar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
+    public boolean deletar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
     public int consultarNumAvPositivas(Long codComentario) throws ExcecaoPersistencia;
     public int consultarNumAvNegativas(Long codComentario) throws ExcecaoPersistencia;
     public boolean haAvaliacao(Long codUsuario, Long codComentario) throws ExcecaoPersistencia;

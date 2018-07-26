@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceUsuarioDAO {
     public Long inserir(Usuario usuario) throws ExcecaoPersistencia;
-    public boolean alterar(Usuario usuario) throws ExcecaoPersistencia;
-    public boolean excluir(Usuario usuario) throws ExcecaoPersistencia;
+    public boolean atualizar(Usuario usuario) throws ExcecaoPersistencia;
+    public boolean deletar(Usuario usuario) throws ExcecaoPersistencia;
     public Usuario consultarUsuarioPorId(Long codUsuario) throws ExcecaoPersistencia;
     public Usuario consultarUsuarioPorEmail(String txtEmail) throws ExcecaoPersistencia;
     public List<Usuario> listarTudo() throws ExcecaoPersistencia;

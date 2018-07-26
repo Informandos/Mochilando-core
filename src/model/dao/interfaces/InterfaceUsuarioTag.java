@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceUsuarioTag {
     public Long inserir(UsuarioTag usuarioTag) throws ExcecaoPersistencia;
-    public boolean alterar(UsuarioTag usuarioTag) throws ExcecaoPersistencia;
-    public boolean excluir(UsuarioTag usuarioTag) throws ExcecaoPersistencia;
+    public boolean atualizar(UsuarioTag usuarioTag) throws ExcecaoPersistencia;
+    public boolean deletar(UsuarioTag usuarioTag) throws ExcecaoPersistencia;
     public UsuarioTag consultarPorId(Long seqUsuarioTag) throws ExcecaoPersistencia;
     public List<UsuarioTag> listarTudo() throws ExcecaoPersistencia;
     public List<UsuarioTag> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;

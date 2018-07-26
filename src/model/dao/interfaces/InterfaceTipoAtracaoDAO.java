@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceTipoAtracaoDAO {
     public Long inserir(TipoAtracao tipoAtracao) throws ExcecaoPersistencia;
-    public boolean alterar(TipoAtracao tipoAtracao) throws ExcecaoPersistencia;
-    public boolean excluir(TipoAtracao tipoAtracao) throws ExcecaoPersistencia;
+    public boolean atualizar(TipoAtracao tipoAtracao) throws ExcecaoPersistencia;
+    public boolean deletar(TipoAtracao tipoAtracao) throws ExcecaoPersistencia;
     public TipoAtracao consultarTipoAtracaoPorId(Long codTipoAtracao) throws ExcecaoPersistencia;
     public TipoAtracao consultarTipoAtracaoPorNome(String descTipoAtracao) throws ExcecaoPersistencia;
     public List<TipoAtracao> listarTudo() throws ExcecaoPersistencia;

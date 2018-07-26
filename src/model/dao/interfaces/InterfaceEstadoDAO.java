@@ -15,8 +15,8 @@ import model.excecao.ExcecaoPersistencia;
  */
 public interface InterfaceEstadoDAO {
     public Long inserir(Estado estado) throws ExcecaoPersistencia;
-    public boolean alterar(Estado estado) throws ExcecaoPersistencia;
-    public boolean excluir(Estado estado) throws ExcecaoPersistencia;
+    public boolean atualizar(Estado estado) throws ExcecaoPersistencia;
+    public boolean deletar(Estado estado) throws ExcecaoPersistencia;
     public Estado consultarPorId(Long codEstado) throws ExcecaoPersistencia;
     public Estado consultarPorSigla(String sigla) throws ExcecaoPersistencia;
     public List<Estado> listarTudo() throws ExcecaoPersistencia;
