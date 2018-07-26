@@ -26,7 +26,7 @@ public class FotoDAO implements InterfaceFotoDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO usuario (seq_foto,seq_dia,foto) VALUES(?,?,?)";
+            String sql = "INSERT INTO foto (seq_foto,seq_dia,foto) VALUES(?,?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
@@ -88,7 +88,7 @@ public class FotoDAO implements InterfaceFotoDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "DELETE FROM usuario WHERE seq_foto = ?";
+            String sql = "DELETE FROM foto WHERE seq_foto = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1,foto.getSeqFoto());
@@ -145,7 +145,7 @@ public class FotoDAO implements InterfaceFotoDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM usuario WHERE seq_foto = ?";
+            String sql = "SELECT * FROM foto WHERE seq_foto = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, seqFoto);
@@ -183,7 +183,7 @@ public class FotoDAO implements InterfaceFotoDAO {
          try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "SELECT * FROM veiculo WHERE seq_dia = ?";
+            String sql = "SELECT * FROM foto WHERE seq_dia = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, seqDia);
