@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 public class DataSourceConnection implements ConnectionFactory {
 
-    private final static String dsName = "jdbc/mochilando";
+    private final static String dsName = "jdbc/Mochilando";
 
     private DataSource ds;
     
