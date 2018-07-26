@@ -64,7 +64,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public boolean alterar(Dia dia)  throws ExcecaoPersistencia{
+    public boolean atualizar(Dia dia)  throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -93,7 +93,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public boolean excluir(Dia dia) throws ExcecaoPersistencia{
+    public boolean deletar(Dia dia) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

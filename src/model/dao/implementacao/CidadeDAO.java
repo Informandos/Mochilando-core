@@ -21,12 +21,12 @@ public class CidadeDAO implements InterfaceCidadeDAO {
     }
 
     @Override
-    public boolean alterar(Cidade cidade) {
+    public boolean atualizar(Cidade cidade) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean excluir(Cidade cidade) {
+    public boolean deletar(Cidade cidade) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

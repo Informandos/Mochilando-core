@@ -59,7 +59,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
     }
 
     @Override
-    public boolean alterar(Usuario usuario) throws ExcecaoPersistencia {
+    public boolean atualizar(Usuario usuario) throws ExcecaoPersistencia {
         try {
 
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -98,7 +98,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
     }
 
     @Override
-    public boolean excluir(Usuario usuario) throws ExcecaoPersistencia {
+    public boolean deletar(Usuario usuario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

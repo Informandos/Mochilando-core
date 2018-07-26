@@ -54,7 +54,7 @@ public class FotoDAO implements InterfaceFotoDAO {
     }
 
     @Override
-    public boolean alterar(Foto foto) throws ExcecaoPersistencia {
+    public boolean atualizar(Foto foto) throws ExcecaoPersistencia {
         try {
 
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -84,7 +84,7 @@ public class FotoDAO implements InterfaceFotoDAO {
     }
 
     @Override
-    public boolean excluir(Foto foto) throws ExcecaoPersistencia {
+    public boolean deletar(Foto foto) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

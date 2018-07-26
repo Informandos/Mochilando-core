@@ -71,7 +71,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public boolean alterar(Diario diario) throws ExcecaoPersistencia {
+    public boolean atualizar(Diario diario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -107,7 +107,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public boolean excluir(Diario diario) throws ExcecaoPersistencia {
+    public boolean deletar(Diario diario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

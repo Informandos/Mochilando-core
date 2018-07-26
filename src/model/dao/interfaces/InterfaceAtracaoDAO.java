@@ -13,7 +13,7 @@ import model.excecao.ExcecaoPersistencia;
  *
  * @author Juliana
  */
-public interface InterfaceAtracaoDAO extends DAOInterface {
+public interface InterfaceAtracaoDAO {
     public Long inserir(Atracao atracao) throws ExcecaoPersistencia;
     public boolean atualizar(Atracao atracao) throws ExcecaoPersistencia;
     public boolean deletar(Atracao atracao) throws ExcecaoPersistencia;

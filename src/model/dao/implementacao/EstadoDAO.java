@@ -65,7 +65,7 @@ public class EstadoDAO implements InterfaceEstadoDAO {
     }
 
     @Override
-    public boolean alterar(Estado estado) throws ExcecaoPersistencia {
+    public boolean atualizar(Estado estado) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -94,7 +94,7 @@ public class EstadoDAO implements InterfaceEstadoDAO {
     }
 
     @Override
-    public boolean excluir(Estado estado) throws ExcecaoPersistencia {
+    public boolean deletar(Estado estado) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

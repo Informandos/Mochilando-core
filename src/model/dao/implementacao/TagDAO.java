@@ -52,7 +52,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public boolean alterar(Tag tag) throws ExcecaoPersistencia {
+    public boolean atualizar(Tag tag) throws ExcecaoPersistencia {
         try{
          Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -80,7 +80,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public boolean excluir(Tag tag) throws ExcecaoPersistencia {
+    public boolean deletar(Tag tag) throws ExcecaoPersistencia {
         try{
         Connection connection = ConnectionManager.getInstance().getConnection();
 
