@@ -5,6 +5,8 @@
  */
 package model.domain;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Juliana
@@ -15,7 +17,7 @@ public class Usuario {
     private String sobrenomeUsuario;
     private String txtEmail;
     private String txtSenha;
-    private byte[] imgPerfil;
+    private Blob imgPerfil;
     private String sexo;
     private String datNascimento;
     private Cidade cidade;
@@ -23,7 +25,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, byte[] imgPerfil, String sexo, String datNascimento, Cidade cidade) {
+    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, Blob imgPerfil, String sexo, String datNascimento, Cidade cidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -108,14 +110,14 @@ public class Usuario {
     /**
      * @return the imgPerfil
      */
-    public byte[] getImgPerfil() {
+    public Blob getImgPerfil() {
         return imgPerfil;
     }
 
     /**
      * @param imgPerfil the imgPerfil to set
      */
-    public void setImgPerfil(byte[] imgPerfil) {
+    public void setImgPerfil(Blob imgPerfil) {
         this.imgPerfil = imgPerfil;
     }
 
