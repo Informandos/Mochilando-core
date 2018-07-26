@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model.dao.implementacao;
 
 
@@ -47,7 +43,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
 
             Long id = null;
             if (rs.next()) {
-                id = new Long(rs.getLong("id"));
+                id = new Long(rs.getLong("cod_usuario"));
                 usuario.setCodUsuario(id);
             }
 
@@ -77,7 +73,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                     + "       sexo = ?, "
                     + "       dat_nascimento = ?,"
                     + "       cod_cidade = ?"
-                    + " WHERE id = ?;";
+                    + " WHERE cod_nome = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             Long codUsuario = usuario.getCodUsuario();
