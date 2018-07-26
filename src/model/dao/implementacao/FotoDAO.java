@@ -151,11 +151,11 @@ public class FotoDAO implements InterfaceFotoDAO {
             pstmt.setLong(1, seqFoto);
             ResultSet rs = pstmt.executeQuery();
 
-            Foto usuario = null;
+            Foto foto = null;
              InterfaceDiaDAO diaDAO = new DiaDAO();
             if (rs.next()) {
                 
-                    Foto foto = new Foto();
+                    foto = new Foto();
                     foto.setSeqFoto(rs.getLong("seq_foto"));
                     Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
@@ -166,7 +166,7 @@ public class FotoDAO implements InterfaceFotoDAO {
             pstmt.close();
             connection.close();
 
-            return usuario;
+            return foto;
         } catch (Exception e) {
             e.printStackTrace();
             throw new ExcecaoPersistencia(e.getMessage(), e);
