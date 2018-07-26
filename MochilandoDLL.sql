@@ -26,14 +26,6 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "Diario" (
-
-
-)
-
-WITHOUT OIDS;
-
-
 
 CREATE TABLE "estado" (
 
