@@ -18,12 +18,22 @@ CREATE TABLE "usuario" (
 
 "cod_cidade" serial4 NOT NULL,
 
-PRIMARY KEY ("cod_usuario") 
+PRIMARY KEY ("cod_usuario") ,
+
+UNIQUE ("cod_usuario")
 
 )
 
 WITHOUT OIDS;
 
+
+
+CREATE TABLE "Diario" (
+
+
+)
+
+WITHOUT OIDS;
 
 
 
@@ -35,7 +45,9 @@ CREATE TABLE "estado" (
 
 "nom_estado" varchar(30) NOT NULL,
 
-PRIMARY KEY ("cod_estado") 
+PRIMARY KEY ("cod_estado") ,
+
+UNIQUE ("cod_estado")
 
 )
 
@@ -51,7 +63,9 @@ CREATE TABLE "cidade" (
 
 "nom_cidade" varchar(255) NOT NULL,
 
-PRIMARY KEY ("cod_cidade", "cod_estado") 
+PRIMARY KEY ("cod_cidade", "cod_estado") ,
+
+UNIQUE ("cod_cidade")
 
 )
 
@@ -75,7 +89,9 @@ CREATE TABLE "diario" (
 
 "txt_diario" varchar NOT NULL,
 
-PRIMARY KEY ("cod_diario", "cod_usuario") 
+PRIMARY KEY ("cod_diario", "cod_usuario") ,
+
+UNIQUE ("cod_diario")
 
 )
 
@@ -97,7 +113,9 @@ CREATE TABLE "atracao" (
 
 "nro_longitude" float8 NOT NULL,
 
-PRIMARY KEY ("seq_atracao", "cod_cidade_atracao", "cod_tipo_atracao") 
+PRIMARY KEY ("seq_atracao", "cod_cidade_atracao", "cod_tipo_atracao") ,
+
+UNIQUE ("seq_atracao")
 
 )
 
@@ -117,7 +135,9 @@ CREATE TABLE "comentario" (
 
 "txt_comentario" varchar NOT NULL,
 
-PRIMARY KEY ("seq_comentario", "cod_diario", "cod_autor_comentario") 
+PRIMARY KEY ("seq_comentario", "cod_diario", "cod_autor_comentario") ,
+
+UNIQUE ("seq_comentario")
 
 )
 
@@ -131,7 +151,9 @@ CREATE TABLE "tipo_atracao" (
 
 "desc_tipo_atracao" varchar NOT NULL,
 
-PRIMARY KEY ("cod_tipo_atracao") 
+PRIMARY KEY ("cod_tipo_atracao") ,
+
+UNIQUE ("cod_tipo_atracao")
 
 )
 
@@ -147,11 +169,9 @@ CREATE TABLE "dia" (
 
 "txt_dia" varchar NOT NULL,
 
-"ordem_dia" int4 NOT NULL,
+PRIMARY KEY ("seq_dia", "cod_diario") ,
 
-"data_dia" date NOT NULL,
-
-PRIMARY KEY ("seq_dia", "cod_diario") 
+UNIQUE ("seq_dia")
 
 )
 
@@ -167,7 +187,9 @@ CREATE TABLE "dia_atracao" (
 
 "seq_dia" serial8 NOT NULL,
 
-PRIMARY KEY ("seq_dia_atracao", "seq_atracao", "seq_dia") 
+PRIMARY KEY ("seq_dia_atracao", "seq_atracao", "seq_dia") ,
+
+UNIQUE ("seq_dia_atracao")
 
 )
 
@@ -185,7 +207,9 @@ CREATE TABLE "avaliacao_comentario" (
 
 "avaliacao" char NOT NULL,
 
-PRIMARY KEY ("seq_avaliacao", "seq_comentario", "cod_usuario") 
+PRIMARY KEY ("seq_avaliacao", "seq_comentario", "cod_usuario") ,
+
+UNIQUE ("seq_avaliacao")
 
 )
 
@@ -203,7 +227,9 @@ CREATE TABLE "avaliacao_diario" (
 
 "avaliacao" char NOT NULL,
 
-PRIMARY KEY ("seq_avaliacao", "cod_diario", "cod_usuario") 
+PRIMARY KEY ("seq_avaliacao", "cod_diario", "cod_usuario") ,
+
+UNIQUE ("seq_avaliacao")
 
 )
 
@@ -219,7 +245,9 @@ CREATE TABLE "foto" (
 
 "foto" bytea NOT NULL,
 
-PRIMARY KEY ("seq_foto", "seq_dia") 
+PRIMARY KEY ("seq_foto", "seq_dia") ,
+
+UNIQUE ("seq_foto")
 
 )
 
@@ -227,13 +255,15 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "tag" (
+CREATE TABLE "preferencia" (
 
-"cod_tag" serial4 NOT NULL,
+"cod_preferencia" serial4 NOT NULL,
 
-"desc_tag" varchar NOT NULL,
+"desc_preferencia" varchar NOT NULL,
 
-PRIMARY KEY ("cod_tag") 
+PRIMARY KEY ("cod_preferencia") ,
+
+UNIQUE ("cod_preferencia")
 
 )
 
@@ -241,15 +271,17 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "usuario_tag" (
+CREATE TABLE "usuario_preferencia" (
 
-"seq_usuario_tag" serial8 NOT NULL,
+"seq_usuario_preferencia" serial8 NOT NULL,
 
 "cod_usuario" serial8 NOT NULL,
 
-"cod_tag" serial4 NOT NULL,
+"cod_preferencia" serial4 NOT NULL,
 
-PRIMARY KEY ("seq_usuario_tag", "cod_usuario", "cod_tag") 
+PRIMARY KEY ("seq_usuario_preferencia", "cod_usuario", "cod_preferencia") ,
+
+UNIQUE ("seq_usuario_preferencia")
 
 )
 
@@ -263,9 +295,11 @@ CREATE TABLE "tag_diario" (
 
 "cod_diario" serial8 NOT NULL,
 
-"cod_tag" serial8 NOT NULL,
+"cod_preferencia" serial8 NOT NULL,
 
-PRIMARY KEY ("seq_tag_diario", "cod_diario", "cod_tag") 
+PRIMARY KEY ("seq_tag_diario", "cod_diario", "cod_preferencia") ,
+
+UNIQUE ("seq_tag_diario")
 
 )
 
@@ -305,13 +339,13 @@ ALTER TABLE "avaliacao_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuari
 
 ALTER TABLE "foto" ADD FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia") MATCH FULL;
 
-ALTER TABLE "usuario_tag" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "usuario_preferencia" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
 
-ALTER TABLE "usuario_tag" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
+ALTER TABLE "usuario_preferencia" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_preferencia") REFERENCES "preferencia" ("cod_preferencia") MATCH FULL;
 
 ALTER TABLE "tag_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
 
-ALTER TABLE "tag_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
+ALTER TABLE "tag_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_preferencia") REFERENCES "preferencia" ("cod_preferencia") MATCH FULL;
 
 
 
