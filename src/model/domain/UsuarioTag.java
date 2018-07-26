@@ -12,7 +12,7 @@ package model.domain;
 public class UsuarioTag {
     private Long seqUsuarioPreferencia;
     private Usuario usuario;
-    private Tag preferencia;
+    private Tag tag;
 
     public UsuarioTag() {
     }
@@ -20,7 +20,7 @@ public class UsuarioTag {
     public UsuarioTag(Long seqUsuarioPreferencia, Usuario usuario, Tag preferencia) {
         this.seqUsuarioPreferencia = seqUsuarioPreferencia;
         this.usuario = usuario;
-        this.preferencia = preferencia;
+        this.tag = tag;
     }
 
     public Long getSeqUsuarioPreferencia() {
@@ -39,12 +39,12 @@ public class UsuarioTag {
         this.usuario = usuario;
     }
 
-    public Tag getPreferencia() {
-        return preferencia;
+    public Tag getTag() {
+        return tag;
     }
 
-    public void setPreferencia(Tag preferencia) {
-        this.preferencia = preferencia;
+    public void setTag(Tag tag) {
+        this.tag = tag;
     }
 
     
