@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Foto;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceFotoDAO {
-    public Long inserir(Foto foto);
-    public boolean alterar(Foto foto);
-    public boolean excluir(Foto foto);
-    public Foto obterFotoPorId(Long seqFoto);
-    public List<Foto> listarTudo();
-    public List<Foto> listarPorDia(Long seqDia);
+    public Long inserir(Foto foto) throws ExcessaoPersistencia;
+    public boolean alterar(Foto foto) throws ExcessaoPersistencia;
+    public boolean excluir(Foto foto) throws ExcessaoPersistencia;
+    public Foto obterFotoPorId(Long seqFoto) throws ExcessaoPersistencia;
+    public List<Foto> listarTudo() throws ExcessaoPersistencia;
+    public List<Foto> listarPorDia(Long seqDia) throws ExcessaoPersistencia;
 }

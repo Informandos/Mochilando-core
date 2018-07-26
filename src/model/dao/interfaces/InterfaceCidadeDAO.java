@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Cidade;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceCidadeDAO {
-    public Long inserir(Cidade cidade);
-    public boolean alterar(Cidade cidade);
-    public boolean excluir(Cidade cidade);
-    public Cidade consultarCidadePorId(Long codCidade);
-    public List<Cidade> listarPorCodEstado(Long codEstado);
-    public List<Cidade> listarTudo();
+    public Long inserir(Cidade cidade) throws ExcessaoPersistencia;
+    public boolean alterar(Cidade cidade) throws ExcessaoPersistencia;
+    public boolean excluir(Cidade cidade) throws ExcessaoPersistencia;
+    public Cidade consultarCidadePorId(Long codCidade) throws ExcessaoPersistencia;
+    public List<Cidade> listarPorCodEstado(Long codEstado) throws ExcessaoPersistencia;
+    public List<Cidade> listarTudo() throws ExcessaoPersistencia;
 }

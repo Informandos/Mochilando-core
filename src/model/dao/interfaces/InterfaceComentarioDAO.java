@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Comentario;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceComentarioDAO {
-    public Long inserir(Comentario comentario);
-    public boolean alterar(Comentario comentario);
-    public boolean excluir(Comentario comentario);
-    public Comentario obterComentarioPorId(Long seqComentario);
-    public List<Comentario> listarPorDiario(Long codDiario);
-    public List<Comentario> listarTudo();
+    public Long inserir(Comentario comentario) throws ExcessaoPersistencia;
+    public boolean alterar(Comentario comentario) throws ExcessaoPersistencia;
+    public boolean excluir(Comentario comentario) throws ExcessaoPersistencia;
+    public Comentario obterComentarioPorId(Long seqComentario) throws ExcessaoPersistencia;
+    public List<Comentario> listarPorDiario(Long codDiario) throws ExcessaoPersistencia;
+    public List<Comentario> listarTudo() throws ExcessaoPersistencia;
 }

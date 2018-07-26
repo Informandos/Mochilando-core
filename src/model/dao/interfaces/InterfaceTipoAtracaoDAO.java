@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.TipoAtracao;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceTipoAtracaoDAO {
-    public Long inserir(TipoAtracao tipoAtracao);
-    public boolean alterar(TipoAtracao tipoAtracao);
-    public boolean excluir(TipoAtracao tipoAtracao);
-    public TipoAtracao consultarTipoAtracaoPorId(Long codTipoAtracao);
-    public TipoAtracao consultarTipoAtracaoPorNome(String descTipoAtracao);
-    public List<TipoAtracao> listarTudo();
+    public Long inserir(TipoAtracao tipoAtracao) throws ExcessaoPersistencia;
+    public boolean alterar(TipoAtracao tipoAtracao) throws ExcessaoPersistencia;
+    public boolean excluir(TipoAtracao tipoAtracao) throws ExcessaoPersistencia;
+    public TipoAtracao consultarTipoAtracaoPorId(Long codTipoAtracao) throws ExcessaoPersistencia;
+    public TipoAtracao consultarTipoAtracaoPorNome(String descTipoAtracao) throws ExcessaoPersistencia;
+    public List<TipoAtracao> listarTudo() throws ExcessaoPersistencia;
 }

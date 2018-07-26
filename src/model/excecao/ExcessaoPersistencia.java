@@ -10,11 +10,14 @@ package model.excecao;
  * @author Juliana
  */
 public class ExcessaoPersistencia extends Exception {
-    public ExcessaoPersistencia(String mensagem){
-        super(mensagem);
+
+    public ExcessaoPersistencia(String msg, Exception exception) {
+        super(msg, exception);
     }
-    
-    public ExcessaoPersistencia(Exception ex) {
-        super(ex);
+
+    public ExcessaoPersistencia(String msg) {
+        super(msg);
     }
+
 }
+

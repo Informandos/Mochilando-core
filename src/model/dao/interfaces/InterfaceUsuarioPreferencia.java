@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.UsuarioPreferencia;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceUsuarioPreferencia {
-    public Long inserir(UsuarioPreferencia usuarioPreferencia);
-    public boolean alterar(UsuarioPreferencia usuarioPreferencia);
-    public boolean excluir(UsuarioPreferencia usuarioPreferencia);
-    public UsuarioPreferencia consultarPorId(Long seqUsuarioPreferencia);
-    public List<UsuarioPreferencia> listarTudo();
-    public List<UsuarioPreferencia> listarPorUsuario(Long codUsuario);
+    public Long inserir(UsuarioPreferencia usuarioPreferencia) throws ExcessaoPersistencia;
+    public boolean alterar(UsuarioPreferencia usuarioPreferencia) throws ExcessaoPersistencia;
+    public boolean excluir(UsuarioPreferencia usuarioPreferencia) throws ExcessaoPersistencia;
+    public UsuarioPreferencia consultarPorId(Long seqUsuarioPreferencia) throws ExcessaoPersistencia;
+    public List<UsuarioPreferencia> listarTudo() throws ExcessaoPersistencia;
+    public List<UsuarioPreferencia> listarPorUsuario(Long codUsuario) throws ExcessaoPersistencia;
 }

@@ -7,16 +7,17 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.Estado;
+import model.excecao.ExcessaoPersistencia;
 
 /**
  *
  * @author Juliana
  */
 public interface InterfaceEstadoDAO {
-    public Long inserir(Estado estado);
-    public boolean alterar(Estado estado);
-    public boolean excluir(Estado estado);
-    public Estado consultarPorId(Long codEstado);
-    public Estado consultarPorSigla(Long codEstado);
-    public List<Estado> listarTudo();
+    public Long inserir(Estado estado) throws ExcessaoPersistencia;
+    public boolean alterar(Estado estado) throws ExcessaoPersistencia;
+    public boolean excluir(Estado estado) throws ExcessaoPersistencia;
+    public Estado consultarPorId(Long codEstado) throws ExcessaoPersistencia;
+    public Estado consultarPorSigla(Long codEstado) throws ExcessaoPersistencia;
+    public List<Estado> listarTudo() throws ExcessaoPersistencia;
 }

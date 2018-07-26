@@ -29,13 +29,11 @@ import util.db.ConnectionManager;
 public class DiarioDAO implements InterfaceDiarioDAO {
 
     @Override
-    public Long inserir(Diario diario) {
+    public Long inserir(Diario diario) throws ExcessaoPersistencia {
         if (diario == null) {
-            try {
-                throw new ExcessaoPersistencia("Diario nao pode ser null");
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            throw new ExcessaoPersistencia("Diario nao pode ser null");
+            
         }
 
         Long codDiario = null;
@@ -64,21 +62,18 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             rs.close();
             pstmt.close();
             connection.close();
+            return codDiario;
 
-        } catch (ClassNotFoundException | SQLException ex) {
-            try {
-                throw new ExcessaoPersistencia(ex);
-            } catch (ExcessaoPersistencia ex1) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-            Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
 
-        return codDiario;
     }
 
     @Override
-    public boolean alterar(Diario diario) {
+    public boolean alterar(Diario diario) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -105,20 +100,17 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.close();
             connection.close();
 
-        } catch (Exception e) {
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            return true;
+
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
 
         }
-
-        return true;
     }
 
     @Override
-    public boolean excluir(Diario diario) {
+    public boolean excluir(Diario diario) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -131,19 +123,15 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.close();
             connection.close();
             return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return true;
     }
 
     @Override
-    public Diario consultarDiarioPorId(Long codDiario) {
+    public Diario consultarDiarioPorId(Long codDiario) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -173,19 +161,15 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             connection.close();
 
             return diario;
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return null;
     }
 
     @Override
-    public List<Diario> listarTudo() {
+    public List<Diario> listarTudo() throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -220,18 +204,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
             return listarTudo;
         } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return null;
     }
 
     @Override
-    public List<Diario> listarPorUsuario(Usuario usuario) {
+    public List<Diario> listarPorUsuario(Usuario usuario) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -265,18 +245,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
             return listarPorUsuario;
         } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return null;
     }
 
     @Override
-    public List<Diario> listarPorCidade(Cidade cidade) {
+    public List<Diario> listarPorCidade(Cidade cidade) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -318,18 +294,14 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
             return listarPorCidade;
         } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return null;
     }
 
     @Override
-    public List<Diario> listarPorEstado(Estado estado) {
+    public List<Diario> listarPorEstado(Estado estado) throws ExcessaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -372,13 +344,10 @@ public class DiarioDAO implements InterfaceDiarioDAO {
 
             return listarPorEstado;
         } catch (Exception e) {
-            try {
-                throw new ExcessaoPersistencia(e);
-            } catch (ExcessaoPersistencia ex) {
-                Logger.getLogger(DiarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
+            throw new ExcessaoPersistencia(e.getMessage(), e);
+
         }
-        return null;
     }
 
 }
