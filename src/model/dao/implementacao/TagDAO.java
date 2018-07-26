@@ -9,6 +9,6 @@ package model.dao.implementacao;
  *
  * @author User
  */
-public class UsuarioTagDao {
+public class TagDAO {
     
 }
