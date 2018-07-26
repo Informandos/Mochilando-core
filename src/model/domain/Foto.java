@@ -7,6 +7,7 @@ package model.domain;
 
 import java.awt.image.BufferedImage;
 import java.sql.Blob;
+import org.ietf.jgss.Oid;
 
 /**
  *
@@ -16,12 +17,12 @@ public class Foto {
 
     private Long seqFoto;
     private Dia dia;
-    private Blob byteFoto;
+    private Byte byteFoto;
 
     public Foto() {
     }
 
-    public Foto(Long seqFoto, Dia dia, Blob byteFoto) {
+    public Foto(Long seqFoto, Dia dia, Byte byteFoto) {
         this.seqFoto = seqFoto;
         this.dia = dia;
         this.byteFoto = byteFoto;
@@ -43,11 +44,11 @@ public class Foto {
         this.dia = dia;
     }
 
-    public Blob getByteFoto() {
+    public Byte getByteFoto() {
         return byteFoto;
     }
 
-    public void setByteFoto( Blob byteFoto) {
+    public void setByteFoto( Byte byteFoto) {
         this.byteFoto = byteFoto;
     }
 

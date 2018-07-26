@@ -32,7 +32,7 @@ public class FotoDAO implements InterfaceFotoDAO {
             
             pstmt.setLong(1,foto.getSeqFoto());
             pstmt.setLong(2,foto.getDia().getSeqDia());
-            pstmt.setBlob(3,foto.getByteFoto());
+            pstmt.setByte(3,foto.getByteFoto());
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -69,7 +69,7 @@ public class FotoDAO implements InterfaceFotoDAO {
             Long seqFoto = foto.getSeqFoto();
             pstmt.setLong(1,foto.getSeqFoto());
             pstmt.setLong(2,foto.getDia().getSeqDia());
-            pstmt.setBlob(3,foto.getByteFoto());
+            pstmt.setByte(3,foto.getByteFoto());
 
             pstmt.executeUpdate();
 
@@ -122,7 +122,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                     foto.setSeqFoto(rs.getLong("seq_foto"));
                     Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
-                    foto.setByteFoto(rs.getBlob("foto"));
+                    foto.setByteFoto(rs.getByte("foto"));
                     
                     listAll.add(foto);
                 } while (rs.next());
@@ -159,7 +159,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                     foto.setSeqFoto(rs.getLong("seq_foto"));
                     Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
-                    foto.setByteFoto(rs.getBlob("foto"));
+                    foto.setByteFoto(rs.getByte("foto"));
             }
 
             rs.close();
@@ -198,7 +198,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                     foto.setSeqFoto(rs.getLong("seq_foto"));
                     Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
-                    foto.setByteFoto(rs.getBlob("foto"));
+                    foto.setByteFoto(rs.getByte("foto"));
             }
 
             rs.close();

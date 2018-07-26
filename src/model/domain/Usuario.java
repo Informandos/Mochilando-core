@@ -17,7 +17,7 @@ public class Usuario {
     private String sobrenomeUsuario;
     private String txtEmail;
     private String txtSenha;
-    private Blob imgPerfil;
+    private Byte imgPerfil;
     private String sexo;
     private String datNascimento;
     private Cidade cidade;
@@ -25,7 +25,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, Blob imgPerfil, String sexo, String datNascimento, Cidade cidade) {
+    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, Byte imgPerfil, String sexo, String datNascimento, Cidade cidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -110,14 +110,14 @@ public class Usuario {
     /**
      * @return the imgPerfil
      */
-    public Blob getImgPerfil() {
+    public Byte getImgPerfil() {
         return imgPerfil;
     }
 
     /**
      * @param imgPerfil the imgPerfil to set
      */
-    public void setImgPerfil(Blob imgPerfil) {
+    public void setImgPerfil(Byte imgPerfil) {
         this.imgPerfil = imgPerfil;
     }
 
