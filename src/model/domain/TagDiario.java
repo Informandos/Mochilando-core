@@ -13,12 +13,12 @@ public class TagDiario {
     
     private Long seqTagDiario;
     private Diario diario;
-    private Preferencia preferencia;
+    private Tag preferencia;
 
     public TagDiario() {
     }
 
-    public TagDiario(Long seqTagDiario, Diario diario, Preferencia preferencia) {
+    public TagDiario(Long seqTagDiario, Diario diario, Tag preferencia) {
         this.seqTagDiario = seqTagDiario;
         this.diario = diario;
         this.preferencia = preferencia;
@@ -40,11 +40,11 @@ public class TagDiario {
         this.diario = diario;
     }
 
-    public Preferencia getPreferencia() {
+    public Tag getPreferencia() {
         return preferencia;
     }
 
-    public void setPreferencia(Preferencia preferencia) {
+    public void setPreferencia(Tag preferencia) {
         this.preferencia = preferencia;
     }
     
