@@ -28,8 +28,8 @@ public class TagDAO implements InterfaceTagDAO {
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
-            pstmt.setLong(1,tag.getCodPreferencia());
-            pstmt.setString(2,tag.getDescPreferencia());
+            pstmt.setLong(1,tag.getCodTag());
+            pstmt.setString(2,tag.getDescTag());
            
             
             ResultSet rs = pstmt.executeQuery();
@@ -37,7 +37,7 @@ public class TagDAO implements InterfaceTagDAO {
             Long id = null;
             if (rs.next()) {
                 id = new Long(rs.getLong("cod_tag"));
-                tag.setCodPreferencia(id);
+                tag.setCodTag(id);
             }
 
             rs.close();
@@ -62,10 +62,10 @@ public class TagDAO implements InterfaceTagDAO {
                     + " WHERE cod_tag = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            Long codTag = tag.getCodPreferencia();
+            Long codTag = tag.getCodTag();
            
-            pstmt.setLong(1,tag.getCodPreferencia());
-            pstmt.setString(2,tag.getDescPreferencia());
+            pstmt.setLong(1,tag.getCodTag());
+            pstmt.setString(2,tag.getDescTag());
 
             pstmt.executeUpdate();
 
@@ -87,7 +87,7 @@ public class TagDAO implements InterfaceTagDAO {
             String sql = "DELETE FROM tag WHERE cod_tag = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1,tag.getCodPreferencia());
+            pstmt.setLong(1,tag.getCodTag());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -100,7 +100,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public Tag consultarPreferenciaPorId(Long codTag) throws ExcecaoPersistencia {
+    public Tag consultarTagPorId(Long codTag) throws ExcecaoPersistencia {
        try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -115,9 +115,9 @@ public class TagDAO implements InterfaceTagDAO {
             if (rs.next()) {
                 
                     tag = new Tag();
-                    tag.setCodPreferencia(rs.getLong("cod_tag"));
+                    tag.setCodTag(rs.getLong("cod_tag"));
                    
-                    tag.setDescPreferencia(rs.getString("desc_tag"));
+                    tag.setDescTag(rs.getString("desc_tag"));
             }
 
             rs.close();
@@ -132,7 +132,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public Tag consultarPreferenciaPorNome(String descTag) throws ExcecaoPersistencia {
+    public Tag consultarTagPorNome(String descTag) throws ExcecaoPersistencia {
            try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -147,9 +147,9 @@ public class TagDAO implements InterfaceTagDAO {
             if (rs.next()) {
                 
                     tag = new Tag();
-                    tag.setCodPreferencia(rs.getLong("cod_tag"));
+                    tag.setCodTag(rs.getLong("cod_tag"));
                    
-                    tag.setDescPreferencia(rs.getString("desc_tag"));
+                    tag.setDescTag(rs.getString("desc_tag"));
             }
 
             rs.close();
@@ -179,9 +179,9 @@ public class TagDAO implements InterfaceTagDAO {
                 listAll = new ArrayList<>();
                 do {
                     Tag tag = new Tag();
-                    tag.setCodPreferencia(rs.getLong("cod_tag"));
+                    tag.setCodTag(rs.getLong("cod_tag"));
                     
-                    tag.setDescPreferencia(rs.getString("desc_tag"));
+                    tag.setDescTag(rs.getString("desc_tag"));
                     
                     listAll.add(tag);
                 } while (rs.next());
