@@ -28,14 +28,6 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "Diario" (
-
-
-)
-
-WITHOUT OIDS;
-
-
 
 CREATE TABLE "estado" (
 
@@ -255,15 +247,15 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "preferencia" (
+CREATE TABLE "tag" (
 
-"cod_preferencia" serial4 NOT NULL,
+"cod_tag" serial4 NOT NULL,
 
-"desc_preferencia" varchar NOT NULL,
+"desc_tag" varchar NOT NULL,
 
-PRIMARY KEY ("cod_preferencia") ,
+PRIMARY KEY ("cod_tag") ,
 
-UNIQUE ("cod_preferencia")
+UNIQUE ("cod_tag")
 
 )
 
@@ -271,17 +263,17 @@ WITHOUT OIDS;
 
 
 
-CREATE TABLE "usuario_preferencia" (
+CREATE TABLE "usuario_tag" (
 
-"seq_usuario_preferencia" serial8 NOT NULL,
+"seq_usuario_tag" serial8 NOT NULL,
 
 "cod_usuario" serial8 NOT NULL,
 
-"cod_preferencia" serial4 NOT NULL,
+"cod_tag" serial4 NOT NULL,
 
-PRIMARY KEY ("seq_usuario_preferencia", "cod_usuario", "cod_preferencia") ,
+PRIMARY KEY ("seq_usuario_tag", "cod_usuario", "cod_tag") ,
 
-UNIQUE ("seq_usuario_preferencia")
+UNIQUE ("seq_usuario_tag")
 
 )
 
@@ -295,9 +287,9 @@ CREATE TABLE "tag_diario" (
 
 "cod_diario" serial8 NOT NULL,
 
-"cod_preferencia" serial8 NOT NULL,
+"cod_tag" serial8 NOT NULL,
 
-PRIMARY KEY ("seq_tag_diario", "cod_diario", "cod_preferencia") ,
+PRIMARY KEY ("seq_tag_diario", "cod_diario", "cod_tag") ,
 
 UNIQUE ("seq_tag_diario")
 
@@ -339,13 +331,13 @@ ALTER TABLE "avaliacao_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuari
 
 ALTER TABLE "foto" ADD FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia") MATCH FULL;
 
-ALTER TABLE "usuario_preferencia" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "usuario_tag" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
 
-ALTER TABLE "usuario_preferencia" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_preferencia") REFERENCES "preferencia" ("cod_preferencia") MATCH FULL;
+ALTER TABLE "usuario_tag" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
 
 ALTER TABLE "tag_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
 
-ALTER TABLE "tag_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_preferencia") REFERENCES "preferencia" ("cod_preferencia") MATCH FULL;
+ALTER TABLE "tag_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
 
 
 
