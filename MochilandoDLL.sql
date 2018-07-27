@@ -28,7 +28,6 @@ WITHOUT OIDS;
 
 
 
-
 CREATE TABLE "estado" (
 
 "cod_estado" serial2 NOT NULL,
@@ -160,6 +159,10 @@ CREATE TABLE "dia" (
 "cod_diario" serial8 NOT NULL,
 
 "txt_dia" varchar NOT NULL,
+
+"ordem_dia" int4 NOT NULL,
+
+"data_dia" varchar(255),
 
 PRIMARY KEY ("seq_dia", "cod_diario") ,
 
