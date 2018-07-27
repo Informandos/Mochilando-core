@@ -93,17 +93,20 @@ public class ManterDiario implements InterfaceManterDiario {
 
     @Override
     public List<Diario> pesquisarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Diario> result = diarioDAO.listarPorCodUsuario(codUsuario);
+        return result;
     }
 
     @Override
     public List<Diario> pesquisarPorCodCidade(Long codCidade) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Diario> result = diarioDAO.listarPorCodCidade(codCidade);
+        return result;
     }
 
     @Override
     public List<Diario> pesquisarPorCodEstado(Long codEstado) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Diario> result = diarioDAO.listarPorCodCidade(codEstado);
+        return result;
     }
     
 }
