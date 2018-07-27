@@ -27,11 +27,21 @@ public class ManterUsuario implements InterfaceManterUsuario {
     @Override
     public Long cadastrar(Usuario usuario) throws  ExcecaoPersistencia,ExcecaoNegocio{
         
-        if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
+        if((usuario.getCodUsuario()== null))
+            throw new ExcecaoNegocio("Obrigatório informar o codigo usuario");
+         if((usuario.getNomUsuario()== null) || (usuario.getNomUsuario().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o nome.");
+        if((usuario.getTxtSenha()== null) || (usuario.getTxtSenha().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar a senha.");
+         if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o E-mail.");
-        
-        //TODO: DEMAIS VERIFICAÇÕES
-        
+          if((usuario.getDatNascimento()== null) || (usuario.getDatNascimento().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar a data de nascimento.");
+          if((usuario.getSobrenomeUsuario()== null) || (usuario.getSobrenomeUsuario().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
+          if((usuario.getSexo()== null) || (usuario.getSexo().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
+          
         Long result = usuarioDAO.inserir(usuario);
         return result;
     }
@@ -39,10 +49,22 @@ public class ManterUsuario implements InterfaceManterUsuario {
     @Override
     public boolean alterar(Usuario usuario) throws ExcecaoPersistencia,ExcecaoNegocio {
         
-        if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
+          if((usuario.getCodUsuario()== null))
+            throw new ExcecaoNegocio("Obrigatório informar o codigo usuario");
+         if((usuario.getNomUsuario()== null) || (usuario.getNomUsuario().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o nome.");
+        if((usuario.getTxtSenha()== null) || (usuario.getTxtSenha().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar a senha.");
+         if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o E-mail.");
+          if((usuario.getDatNascimento()== null) || (usuario.getDatNascimento().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar a data de nascimento.");
+          if((usuario.getSobrenomeUsuario()== null) || (usuario.getSobrenomeUsuario().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
+          if((usuario.getSexo()== null) || (usuario.getSexo().isEmpty()))
+            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
         
-        //TODO: DEMAIS VERIFICAÇÕES
+        
                   
         boolean result = usuarioDAO.atualizar(usuario);
         return result;
