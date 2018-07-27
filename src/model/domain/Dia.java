@@ -16,13 +16,13 @@ public class Dia {
     private Long seqDia;
     private Diario diario;
     private String txtDia;
-    private int ordemDia;
+    private Integer ordemDia;
     private Date dataDia;
 
     public Dia() {
     }
 
-    public Dia(Long seqDia, Diario diario, String txtDia, int ordemDia, Date dataDia) {
+    public Dia(Long seqDia, Diario diario, String txtDia, Integer ordemDia, Date dataDia) {
         this.seqDia = seqDia;
         this.diario = diario;
         this.txtDia = txtDia;
@@ -72,11 +72,11 @@ public class Dia {
         this.txtDia = txtDia;
     }
 
-    public int getOrdemDia() {
+    public Integer getOrdemDia() {
         return ordemDia;
     }
 
-    public void setOrdemDia(int ordemDia) {
+    public void setOrdemDia(Integer ordemDia) {
         this.ordemDia = ordemDia;
     }
 
