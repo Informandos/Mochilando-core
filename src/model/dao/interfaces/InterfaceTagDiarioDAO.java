@@ -13,7 +13,7 @@ import util.db.exception.ExcecaoPersistencia;
  *
  * @author Juliana
  */
-public interface InterfaceTagDiario {
+public interface InterfaceTagDiarioDAO {
     public Long inserir(TagDiario tagDiario ) throws ExcecaoPersistencia;
     public boolean atualizar(TagDiario tagDiario) throws ExcecaoPersistencia;
     public boolean deletar(TagDiario tagDiario) throws ExcecaoPersistencia;

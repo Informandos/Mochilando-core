@@ -14,7 +14,7 @@ import util.db.exception.ExcecaoPersistencia;
  * @author Juliana
  */
 
-public interface InterfaceDiaAtracao {
+public interface InterfaceDiaAtracaoDAO {
     public Long inserir(DiaAtracao diaAtracao) throws ExcecaoPersistencia;
     public boolean atualizar(DiaAtracao diaAtracao) throws ExcecaoPersistencia;
     public boolean deletar(DiaAtracao diaAtracao) throws ExcecaoPersistencia;
