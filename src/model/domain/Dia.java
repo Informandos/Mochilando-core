@@ -5,23 +5,29 @@
  */
 package model.domain;
 
+import java.util.Date;
+
 /**
  *
  * @author Juliana
  */
 public class Dia {
-    
+
     private Long seqDia;
     private Diario diario;
     private String txtDia;
+    private int ordemDia;
+    private Date dataDia;
 
     public Dia() {
     }
 
-    public Dia(Long seqDia, Diario diario, String txtDia) {
+    public Dia(Long seqDia, Diario diario, String txtDia, int ordemDia, Date dataDia) {
         this.seqDia = seqDia;
         this.diario = diario;
         this.txtDia = txtDia;
+        this.ordemDia = ordemDia;
+        this.dataDia = dataDia;
     }
 
     /**
@@ -65,5 +71,21 @@ public class Dia {
     public void setTxtDia(String txtDia) {
         this.txtDia = txtDia;
     }
-    
+
+    public int getOrdemDia() {
+        return ordemDia;
+    }
+
+    public void setOrdemDia(int ordemDia) {
+        this.ordemDia = ordemDia;
+    }
+
+    public Date getDataDia() {
+        return dataDia;
+    }
+
+    public void setDataDia(Date dataDia) {
+        this.dataDia = dataDia;
+    }
+
 }

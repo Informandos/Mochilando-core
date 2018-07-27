@@ -6,6 +6,7 @@
 package model.dao.implementacao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +26,7 @@ import util.db.ConnectionManager;
 public class DiaDAO implements InterfaceDiaDAO {
 
     @Override
-    public Long inserir(Dia dia)  throws ExcecaoPersistencia{
+    public Long inserir(Dia dia) throws ExcecaoPersistencia {
         if (dia == null) {
 
             throw new ExcecaoPersistencia("Dia nao pode ser null");
@@ -37,13 +38,15 @@ public class DiaDAO implements InterfaceDiaDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO dia (cod_diario, txt_Dia) "
-                    + "VALUES(?,?) RETURNING seq_dia";
+            String sql = "INSERT INTO dia (cod_diario, txt_Dia, ordem_dia, data_dia) "
+                    + "VALUES(?,?,?,?) RETURNING seq_dia";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
             pstmt.setLong(1, dia.getDiario().getCodDiario());
             pstmt.setString(2, dia.getTxtDia());
+            pstmt.setInt(3, dia.getOrdemDia());
+            pstmt.setDate(4, new java.sql.Date(dia.getDataDia().getTime()));
 
             ResultSet rs = pstmt.executeQuery();
 
@@ -64,19 +67,22 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public boolean atualizar(Dia dia)  throws ExcecaoPersistencia{
+    public boolean atualizar(Dia dia) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "UPDATE dia "
                     + "   SET cod_diario = ?, "
                     + "       txt_dia = ?, "
+                    + "       ordem_dia = ?, "
                     + " WHERE cod_diario = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
             pstmt.setLong(1, dia.getDiario().getCodDiario());
             pstmt.setString(2, dia.getTxtDia());
+            pstmt.setInt(3, dia.getOrdemDia());
+            pstmt.setDate(4, new java.sql.Date(dia.getDataDia().getTime()));
 
             pstmt.executeUpdate();
 
@@ -93,7 +99,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public boolean deletar(Dia dia) throws ExcecaoPersistencia{
+    public boolean deletar(Dia dia) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -114,7 +120,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public Dia consultarPorId(Long seqDia)  throws ExcecaoPersistencia{
+    public Dia consultarPorId(Long seqDia) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -133,6 +139,8 @@ public class DiaDAO implements InterfaceDiaDAO {
                 diario = diarioDAO.consultarPorId(rs.getLong("cod_diario"));
                 dia.setDiario(diario);
                 dia.setTxtDia(rs.getString("txt_dia"));
+                dia.setOrdemDia(rs.getInt("ordem_dia"));
+                dia.setDataDia(rs.getDate("data_dia"));
             }
 
             rs.close();
@@ -148,7 +156,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public List<Dia> listarPorCodDiario(Long codDiario)  throws ExcecaoPersistencia{
+    public List<Dia> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -179,7 +187,7 @@ public class DiaDAO implements InterfaceDiaDAO {
             connection.close();
 
             return listarPorCodDiario;
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException | ExcecaoPersistencia e) {
 
             throw new ExcecaoPersistencia(e.getMessage(), e);
 
@@ -187,8 +195,43 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public List<Dia> listarTudo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Dia> listarTudo() throws ExcecaoPersistencia {
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM dia";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            ArrayList<Dia> listarTudo = null;
+            InterfaceDiarioDAO diarioDAO = new DiarioDAO();
+            if (rs.next()) {
+                listarTudo = new ArrayList<>();
+                do {
+                    Dia dia = new Dia();
+                    dia.setSeqDia(rs.getLong("seq_dia"));
+                    Diario diario = diarioDAO.consultarPorId(rs.getLong("cod_diario"));
+                    dia.setDiario(diario);
+                    dia.setTxtDia(rs.getString("txt_dia"));
+                    dia.setOrdemDia(rs.getInt("ordem_dia"));
+                    dia.setDataDia(rs.getDate("data_dia"));
+
+                    listarTudo.add(dia);
+                } while (rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return listarTudo;
+        } catch (ClassNotFoundException | SQLException | ExcecaoPersistencia e) {
+
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+
+        }
     }
-    
+
 }
