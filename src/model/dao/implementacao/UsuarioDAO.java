@@ -237,5 +237,43 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         }
     }
 
+    @Override
+    public Usuario consultarPorEmailSenha(String email, String senha) throws ExcecaoPersistencia {
+       try{
+        Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM usuario WHERE txt_email = ? AND txt_senha = md5(?)";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
+            ResultSet rs = pstmt.executeQuery();
+
+            Usuario usuario = null;
+             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            if (rs.next()) {
+                 usuario.setCodUsuario(rs.getLong("cod_usuario"));
+                    usuario.setNomUsuario(rs.getString("nome_usuario"));
+                    usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
+                    usuario.setTxtEmail(rs.getString("txt_email"));
+                    usuario.setTxtSenha(rs.getString("txt_senha"));
+                    usuario.setImgPerfil(rs.getByte("img_perfil"));
+                    usuario.setSexo(rs.getString("sexo"));
+                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
+                    usuario.setCidade(cidade);
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return usuario;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+    }
+
 
 }
