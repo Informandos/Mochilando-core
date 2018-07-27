@@ -7,6 +7,7 @@ package model.dao.interfaces;
 
 import java.util.List;
 import model.domain.AvaliacaoComentario;
+import model.domain.Comentario;
 import util.db.exception.ExcecaoPersistencia;
 
 
@@ -18,9 +19,10 @@ public interface InterfaceAvaliacaoComentarioDAO {
     public Long inserir(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
     public boolean atualizar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
     public boolean deletar(AvaliacaoComentario avaliacaoComenario) throws ExcecaoPersistencia;
-    public int consultarNumAvPositivas(Long codComentario) throws ExcecaoPersistencia;
-    public int consultarNumAvNegativas(Long codComentario) throws ExcecaoPersistencia;
-    public boolean haAvaliacao(Long codUsuario, Long codComentario) throws ExcecaoPersistencia;
-    public AvaliacaoComentario consultar(Long codUsuario, Long codComentario) throws ExcecaoPersistencia;
+    public AvaliacaoComentario consultarPorId(Long seqAvaliacao) throws ExcecaoPersistencia;
+    public int consultarNumAvPositivas(Long seqComentario) throws ExcecaoPersistencia;
+    public int consultarNumAvNegativas(Long seqComentario) throws ExcecaoPersistencia;
+    public boolean haAvaliacao(Long codUsuario, Long seqComentario) throws ExcecaoPersistencia;
     public List <AvaliacaoComentario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
+    public List <AvaliacaoComentario> listarTudo(Long seqAvaliacao) throws ExcecaoPersistencia;
 }

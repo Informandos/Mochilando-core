@@ -20,7 +20,7 @@ public interface InterfaceDiarioDAO {
     public Long inserir(Diario diario) throws ExcecaoPersistencia;
     public boolean atualizar(Diario diario) throws ExcecaoPersistencia;
     public boolean deletar(Diario diario) throws ExcecaoPersistencia;
-    public Diario consultarDiarioPorId(Long codDiario) throws ExcecaoPersistencia;
+    public Diario consultarPorId(Long codDiario) throws ExcecaoPersistencia;
     public List<Diario> listarTudo() throws ExcecaoPersistencia;
     public List<Diario> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;
     public List<Diario> listarPorCodCidade(Long codCidade) throws ExcecaoPersistencia;
