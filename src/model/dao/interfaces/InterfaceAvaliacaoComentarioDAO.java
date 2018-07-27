@@ -22,7 +22,6 @@ public interface InterfaceAvaliacaoComentarioDAO {
     public AvaliacaoComentario consultarPorId(Long seqAvaliacao) throws ExcecaoPersistencia;
     public int consultarNumAvPositivas(Long seqComentario) throws ExcecaoPersistencia;
     public int consultarNumAvNegativas(Long seqComentario) throws ExcecaoPersistencia;
-    public boolean haAvaliacao(Long codUsuario, Long seqComentario) throws ExcecaoPersistencia;
     public List <AvaliacaoComentario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
     public List <AvaliacaoComentario> listarTudo(Long seqAvaliacao) throws ExcecaoPersistencia;
 }
