@@ -20,7 +20,6 @@ public interface InterfaceAvaliacaoDiarioDAO {
     public AvaliacaoDiario consultarPorId(Long seqAvaliacao);
     public int consultarNumAvPositivas(Long codDiario) throws ExcecaoPersistencia;
     public int consultarNumAvNegativas(Long codDiario) throws ExcecaoPersistencia;
-    public boolean haAvaliacao(Long codUsuario, Long codDiario) throws ExcecaoPersistencia;
     public List<AvaliacaoDiario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
     public List<AvaliacaoDiario> listarTudo();
 }
