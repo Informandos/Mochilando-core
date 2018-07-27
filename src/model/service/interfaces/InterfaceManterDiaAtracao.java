@@ -20,5 +20,5 @@ public interface InterfaceManterDiaAtracao {
     public boolean excluir(DiaAtracao diaAtracao) throws ExcecaoPersistencia, ExcecaoNegocio;
     public DiaAtracao pesquisarPorId(Long seqDiaAtracao) throws ExcecaoPersistencia;
     public List<DiaAtracao> pesquisarPorSeqDia(Long seqDia) throws ExcecaoPersistencia;
-    public List<DiaAtracao> pesquisarTodos();
+    public List<DiaAtracao> pesquisarTodos() throws ExcecaoPersistencia;
 }

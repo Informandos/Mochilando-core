@@ -23,5 +23,5 @@ public interface InterfaceManterAvaliacaoDiario {
     public int pesquisarNumAvPositivas(Long codDiario) throws ExcecaoPersistencia;
     public int pesquisarNumAvNegativas(Long codDiario) throws ExcecaoPersistencia;
     public List<AvaliacaoDiario> pesquisarPorDiario(Long codDiario) throws ExcecaoPersistencia;
-    public List<AvaliacaoDiario> pesquisarTodos();
+    public List<AvaliacaoDiario> pesquisarTodos() throws ExcecaoPersistencia;
 }
