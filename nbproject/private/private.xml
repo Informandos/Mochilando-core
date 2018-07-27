@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterComentario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterEstado.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterCidade.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterDiaAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterTipoAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterAvaliacaoComentario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterDiario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterDia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterFoto.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterTag.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterAtracao.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/dao/implementacao/DiaDAO.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/util/db/exception/ExcecaoPersistencia.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterTagDiario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterUsuarioTag.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterUsuario.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/B%20REPOSITORIO%20TCC/Mochilando-core/src/model/service/interfaces/InterfaceManterAvaliacaoDiario.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
