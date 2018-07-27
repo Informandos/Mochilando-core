@@ -141,7 +141,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                     usuario.setImgPerfil(rs.getByte("img_perfil"));
                     usuario.setSexo(rs.getString("sexo"));
                     usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarCidadePorId(rs.getLong("cod_cidade"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                     usuario.setCidade(cidade);
                     listAll.add(usuario);
                 } while (rs.next());
@@ -159,7 +159,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
     }
 
     @Override
-    public Usuario consultarUsuarioPorId(Long id) throws ExcecaoPersistencia {
+    public Usuario consultarPorId(Long id) throws ExcecaoPersistencia {
 
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -182,7 +182,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                     usuario.setImgPerfil(rs.getByte("img_perfil"));
                     usuario.setSexo(rs.getString("sexo"));
                     usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarCidadePorId(rs.getLong("cod_cidade"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                     usuario.setCidade(cidade);
             }
 
@@ -200,7 +200,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
     
 
     @Override
-    public Usuario consultarUsuarioPorEmail(String txtEmail) throws ExcecaoPersistencia {
+    public Usuario consultarPorEmail(String txtEmail) throws ExcecaoPersistencia {
          try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -222,7 +222,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                     usuario.setImgPerfil(rs.getByte("img_perfil"));
                     usuario.setSexo(rs.getString("sexo"));
                     usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarCidadePorId(rs.getLong("cod_cidade"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                     usuario.setCidade(cidade);
             }
 

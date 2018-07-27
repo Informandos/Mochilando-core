@@ -114,7 +114,7 @@ public class DiaDAO implements InterfaceDiaDAO {
     }
 
     @Override
-    public Dia consultarDiaPorId(Long seqDia)  throws ExcecaoPersistencia{
+    public Dia consultarPorId(Long seqDia)  throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -130,7 +130,7 @@ public class DiaDAO implements InterfaceDiaDAO {
                 dia = new Dia();
                 dia.setSeqDia(rs.getLong("seq_dia"));
                 Diario diario;
-                diario = diarioDAO.consultarDiarioPorId(rs.getLong("cod_diario"));
+                diario = diarioDAO.consultarPorId(rs.getLong("cod_diario"));
                 dia.setDiario(diario);
                 dia.setTxtDia(rs.getString("txt_dia"));
             }
@@ -165,7 +165,7 @@ public class DiaDAO implements InterfaceDiaDAO {
                 do {
                     Dia dia = new Dia();
                     dia.setSeqDia(rs.getLong("seq_dia"));
-                    Diario diario = diarioDAO.consultarDiarioPorId(codDiario);
+                    Diario diario = diarioDAO.consultarPorId(codDiario);
                     dia.setDiario(diario);
                     dia.setTxtDia(rs.getString("txt_dia"));
 
@@ -184,6 +184,11 @@ public class DiaDAO implements InterfaceDiaDAO {
             throw new ExcecaoPersistencia(e.getMessage(), e);
 
         }
+    }
+
+    @Override
+    public List<Dia> listarTudo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

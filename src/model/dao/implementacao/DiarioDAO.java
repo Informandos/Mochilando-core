@@ -128,7 +128,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
     }
 
     @Override
-    public Diario consultarDiarioPorId(Long codDiario) throws ExcecaoPersistencia {
+    public Diario consultarPorId(Long codDiario) throws ExcecaoPersistencia {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -144,7 +144,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 diario = new Diario();
                 diario.setCodDiario(rs.getLong("cod_diario"));
                 Usuario usuario;
-                usuario = usuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                usuario = usuarioDAO.consultarPorId(rs.getLong("cod_usuario"));
                 diario.setUsuario(usuario);
                 diario.setNomDiario(rs.getString("nom_diario"));
                 diario.setDatPublicacao(rs.getDate("dat_publicacao"));
@@ -182,7 +182,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
-                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                    Usuario usuario = UsuarioDAO.consultarPorId(rs.getLong("cod_usuario"));
                     diario.setUsuario(usuario);
                     diario.setNomDiario(rs.getString("nom_diario"));
                     diario.setDatPublicacao(rs.getDate("dat_publicacao"));
@@ -225,7 +225,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
-                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(codUsuario);
+                    Usuario usuario = UsuarioDAO.consultarPorId(codUsuario);
                     diario.setUsuario(usuario);
                     diario.setNomDiario(rs.getString("nom_diario"));
                     diario.setDatPublicacao(rs.getDate("dat_publicacao"));
@@ -274,7 +274,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
-                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                    Usuario usuario = UsuarioDAO.consultarPorId(rs.getLong("cod_usuario"));
                     diario.setUsuario(usuario);
                     diario.setNomDiario(rs.getString("nom_diario"));
                     diario.setDatPublicacao(rs.getDate("dat_publicacao"));
@@ -324,7 +324,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 do {
                     Diario diario = new Diario();
                     diario.setCodDiario(rs.getLong("cod_diario"));
-                    Usuario usuario = UsuarioDAO.consultarUsuarioPorId(rs.getLong("cod_usuario"));
+                    Usuario usuario = UsuarioDAO.consultarPorId(rs.getLong("cod_usuario"));
                     diario.setUsuario(usuario);
                     diario.setNomDiario(rs.getString("nom_diario"));
                     diario.setDatPublicacao(rs.getDate("dat_publicacao"));

@@ -8,6 +8,7 @@ package model.dao.implementacao;
 import java.util.List;
 import model.dao.interfaces.InterfaceCidadeDAO;
 import model.domain.Cidade;
+import util.db.exception.ExcecaoPersistencia;
 
 /**
  *
@@ -16,33 +17,33 @@ import model.domain.Cidade;
 public class CidadeDAO implements InterfaceCidadeDAO {
 
     @Override
-    public Long inserir(Cidade cidade) {
+    public Long inserir(Cidade cidade) throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean atualizar(Cidade cidade) {
+    public boolean atualizar(Cidade cidade) throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean deletar(Cidade cidade) {
+    public boolean deletar(Cidade cidade) throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Cidade consultarCidadePorId(Long codCidade) {
+    public Cidade consultarPorId(Long codCidade) throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Cidade> listarPorCodEstado(Long codEstado) {
+    public List<Cidade> listarPorCodEstado(Long codEstado) throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Cidade> listarTudo() {
+    public List<Cidade> listarTudo() throws ExcecaoPersistencia {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

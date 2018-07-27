@@ -120,7 +120,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                 do {
                     Foto foto = new Foto();
                     foto.setSeqFoto(rs.getLong("seq_foto"));
-                    Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
+                    Dia dia = diaDAO.consultarPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
                     foto.setByteFoto(rs.getByte("foto"));
                     
@@ -140,7 +140,7 @@ public class FotoDAO implements InterfaceFotoDAO {
     }
 
     @Override
-    public Foto obterFotoPorId(Long seqFoto) throws ExcecaoPersistencia {
+    public Foto consultarPorId(Long seqFoto) throws ExcecaoPersistencia {
 
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -157,7 +157,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                 
                     foto = new Foto();
                     foto.setSeqFoto(rs.getLong("seq_foto"));
-                    Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
+                    Dia dia = diaDAO.consultarPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
                     foto.setByteFoto(rs.getByte("foto"));
             }
@@ -196,7 +196,7 @@ public class FotoDAO implements InterfaceFotoDAO {
                 
                    foto = new Foto();
                     foto.setSeqFoto(rs.getLong("seq_foto"));
-                    Dia dia = diaDAO.consultarDiaPorId(rs.getLong("seq_dia"));
+                    Dia dia = diaDAO.consultarPorId(rs.getLong("seq_dia"));
                     foto.setDia(dia);
                     foto.setByteFoto(rs.getByte("foto"));
             }

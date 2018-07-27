@@ -100,7 +100,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public Tag consultarTagPorId(Long codTag) throws ExcecaoPersistencia {
+    public Tag consultarPorId(Long codTag) throws ExcecaoPersistencia {
        try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -132,7 +132,7 @@ public class TagDAO implements InterfaceTagDAO {
     }
 
     @Override
-    public Tag consultarTagPorNome(String descTag) throws ExcecaoPersistencia {
+    public Tag consultarPorNome(String descTag) throws ExcecaoPersistencia {
            try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
