@@ -39,7 +39,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setByte(5,usuario.getImgPerfil());
             pstmt.setString(6,usuario.getSexo());
             pstmt.setString(7, usuario.getDatNascimento());
-             pstmt.setLong(8, usuario.getCidade().getCodCidade());
+            pstmt.setLong(8, usuario.getCidade().getCodCidade());
             ResultSet rs = pstmt.executeQuery();
 
             Long id = null;
