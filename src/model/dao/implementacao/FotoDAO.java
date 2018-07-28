@@ -26,13 +26,12 @@ public class FotoDAO implements InterfaceFotoDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO foto (seq_foto,seq_dia,foto) VALUES(?,?,?)";
+            String sql = "INSERT INTO foto (seq_dia,foto) VALUES(?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
-            pstmt.setLong(1,foto.getSeqFoto());
-            pstmt.setLong(2,foto.getDia().getSeqDia());
-            pstmt.setByte(3,foto.getByteFoto());
+            pstmt.setLong(1,foto.getDia().getSeqDia());
+            pstmt.setByte(2,foto.getByteFoto());
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -60,16 +59,15 @@ public class FotoDAO implements InterfaceFotoDAO {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "UPDATE foto "
-                    + "   SET seq_foto = ?, "
-                    + "       seq_dia = ?, "
+                    + "   SET seq_dia = ?, "                  
                     + "       foto = ? "    
                     + " WHERE seq_foto = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             Long seqFoto = foto.getSeqFoto();
-            pstmt.setLong(1,foto.getSeqFoto());
-            pstmt.setLong(2,foto.getDia().getSeqDia());
-            pstmt.setByte(3,foto.getByteFoto());
+            pstmt.setLong(3,foto.getSeqFoto());
+            pstmt.setLong(1,foto.getDia().getSeqDia());
+            pstmt.setByte(2,foto.getByteFoto());
 
             pstmt.executeUpdate();
 

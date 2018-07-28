@@ -24,12 +24,12 @@ public class TagDAO implements InterfaceTagDAO {
          try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO tag (cod_tag,desc_tag) VALUES(?,?)";
+            String sql = "INSERT INTO tag (desc_tag) VALUES(?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
-            pstmt.setLong(1,tag.getCodTag());
-            pstmt.setString(2,tag.getDescTag());
+            
+            pstmt.setString(1,tag.getDescTag());
            
             
             ResultSet rs = pstmt.executeQuery();
@@ -57,16 +57,15 @@ public class TagDAO implements InterfaceTagDAO {
          Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "UPDATE tag "
-                    + "   SET  cod_tag = ?, "
-                    + "       desc_tag = ? "    
+                    + "   SET  desc_tag = ?, "                      
                     + " WHERE cod_tag = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             Long codTag = tag.getCodTag();
-           
-            pstmt.setLong(1,tag.getCodTag());
-            pstmt.setString(2,tag.getDescTag());
-
+                       
+            pstmt.setString(1,tag.getDescTag());
+            pstmt.setLong(2,tag.getCodTag());
+            
             pstmt.executeUpdate();
 
             pstmt.close();

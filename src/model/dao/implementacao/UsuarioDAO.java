@@ -27,18 +27,19 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO usuario (cod_usuario,nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,?,md5(?),?,?)";
+            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
-            pstmt.setLong(1, usuario.getCodUsuario());
-            pstmt.setString(2, usuario.getNomUsuario());
-            pstmt.setString(3, usuario.getSobrenomeUsuario());
-            pstmt.setString(4, usuario.getTxtEmail());
-            pstmt.setString(5, usuario.getTxtSenha());
-            pstmt.setByte(7,usuario.getImgPerfil());
-            pstmt.setString(8, usuario.getDatNascimento());
-             pstmt.setLong(9, usuario.getCidade().getCodCidade());
+            
+            pstmt.setString(1, usuario.getNomUsuario());
+            pstmt.setString(2, usuario.getSobrenomeUsuario());
+            pstmt.setString(3, usuario.getTxtEmail());
+            pstmt.setString(4, usuario.getTxtSenha());
+            pstmt.setByte(5,usuario.getImgPerfil());
+            pstmt.setString(6,usuario.getSexo());
+            pstmt.setString(7, usuario.getDatNascimento());
+             pstmt.setLong(8, usuario.getCidade().getCodCidade());
             ResultSet rs = pstmt.executeQuery();
 
             Long id = null;
@@ -65,26 +66,27 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "UPDATE usuario "
-                    + "   SET cod_nome = ?, "
-                    + "       nom_usuario = ?, "
+                    + "   SET nom_usuario = ?, "
                     + "       sobrenome_usuario = ?, "
                     + "       txt_senha = md5(?), "
+                    + "       txt_email=?,"
                     + "       img_perfil = ?,"
                     + "       sexo = ?, "
                     + "       dat_nascimento = ?,"
                     + "       cod_cidade = ?"
-                    + " WHERE cod_nome = ?;";
+                    + " WHERE cod_usuario = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             Long codUsuario = usuario.getCodUsuario();
-            pstmt.setLong(1, usuario.getCodUsuario());
-            pstmt.setString(2, usuario.getNomUsuario());
-            pstmt.setString(3, usuario.getSobrenomeUsuario());
-            pstmt.setString(4, usuario.getTxtEmail());
-            pstmt.setString(5, usuario.getTxtSenha());
-            pstmt.setByte(7,usuario.getImgPerfil());
-            pstmt.setString(8, usuario.getDatNascimento());
-            pstmt.setLong(9, usuario.getCidade().getCodCidade());
+            pstmt.setLong(9, usuario.getCodUsuario());
+            pstmt.setString(1, usuario.getNomUsuario());
+            pstmt.setString(2, usuario.getSobrenomeUsuario());
+            pstmt.setString(4, usuario.getTxtSenha());
+            pstmt.setString(3, usuario.getTxtEmail());
+            pstmt.setByte(5,usuario.getImgPerfil());
+            pstmt.setString(6, usuario.getSexo());
+            pstmt.setString(7, usuario.getDatNascimento());
+            pstmt.setLong(8, usuario.getCidade().getCodCidade());
             pstmt.executeUpdate();
 
             pstmt.close();
