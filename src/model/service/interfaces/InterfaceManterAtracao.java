@@ -21,7 +21,7 @@ public interface InterfaceManterAtracao {
     public boolean alterar(Atracao atracao) throws ExcecaoPersistencia, ExcecaoNegocio;
     public boolean excluir(Atracao atracao) throws ExcecaoPersistencia, ExcecaoNegocio;
     public Atracao pesquisarPorId(Long id) throws ExcecaoPersistencia;
-    public List<Atracao> pesquisarPorCodCidade() throws ExcecaoPersistencia;
+    public List<Atracao> pesquisarPorCodCidade(Long codCidade) throws ExcecaoPersistencia;
     public List<Atracao> pesquisarPorCodEstado(Long codEstado) throws ExcecaoPersistencia;
     public List<Atracao> pesquisarPorCodTipoAtracao(Long codTipoAtracao) throws ExcecaoPersistencia;   
     public List<Atracao> pesquisarTodos() throws ExcecaoPersistencia;
