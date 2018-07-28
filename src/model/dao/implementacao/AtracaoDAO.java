@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import model.dao.interfaces.InterfaceCidadeDAO;
 import model.dao.interfaces.InterfaceTipoAtracaoDAO;
+import model.dao.implementacao.TipoAtracaoDAO;
 import model.domain.Cidade;
+import model.domain.TipoAtracao;
 import util.db.exception.ExcecaoPersistencia;
 import util.db.ConnectionManager;
 
@@ -126,7 +128,7 @@ public class AtracaoDAO implements InterfaceAtracaoDAO {
                 atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                 Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
                 atracao.setCidade(cidade);
-                TipoAtracao tipoA = tipoatracaoDAO.consultaPorID(rs.getLong("cod_tipo_atracao"));
+                TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
                 atracao.setTipoAtracao(tipoA);
                 atracao.setNomAtracao(rs.getString("nom_atracao"));
                 atracao.setNroLatitude(rs.getDouble("nro_latitude"));
@@ -167,7 +169,7 @@ public class AtracaoDAO implements InterfaceAtracaoDAO {
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
                     atracao.setCidade(cidade);
-                    TipoAtracao tipoA = tipoatracaoDAO.consultaPorID(rs.getLong("cod_tipo_atracao"));
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
                     atracao.setTipoAtracao(tipoA);
                     atracao.setNomAtracao(rs.getString("nom_atracao"));
                     atracao.setNroLatitude(rs.getDouble("nro_latitude"));
@@ -215,7 +217,7 @@ public class AtracaoDAO implements InterfaceAtracaoDAO {
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
                     atracao.setCidade(cidade);
-                    TipoAtracao tipoA = tipoatracaoDAO.consultaPorID(rs.getLong("cod_tipo_atracao"));
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
                     atracao.setTipoAtracao(tipoA);
                     atracao.setNomAtracao(rs.getString("nom_atracao"));
                     atracao.setNroLatitude(rs.getDouble("nro_latitude"));
@@ -261,7 +263,7 @@ public class AtracaoDAO implements InterfaceAtracaoDAO {
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
                     atracao.setCidade(cidade);
-                    TipoAtracao tipoA = tipoatracaoDAO.consultaPorID(rs.getLong("cod_tipo_atracao"));
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
                     atracao.setTipoAtracao(tipoA);
                     atracao.setNomAtracao(rs.getString("nom_atracao"));
                     atracao.setNroLatitude(rs.getDouble("nro_latitude"));
@@ -304,7 +306,7 @@ public class AtracaoDAO implements InterfaceAtracaoDAO {
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
                     atracao.setCidade(cidade);
-                    TipoAtracao tipoA = tipoatracaoDAO.consultaPorID(rs.getLong("cod_tipo_atracao"));
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
                     atracao.setTipoAtracao(tipoA);
                     atracao.setNomAtracao(rs.getString("nom_atracao"));
                     atracao.setNroLatitude(rs.getDouble("nro_latitude"));

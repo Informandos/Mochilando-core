@@ -31,11 +31,11 @@ public class ManterAtracao implements InterfaceManterAtracao{
         if (atracao.getNomAtracao() == null) {
             throw new ExcecaoNegocio("Obrigatório informar o nome da atracao");
         }
-        if (atracao.getNroLatitude()) {
+        if (atracao.getNroLatitude() == null) {
             throw new ExcecaoNegocio("Obrigatório informar a latitude da atracao");
         } else {
         }
-        if (atracao.getNroLongitude()) {
+        if (atracao.getNroLongitude() == null) {
             throw new ExcecaoNegocio("Obrigatório informar a longitude da atracao");
         }
         
@@ -57,10 +57,10 @@ public class ManterAtracao implements InterfaceManterAtracao{
         if (atracao.getNomAtracao() == null) {
             throw new ExcecaoNegocio("Obrigatório informar o nome da atracao");
         }
-        if (atracao.getNroLatitude()) {
+        if (atracao.getNroLatitude() == null) {
             throw new ExcecaoNegocio("Obrigatório informar a latitude da atracao");
         }
-        if (atracao.getNroLongitude()) {
+        if (atracao.getNroLongitude() == null) {
             throw new ExcecaoNegocio("Obrigatório informar a longitude da atracao");
         }
         

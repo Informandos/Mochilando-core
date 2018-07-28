@@ -15,8 +15,8 @@ public class Atracao {
     private Cidade cidade;
     private TipoAtracao tipoAtracao;
     private String nomAtracao;
-    private double nroLatitude;
-    private double nroLongitude;
+    private Double nroLatitude;
+    private Double nroLongitude;
 
     public Atracao() {
     }
@@ -89,28 +89,28 @@ public class Atracao {
     /**
      * @return the nroLatitude
      */
-    public double getNroLatitude() {
+    public Double getNroLatitude() {
         return nroLatitude;
     }
 
     /**
      * @param nroLatitude the nroLatitude to set
      */
-    public void setNroLatitude(double nroLatitude) {
+    public void setNroLatitude(Double nroLatitude) {
         this.nroLatitude = nroLatitude;
     }
 
     /**
      * @return the nroLongitude
      */
-    public double getNroLongitude() {
+    public Double getNroLongitude() {
         return nroLongitude;
     }
 
     /**
      * @param nroLongitude the nroLongitude to set
      */
-    public void setNroLongitude(double nroLongitude) {
+    public void setNroLongitude(Double nroLongitude) {
         this.nroLongitude = nroLongitude;
     }
 
