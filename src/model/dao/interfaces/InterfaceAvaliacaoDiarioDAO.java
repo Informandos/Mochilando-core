@@ -17,9 +17,9 @@ public interface InterfaceAvaliacaoDiarioDAO {
     public Long inserir(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
     public boolean atualizar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
     public boolean deletar(AvaliacaoDiario avaliacaoDiario) throws ExcecaoPersistencia;
-    public AvaliacaoDiario consultarPorId(Long seqAvaliacao);
+    public AvaliacaoDiario consultarPorId(Long seqAvaliacao) throws ExcecaoPersistencia;
     public int consultarNumAvPositivas(Long codDiario) throws ExcecaoPersistencia;
     public int consultarNumAvNegativas(Long codDiario) throws ExcecaoPersistencia;
     public List<AvaliacaoDiario> listarPorDiario(Long codDiario) throws ExcecaoPersistencia;
-    public List<AvaliacaoDiario> listarTudo();
+    public List<AvaliacaoDiario> listarTudo()throws ExcecaoPersistencia;
 }
