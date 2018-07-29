@@ -105,7 +105,33 @@ public class CidadeDAO implements InterfaceCidadeDAO {
 
     @Override
     public Cidade consultarPorId(Long codCidade) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM estado WHERE cod_cidade = ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, codCidade);
+            ResultSet rs = pstmt.executeQuery();
+
+            Cidade cidade = null;
+            if (rs.next()) {
+                cidade = new Cidade();
+                cidade.setCodCidade(rs.getLong("cod_Cidade"));
+                cidade.setEstado(rs.getEstado("estado"));
+                cidade.setNomCidade(rs.getString("nom_cidade"));
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return cidade;
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+
+        }    
     }
 
     @Override
