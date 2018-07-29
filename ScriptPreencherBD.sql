@@ -10,16 +10,16 @@ insert into cidade (cod_estado, nom_cidade) values ((select cod_estado from esta
 
 -- Usuário
 -- Senha: 1234567
-insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, img_perfil, sexo, dat_nascimento, cod_cidade) values ('João', 'da Silva', 'joaosilva@email.com', 'fcea920f7412b5da7be0cf42b8c93759', (lo_import('C:\Users\lucca\Desktop\imagensBD\joao.jpg')), 'M', '1990-03-07', (select cod_cidade from cidade where nom_cidade like 'São Paulo'));
+insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, sexo, dat_nascimento, cod_cidade) values ('João', 'da Silva', 'joaosilva@email.com', 'fcea920f7412b5da7be0cf42b8c93759', 'M', '1990-03-07', (select cod_cidade from cidade where nom_cidade like 'São Paulo'));
 -- Senha: 7654321
-insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, img_perfil, sexo, dat_nascimento, cod_cidade) values ('Pedro', 'Alvares', 'pedroalvares@email.com', 'f0898af949a373e72a4f6a34b4de9090', (lo_import('C:\Users\lucca\Desktop\imagensBD\pedro.jpg')), 'M', '1994-11-26', (select cod_cidade from cidade where nom_cidade like 'Belo Horizonte'));
+insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, sexo, dat_nascimento, cod_cidade) values ('Pedro', 'Alvares', 'pedroalvares@email.com', 'f0898af949a373e72a4f6a34b4de9090', 'M', '1994-11-26', (select cod_cidade from cidade where nom_cidade like 'Belo Horizonte'));
 -- Senha: 1357926
-insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, img_perfil, sexo, dat_nascimento, cod_cidade) values ('Maria', 'Pereira', 'mariapereira@email.com', '50cc5c8c54e4ddcfa4ef839dfec7f6a2', (lo_import('C:\Users\lucca\Desktop\imagensBD\maria.jpg')), 'F', '1996-07-30', (select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'));
+insert into usuario (nom_usuario, sobrenome_usuario, txt_email, txt_senha, sexo, dat_nascimento, cod_cidade) values ('Maria', 'Pereira', 'mariapereira@email.com', '50cc5c8c54e4ddcfa4ef839dfec7f6a2', 'F', '1996-07-30', (select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'));
 
 -- Diário
-insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'João'), 'Viagem à Belo Horizonte-MG', '2018-05-05', '2018-05-05', '2018-05-12');
-insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'Pedro'), 'Viagem à São Paulo-SP', '2018-06-04', '2018-06-04', '2018-06-11');
-insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'Maria'), 'Viagem ao Rio de Janeiro-RJ', '2018-04-07', '2018-04-07', '2018-04-14');
+insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'João'), 'Viagem à Belo Horizonte-MG', '2018-05-05', '2018-05-05', '2018-05-12', 'Viagem para BH');
+insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'Pedro'), 'Viagem à São Paulo-SP', '2018-06-04', '2018-06-04', '2018-06-11', 'Viagem para SP');
+insert into diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_diario) values ((select cod_usuario from usuario where nom_usuario like 'Maria'), 'Viagem ao Rio de Janeiro-RJ', '2018-04-07', '2018-04-07', '2018-04-14', 'Viagem para RJ');
 
 -- Comentário
 insert into comentario (cod_diario, cod_autor_comentario, dat_publicacao, txt_comentario) values ((select cod_diario from diario where nom_diario like 'Viagem à Belo Horizonte-MG'), (select cod_usuario from usuario where nom_usuario like 'Maria'), '2018-05-06', 'Que legal');
@@ -38,18 +38,18 @@ insert into tipo_atracao (desc_tipo_atracao) values ('Sete Maravilhas do Mundo M
 
 -- Atração
 insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Belo Horizonte'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Praça'), 'Praça da Liberdade', 1, 1);
-insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'São Paulo'), (select cod_tipo_atracao from tipo_atrcao where desc_tipo_atracao like 'Parque'), 'Parque Ibirapuera', 2, 2);
-insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'), (select cod_tipo_atracao from tipo_atrcao where desc_tipo_atracao like 'Sete Maravilhas do Mundo Moderno'), 'Cristo Redentor', 3, 3);
+insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'São Paulo'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Parque'), 'Parque Ibirapuera', 2, 2);
+insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Sete Maravilhas do Mundo Moderno'), 'Cristo Redentor', 3, 3);
 
 -- Dia Atração
-insert into dia_atracao (seq_atarcao, seq_dia) values ((select seq_atracao from atrcao where nro_latitude = 1), (select seq_dia from dia where data_dia = '2018-05-06'));
-insert into dia_atracao (seq_atarcao, seq_dia) values ((select seq_atracao from atrcao where nro_latitude = 2), (select seq_dia from dia where data_dia = '2018-06-05'));
-insert into dia_atracao (seq_atarcao, seq_dia) values ((select seq_atracao from atrcao where nro_latitude = 3), (select seq_dia from dia where data_dia = '2018-04-08'));
+insert into dia_atracao (seq_atracao, seq_dia) values ((select seq_atracao from atracao where nro_latitude = 1), (select seq_dia from dia where data_dia = '2018-05-06'));
+insert into dia_atracao (seq_atracao, seq_dia) values ((select seq_atracao from atracao where nro_latitude = 2), (select seq_dia from dia where data_dia = '2018-06-05'));
+insert into dia_atracao (seq_atracao, seq_dia) values ((select seq_atracao from atracao where nro_latitude = 3), (select seq_dia from dia where data_dia = '2018-04-08'));
 
 -- Foto
-insert into foto (seq_dia, foto) values ((select seq_dia from dia where data_dia = '2018-05-06'), (lo_import('C:\Users\lucca\Desktop\imagensBD\pl.jpg')));
-insert into foto (seq_dia, foto) values ((select seq_dia from dia where data_dia = '2018-06-05'), (lo_import('C:\Users\lucca\Desktop\imagensBD\pi.jpg')));
-insert into foto (seq_dia, foto) values ((select seq_dia from dia where data_dia = '2018-04-08'), (lo_import('C:\Users\lucca\Desktop\imagensBD\cr.jpg')));
+insert into foto (seq_dia) values ((select seq_dia from dia where data_dia = '2018-05-06'));
+insert into foto (seq_dia) values ((select seq_dia from dia where data_dia = '2018-06-05'));
+insert into foto (seq_dia) values ((select seq_dia from dia where data_dia = '2018-04-08'));
 
 -- Tag
 insert into tag (desc_tag) values ('Belo Horizonte');
