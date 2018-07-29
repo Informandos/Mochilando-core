@@ -20,5 +20,5 @@ public interface InterfaceDiaAtracaoDAO {
     public boolean deletar(DiaAtracao diaAtracao) throws ExcecaoPersistencia;
     public DiaAtracao consultarPorId(Long seqDiaAtracao) throws ExcecaoPersistencia;
     public List<DiaAtracao> listarPorSeqDia(Long seqDia) throws ExcecaoPersistencia;
-    public List<DiaAtracao> listarTudo();
+    public List<DiaAtracao> listarTudo() throws ExcecaoPersistencia;
 }

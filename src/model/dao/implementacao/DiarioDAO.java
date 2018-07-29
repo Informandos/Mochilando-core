@@ -80,7 +80,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     + "       dat_publicacao = ?, "
                     + "       dat_inicio_viagem = ?, "
                     + "       dat_fim_viagem = ?, "
-                    + "       txt_diario= ?, "
+                    + "       txt_diario= ? "
                     + " WHERE cod_diario = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
