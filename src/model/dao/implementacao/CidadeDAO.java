@@ -18,7 +18,39 @@ public class CidadeDAO implements InterfaceCidadeDAO {
 
     @Override
     public Long inserir(Cidade cidade) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (cidade == null) {
+
+            throw new ExcecaoPersistencia("Cidade nao pode ser null");
+
+        }
+
+        Long codCidade = null;
+
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "INSERT INTO cidade (cod_estado, nom_cidade) "
+                    + "VALUES(?,?,?) RETURNING cod_cidade";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+
+            pstmt.setString(1, cidade.getEstado());
+            pstmt.setString(2, cidade.getNomCidade());
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                codCidade = rs.getLong("cod_cidade");
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+            return codCidade;
+
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcecaoPersistencia(e.getMessage(), e);    
     }
 
     @Override
