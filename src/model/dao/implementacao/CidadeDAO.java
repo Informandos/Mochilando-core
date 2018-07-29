@@ -84,7 +84,23 @@ public class CidadeDAO implements InterfaceCidadeDAO {
 
     @Override
     public boolean deletar(Cidade cidade) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "DELETE FROM cidade WHERE cod_cidade = ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, cidade.getCodCidade());
+            pstmt.executeUpdate();
+
+            pstmt.close();
+            connection.close();
+            return true;
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+
+        }
     }
 
     @Override
