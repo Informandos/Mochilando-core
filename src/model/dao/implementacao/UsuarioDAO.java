@@ -27,7 +27,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?)";
+            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             
