@@ -91,7 +91,7 @@ public class ManterUsuario implements InterfaceManterUsuario {
     }    
 
     @Override
-    public Usuario getUserLogin(String email, String senha) throws ExcecaoPersistencia, ExcecaoNegocio {
+    public Usuario getUserLogin(String email, String senha) throws ExcecaoPersistencia {
         Usuario result = usuarioDAO.consultarPorEmailSenha(email, senha);
         return result;               
     }
