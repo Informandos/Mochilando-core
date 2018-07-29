@@ -306,41 +306,41 @@ WITHOUT OIDS;
 
 
 
-ALTER TABLE "cidade" ADD FOREIGN KEY ("cod_estado") REFERENCES "estado" ("cod_estado") MATCH FULL;
+ALTER TABLE "cidade" ADD FOREIGN KEY ("cod_estado") REFERENCES "estado" ("cod_estado");
 
-ALTER TABLE "usuario" ADD FOREIGN KEY ("cod_cidade") REFERENCES "cidade" ("cod_cidade") MATCH FULL;
+ALTER TABLE "usuario" ADD FOREIGN KEY ("cod_cidade") REFERENCES "cidade" ("cod_cidade");
 
-ALTER TABLE "diario" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "diario" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario");
 
-ALTER TABLE "atracao" ADD FOREIGN KEY ("cod_cidade_atracao") REFERENCES "cidade" ("cod_cidade") MATCH FULL;
+ALTER TABLE "atracao" ADD FOREIGN KEY ("cod_cidade_atracao") REFERENCES "cidade" ("cod_cidade");
 
-ALTER TABLE "comentario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
+ALTER TABLE "comentario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario");
 
-ALTER TABLE "comentario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_autor_comentario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "comentario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_autor_comentario") REFERENCES "usuario" ("cod_usuario");
 
-ALTER TABLE "atracao" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tipo_atracao") REFERENCES "tipo_atracao" ("cod_tipo_atracao") MATCH FULL;
+ALTER TABLE "atracao" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tipo_atracao") REFERENCES "tipo_atracao" ("cod_tipo_atracao");
 
-ALTER TABLE "dia" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
+ALTER TABLE "dia" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario");
 
-ALTER TABLE "dia_atracao" ADD FOREIGN KEY ("seq_atracao") REFERENCES "atracao" ("seq_atracao") MATCH FULL;
+ALTER TABLE "dia_atracao" ADD FOREIGN KEY ("seq_atracao") REFERENCES "atracao" ("seq_atracao");
 
-ALTER TABLE "dia_atracao" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia") MATCH FULL;
+ALTER TABLE "dia_atracao" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia");
 
-ALTER TABLE "avaliacao_comentario" ADD FOREIGN KEY ("seq_comentario") REFERENCES "comentario" ("seq_comentario") MATCH FULL;
+ALTER TABLE "avaliacao_comentario" ADD FOREIGN KEY ("seq_comentario") REFERENCES "comentario" ("seq_comentario");
 
-ALTER TABLE "avaliacao_comentario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "avaliacao_comentario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario");
 
-ALTER TABLE "avaliacao_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
+ALTER TABLE "avaliacao_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario");
 
-ALTER TABLE "avaliacao_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "avaliacao_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario");
 
-ALTER TABLE "foto" ADD FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia") MATCH FULL;
+ALTER TABLE "foto" ADD FOREIGN KEY ("seq_dia") REFERENCES "dia" ("seq_dia");
 
-ALTER TABLE "usuario_tag" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario") MATCH FULL;
+ALTER TABLE "usuario_tag" ADD FOREIGN KEY ("cod_usuario") REFERENCES "usuario" ("cod_usuario");
 
 ALTER TABLE "usuario_tag" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
 
-ALTER TABLE "tag_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario") MATCH FULL;
+ALTER TABLE "tag_diario" ADD FOREIGN KEY ("cod_diario") REFERENCES "diario" ("cod_diario");
 
 ALTER TABLE "tag_diario" ADD CONSTRAINT "_copy_1" FOREIGN KEY ("cod_tag") REFERENCES "tag" ("cod_tag") MATCH FULL;
 
