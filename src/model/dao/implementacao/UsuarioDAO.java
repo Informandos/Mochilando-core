@@ -276,6 +276,5 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
     }
-
-
+       
 }

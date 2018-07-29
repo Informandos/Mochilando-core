@@ -21,4 +21,5 @@ public interface InterfaceUsuarioDAO {
     public Usuario consultarPorEmail(String txtEmail) throws ExcecaoPersistencia;
     public List<Usuario> listarTudo() throws ExcecaoPersistencia;
     public Usuario consultarPorEmailSenha(String email,String senha) throws ExcecaoPersistencia;
+    
 }

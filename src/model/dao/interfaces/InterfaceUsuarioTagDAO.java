@@ -20,4 +20,5 @@ public interface InterfaceUsuarioTagDAO {
     public UsuarioTag consultarPorId(Long seqUsuarioTag) throws ExcecaoPersistencia;
     public List<UsuarioTag> listarTudo() throws ExcecaoPersistencia;
     public List<UsuarioTag> listarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;
+    
 }

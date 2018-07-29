@@ -16,5 +16,6 @@ public interface InterfaceManterUsuario {
     public boolean excluir(Usuario usuario) throws ExcecaoPersistencia,ExcecaoNegocio;
     public List<Usuario> pesquisarTodos() throws ExcecaoPersistencia;
     public Usuario pesquisarPorId(Long id) throws ExcecaoPersistencia;
-    public Usuario getUserLogin(String nome, String senha) throws ExcecaoPersistencia,ExcecaoNegocio;
+    public Usuario getUserLogin(String email, String senha) throws ExcecaoPersistencia,ExcecaoNegocio;
+     public Usuario getUserEmail(String email) throws ExcecaoPersistencia,ExcecaoNegocio;
 }
