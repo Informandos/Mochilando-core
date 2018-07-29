@@ -12,7 +12,7 @@ import util.db.exception.ExcecaoPersistencia;
 
 /**
  *
- * @author Juliana
+ * @author Juliana, Carlos
  */
 public class CidadeDAO implements InterfaceCidadeDAO {
 
@@ -30,7 +30,7 @@ public class CidadeDAO implements InterfaceCidadeDAO {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "INSERT INTO cidade (cod_estado, nom_cidade) "
-                    + "VALUES(?,?,?) RETURNING cod_cidade";
+                    + "VALUES(?,?) RETURNING cod_cidade";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -55,7 +55,31 @@ public class CidadeDAO implements InterfaceCidadeDAO {
 
     @Override
     public boolean atualizar(Cidade cidade) throws ExcecaoPersistencia {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "UPDATE cidade "
+                    + "   SET cod_estado = ?, "
+                    + "       nom_cidade = ?, "
+                    + " WHERE cod_diario = ?;";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+
+            ppstmt.setString(1, cidade.getEstado());
+            pstmt.setString(2, cidade.getNomCidade());
+
+            pstmt.executeUpdate();
+
+            pstmt.close();
+            connection.close();
+
+            return true;
+
+        } catch (ClassNotFoundException | SQLException e) {
+
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+
+        }    
     }
 
     @Override
