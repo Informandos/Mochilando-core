@@ -14,7 +14,7 @@ CREATE TABLE "usuario" (
 
 "sexo" varchar(9) NOT NULL,
 
-"dat_nascimento" date NOT NULL,
+"dat_nascimento" date,
 
 "cod_cidade" serial4 NOT NULL,
 
@@ -25,6 +25,8 @@ UNIQUE ("cod_usuario")
 )
 
 WITHOUT OIDS;
+
+
 
 
 
@@ -72,11 +74,11 @@ CREATE TABLE "diario" (
 
 "nom_diario" varchar NOT NULL,
 
-"dat_publicacao" date NOT NULL,
+"dat_publicacao" date,
 
-"dat_inicio_viagem" date NOT NULL,
+"dat_inicio_viagem" date,
 
-"dat_fim_viagem" date NOT NULL,
+"dat_fim_viagem" date,
 
 "txt_diario" varchar NOT NULL,
 
@@ -122,7 +124,7 @@ CREATE TABLE "comentario" (
 
 "cod_autor_comentario" serial8 NOT NULL,
 
-"dat_publicacao" date NOT NULL,
+"dat_publicacao" date,
 
 "txt_comentario" varchar NOT NULL,
 
@@ -160,7 +162,7 @@ CREATE TABLE "dia" (
 
 "txt_dia" varchar NOT NULL,
 
-"ordem_dia" int4 NOT NULL,
+"ordem_dia" int4,
 
 "data_dia" varchar(255),
 
@@ -238,7 +240,7 @@ CREATE TABLE "foto" (
 
 "seq_dia" serial8 NOT NULL,
 
-"foto" bytea NOT NULL,
+"foto" bytea,
 
 PRIMARY KEY ("seq_foto", "seq_dia") ,
 
