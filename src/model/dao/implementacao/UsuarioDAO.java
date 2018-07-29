@@ -1,6 +1,4 @@
-
 package model.dao.implementacao;
-
 
 import java.util.List;
 import model.dao.interfaces.InterfaceUsuarioDAO;
@@ -16,11 +14,8 @@ import util.db.ConnectionManager;
 import model.dao.implementacao.CidadeDAO;
 import model.dao.interfaces.InterfaceCidadeDAO;
 
-
-
 public class UsuarioDAO implements InterfaceUsuarioDAO {
 
-    
     @Override
     public Long inserir(Usuario usuario) throws ExcecaoPersistencia {
 
@@ -30,21 +25,20 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            
-            
+
             pstmt.setString(1, usuario.getNomUsuario());
             pstmt.setString(2, usuario.getSobrenomeUsuario());
             pstmt.setString(3, usuario.getTxtEmail());
             pstmt.setString(4, usuario.getTxtSenha());
-            pstmt.setByte(5,usuario.getImgPerfil());
-            pstmt.setString(6,usuario.getSexo());
+            pstmt.setByte(5, usuario.getImgPerfil());
+            pstmt.setString(6, usuario.getSexo());
             pstmt.setString(7, usuario.getDatNascimento());
             pstmt.setLong(8, usuario.getCidade().getCodCidade());
             ResultSet rs = pstmt.executeQuery();
 
             Long id = null;
             if (rs.next()) {
-                id = new Long(rs.getLong("cod_usuario"));
+                id = rs.getLong("cod_usuario");
                 usuario.setCodUsuario(id);
             }
 
@@ -83,7 +77,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setString(2, usuario.getSobrenomeUsuario());
             pstmt.setString(4, usuario.getTxtSenha());
             pstmt.setString(3, usuario.getTxtEmail());
-            pstmt.setByte(5,usuario.getImgPerfil());
+            pstmt.setByte(5, usuario.getImgPerfil());
             pstmt.setString(6, usuario.getSexo());
             pstmt.setString(7, usuario.getDatNascimento());
             pstmt.setLong(8, usuario.getCidade().getCodCidade());
@@ -128,7 +122,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
-            
+
             ArrayList<Usuario> listAll = null;
             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             if (rs.next()) {
@@ -136,7 +130,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                 do {
                     Usuario usuario = new Usuario();
                     usuario.setCodUsuario(rs.getLong("cod_usuario"));
-                    usuario.setNomUsuario(rs.getString("nome_usuario"));
+                    usuario.setNomUsuario(rs.getString("nom_usuario"));
                     usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
                     usuario.setTxtEmail(rs.getString("txt_email"));
                     usuario.setTxtSenha(rs.getString("txt_senha"));
@@ -173,19 +167,19 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             ResultSet rs = pstmt.executeQuery();
 
             Usuario usuario = null;
-             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             if (rs.next()) {
                 usuario = new Usuario();
-                 usuario.setCodUsuario(rs.getLong("cod_usuario"));
-                    usuario.setNomUsuario(rs.getString("nome_usuario"));
-                    usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
-                    usuario.setTxtEmail(rs.getString("txt_email"));
-                    usuario.setTxtSenha(rs.getString("txt_senha"));
-                    usuario.setImgPerfil(rs.getByte("img_perfil"));
-                    usuario.setSexo(rs.getString("sexo"));
-                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
-                    usuario.setCidade(cidade);
+                usuario.setCodUsuario(rs.getLong("cod_usuario"));
+                usuario.setNomUsuario(rs.getString("nom_usuario"));
+                usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
+                usuario.setTxtEmail(rs.getString("txt_email"));
+                usuario.setTxtSenha(rs.getString("txt_senha"));
+                usuario.setImgPerfil(rs.getByte("img_perfil"));
+                usuario.setSexo(rs.getString("sexo"));
+                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
+                usuario.setCidade(cidade);
             }
 
             rs.close();
@@ -199,11 +193,9 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         }
     }
 
-    
-
     @Override
     public Usuario consultarPorEmail(String txtEmail) throws ExcecaoPersistencia {
-         try {
+        try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
             String sql = "SELECT * FROM usuario WHERE txt_email = ?";
@@ -213,57 +205,19 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             ResultSet rs = pstmt.executeQuery();
 
             Usuario usuario = null;
-             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             if (rs.next()) {
                 usuario = new Usuario();
-                  usuario.setCodUsuario(rs.getLong("cod_usuario"));
-                    usuario.setNomUsuario(rs.getString("nome_usuario"));
-                    usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
-                    usuario.setTxtEmail(rs.getString("txt_email"));
-                    usuario.setTxtSenha(rs.getString("txt_senha"));
-                    usuario.setImgPerfil(rs.getByte("img_perfil"));
-                    usuario.setSexo(rs.getString("sexo"));
-                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
-                    usuario.setCidade(cidade);
-            }
-
-            rs.close();
-            pstmt.close();
-            connection.close();
-
-            return usuario;
-        }  catch (Exception e) {
-            e.printStackTrace();
-            throw new ExcecaoPersistencia(e.getMessage(), e);
-        }
-    }
-
-    @Override
-    public Usuario consultarPorEmailSenha(String email, String senha) throws ExcecaoPersistencia {
-       try{
-        Connection connection = ConnectionManager.getInstance().getConnection();
-
-            String sql = "SELECT * FROM usuario WHERE txt_email = ? AND txt_senha = md5(?)";
-
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, email);
-            pstmt.setString(2, senha);
-            ResultSet rs = pstmt.executeQuery();
-
-            Usuario usuario = null;
-             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
-            if (rs.next()) {
-                 usuario.setCodUsuario(rs.getLong("cod_usuario"));
-                    usuario.setNomUsuario(rs.getString("nome_usuario"));
-                    usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
-                    usuario.setTxtEmail(rs.getString("txt_email"));
-                    usuario.setTxtSenha(rs.getString("txt_senha"));
-                    usuario.setImgPerfil(rs.getByte("img_perfil"));
-                    usuario.setSexo(rs.getString("sexo"));
-                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
-                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
-                    usuario.setCidade(cidade);
+                usuario.setCodUsuario(rs.getLong("cod_usuario"));
+                usuario.setNomUsuario(rs.getString("nome_usuario"));
+                usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
+                usuario.setTxtEmail(rs.getString("txt_email"));
+                usuario.setTxtSenha(rs.getString("txt_senha"));
+                usuario.setImgPerfil(rs.getByte("img_perfil"));
+                usuario.setSexo(rs.getString("sexo"));
+                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
+                usuario.setCidade(cidade);
             }
 
             rs.close();
@@ -277,5 +231,42 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         }
     }
 
+    @Override
+    public Usuario consultarPorEmailSenha(String email, String senha) throws ExcecaoPersistencia {
+        try {
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM usuario WHERE txt_email = ? AND txt_senha = md5(?)";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
+            ResultSet rs = pstmt.executeQuery();
+
+            Usuario usuario = new Usuario();
+            InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            if (rs.next()) {
+                usuario.setCodUsuario(rs.getLong("cod_usuario"));
+                usuario.setNomUsuario(rs.getString("nom_usuario"));
+                usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
+                usuario.setTxtEmail(rs.getString("txt_email"));
+                usuario.setTxtSenha(rs.getString("txt_senha"));
+                usuario.setImgPerfil(rs.getByte("img_perfil"));
+                usuario.setSexo(rs.getString("sexo"));
+                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
+                usuario.setCidade(cidade);
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+            return usuario;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+    }
 
 }
