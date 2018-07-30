@@ -6,37 +6,27 @@
 package model.busca.implementacao;
 
 import java.util.List;
-import model.busca.interfaces.BuscarDiario;
-import model.domain.Diario;
+import model.busca.interfaces.BuscarAtracao;
+import model.domain.Atracao;
 
 /**
  *
  * @author Juliana
  */
-public class BucarDiarioImplementacao implements BuscarDiario {
+public class BuscarAtracaoImplementacao implements BuscarAtracao {
 
     @Override
-    public List<Diario> BuscaGeral(String busca) {
+    public List<Atracao> BuscaGeral(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Diario> CompararNomDiario(String busca) {
+    public List<Atracao> CompararNomAtracao(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Diario> CompararNomAtracaoRelacionada(String busca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Diario> CompararNomCidadeRelacionada(String busca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Diario> CompararTextoDiario(String busca) {
+    public List<Atracao> CompararCidadeAtracao(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
