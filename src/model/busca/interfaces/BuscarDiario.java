@@ -15,7 +15,7 @@ import model.domain.Diario;
 public interface BuscarDiario extends InterfaceBusca {
     //O metodo abaixo chama os outros dois metodos abaixo dele
     @Override
-    public List<Object> BuscaGeral(String busca);
+    public List<Diario> BuscaGeral(String busca);
     
     //Compara a String com o nome do Diario
     public List<Diario> CompararNomDiario(String busca);

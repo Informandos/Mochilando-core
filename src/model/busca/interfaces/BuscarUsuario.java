@@ -14,7 +14,7 @@ import model.domain.Usuario;
  */
 public interface BuscarUsuario extends InterfaceBusca{
     @Override
-    public List<Object> BuscaGeral(String busca);
+    public List<Usuario> BuscaGeral(String busca);
     
     //Compara a String com o nome do Usuario
     public List<Usuario> CompararNomUsuario(String busca);
