@@ -7,6 +7,7 @@ package model.busca.interfaces;
 
 import java.util.List;
 import model.domain.Atracao;
+import util.db.exception.ExcecaoPersistencia;
 
 /**
  *
@@ -14,12 +15,12 @@ import model.domain.Atracao;
  */
 public interface BuscarAtracao extends InterfaceBusca {
     @Override
-    public List<Atracao> BuscaGeral(String busca);
+    public List<Atracao> BuscaGeral(String busca) throws ExcecaoPersistencia;
     //O metodo acima chama os dois metodos abaixo
     
     //O metodo abaixo compara a String com o nome da atracao
-    public List<Atracao> CompararNomAtracao(String busca);
+    public List<Atracao> CompararNomAtracao(String busca) throws ExcecaoPersistencia;
     
     //O metodo abaixo compara a String com a cidade da atracao
-    public List<Atracao> CompararCidadeAtracao(String busca);
+    public List<Atracao> CompararCidadeAtracao(String busca) throws ExcecaoPersistencia;
 }

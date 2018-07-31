@@ -7,6 +7,7 @@ package model.busca.interfaces;
 
 import java.util.List;
 import model.domain.Usuario;
+import util.db.exception.ExcecaoPersistencia;
 
 /**
  *
@@ -14,8 +15,8 @@ import model.domain.Usuario;
  */
 public interface BuscarUsuario extends InterfaceBusca{
     @Override
-    public List<Usuario> BuscaGeral(String busca);
+    public List<Usuario> BuscaGeral(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o nome do Usuario
-    public List<Usuario> CompararNomUsuario(String busca);
+    public List<Usuario> CompararNomUsuario(String busca) throws ExcecaoPersistencia;
 }

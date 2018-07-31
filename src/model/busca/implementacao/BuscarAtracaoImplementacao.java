@@ -1,21 +1,84 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.busca.implementacao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.busca.interfaces.BuscarAtracao;
+import model.dao.implementacao.CidadeDAO;
+import model.dao.implementacao.TipoAtracaoDAO;
+import model.dao.interfaces.InterfaceCidadeDAO;
+import model.dao.interfaces.InterfaceTipoAtracaoDAO;
 import model.domain.Atracao;
+import model.domain.Cidade;
+import model.domain.TipoAtracao;
+import util.db.ConnectionManager;
+import util.db.exception.ExcecaoPersistencia;
 
-/**
- *
- * @author Juliana
- */
 public class BuscarAtracaoImplementacao implements BuscarAtracao {
 
     @Override
+<<<<<<< HEAD
+    public List<Atracao> BuscaGeral(String busca) throws ExcecaoPersistencia{
+        try {
+            List<Atracao> listaBuscaNome = CompararNomAtracao(busca);
+            List<Atracao> listaBuscaCidade = CompararCidadeAtracao(busca);
+            
+            List<Atracao> listaBuscaConjunta = new ArrayList();
+            listaBuscaConjunta.addAll(listaBuscaNome);
+            listaBuscaConjunta.addAll(listaBuscaCidade);
+        
+        return listaBuscaConjunta;
+        } catch (ExcecaoPersistencia e) {
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public List<Atracao> CompararNomAtracao(String busca) throws ExcecaoPersistencia{
+        try{
+            Connection conn = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM atracao WHERE nom_atracao = ?";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, busca);
+            ResultSet rs = pstmt.executeQuery();
+
+            List<Atracao> listarBusca =null;
+            InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            InterfaceTipoAtracaoDAO tipoAtracaoDAO = new TipoAtracaoDAO();
+            if (rs.next()) {
+                listarBusca = new ArrayList();
+                do{
+                    Atracao atracao = new Atracao();
+                    atracao.setSeqAtracao(rs.getLong("seq_atracao"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
+                    atracao.setCidade(cidade);
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
+                    atracao.setTipoAtracao(tipoA);
+                    atracao.setNomAtracao(rs.getString("nom_atracao"));
+                    atracao.setNroLatitude(rs.getDouble("nro_latitude"));
+                    atracao.setNroLongitude(rs.getDouble("nro_longitude"));
+
+                    listarBusca.add(atracao);
+                } while(rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+            return listarBusca;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+=======
     public List<Atracao> BuscaGeral(String busca) {
         List<Atracao> listaAtracoesNome = CompararNomAtracao(busca);
         List<Atracao> listaAtracoesCidade = CompararCidadeAtracao( busca);
@@ -31,11 +94,49 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
     public List<Atracao> CompararNomAtracao(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
+>>>>>>> 384804e5e0eb8515e1d800c53750e35272254aa4
     }
 
     @Override
-    public List<Atracao> CompararCidadeAtracao(String busca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Atracao> CompararCidadeAtracao(String busca) throws ExcecaoPersistencia{
+        try{
+            Connection conn = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM atracao WHERE cod_cidade_atracao = ?";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, busca);
+            ResultSet rs = pstmt.executeQuery();
+
+            List<Atracao> listarBusca =null;
+            InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
+            InterfaceTipoAtracaoDAO tipoAtracaoDAO = new TipoAtracaoDAO();
+            if (rs.next()) {
+                listarBusca = new ArrayList();
+                do{
+                    Atracao atracao = new Atracao();
+                    atracao.setSeqAtracao(rs.getLong("seq_atracao"));
+                    Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
+                    atracao.setCidade(cidade);
+                    TipoAtracao tipoA = tipoAtracaoDAO.consultarPorId(rs.getLong("cod_tipo_atracao"));
+                    atracao.setTipoAtracao(tipoA);
+                    atracao.setNomAtracao(rs.getString("nom_atracao"));
+                    atracao.setNroLatitude(rs.getDouble("nro_latitude"));
+                    atracao.setNroLongitude(rs.getDouble("nro_longitude"));
+
+                    listarBusca.add(atracao);
+                } while(rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+            return listarBusca;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
     }
 
 }
