@@ -21,4 +21,5 @@ public interface InterfaceManterTagDiario {
     public TagDiario pesquisarPorId(Long seqTagDiario) throws ExcecaoPersistencia;
     public List<TagDiario> pesquisarTodos() throws ExcecaoPersistencia;
     public List<TagDiario> pesquisarPorCodDiario(Long codDiario) throws ExcecaoPersistencia;
+    public List<TagDiario> pesquisarPorCodTag(Long codTag) throws ExcecaoPersistencia;
 }

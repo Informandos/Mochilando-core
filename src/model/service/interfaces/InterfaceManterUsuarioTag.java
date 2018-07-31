@@ -21,4 +21,5 @@ public interface InterfaceManterUsuarioTag {
     public UsuarioTag pesquisarPorId(Long seqUsuarioTag) throws ExcecaoPersistencia;
     public List<UsuarioTag> pesquisarTodos() throws ExcecaoPersistencia;
     public List<UsuarioTag> pesquisarPorCodUsuario(Long codUsuario) throws ExcecaoPersistencia;
+    public List<UsuarioTag> pesquisarPorCodTag(Long codTag) throws ExcecaoPersistencia;
 }

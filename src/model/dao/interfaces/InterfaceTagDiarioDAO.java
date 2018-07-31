@@ -20,4 +20,5 @@ public interface InterfaceTagDiarioDAO {
     public TagDiario consultarPorId(Long seqTagDiario) throws ExcecaoPersistencia;
     public List<TagDiario> listarTudo() throws ExcecaoPersistencia;
     public List<TagDiario> listarPorCodDiario(Long codDiario) throws ExcecaoPersistencia;
+    public List<TagDiario> listarPorCodTag(Long codTag) throws ExcecaoPersistencia;
 }

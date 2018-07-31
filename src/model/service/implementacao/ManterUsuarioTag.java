@@ -71,5 +71,11 @@ public class ManterUsuarioTag implements InterfaceManterUsuarioTag {
         List<UsuarioTag> result = taguDAO.listarPorCodUsuario(codUsuario);
         return result;
     }
+
+    @Override
+    public List<UsuarioTag> pesquisarPorCodTag(Long codTag) throws ExcecaoPersistencia {
+        List<UsuarioTag> result = taguDAO.listarPorCodUsuario(codTag);
+        return result;
+    }
     
 }

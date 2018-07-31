@@ -208,5 +208,44 @@ public class TagDiarioDAO implements InterfaceTagDiarioDAO{
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
     }
+
+    @Override
+    public List<TagDiario> listarPorCodTag(Long codTag) throws ExcecaoPersistencia{
+        try {
+            Connection conn = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM tag_diario WHERE cod_diario = ?";
+            
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, codTag);
+            ResultSet rs = pstmt.executeQuery();
+            
+            InterfaceDiarioDAO diarioDAO = new DiarioDAO();
+            InterfaceTagDAO tagDAO = new TagDAO();
+            ArrayList<TagDiario> listarTudo = null;
+            if (rs.next()) {
+                listarTudo = new ArrayList<>();
+                do {
+                    TagDiario tagD = new TagDiario();
+                    tagD.setSeqTagDiario(rs.getLong("seq_tag_diario"));
+                    Diario diario = diarioDAO.consultarPorId(rs.getLong("cod_diario"));
+                    tagD.setDiario(diario);
+                    Tag tag = tagDAO.consultarPorId(rs.getLong("cod_tag"));
+                    tagD.setTag(tag);
+
+                    listarTudo.add(tagD);
+                } while (rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+            return listarTudo;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+    }
     
 }

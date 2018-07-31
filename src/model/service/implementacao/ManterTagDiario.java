@@ -71,5 +71,11 @@ public class ManterTagDiario implements InterfaceManterTagDiario{
         List<TagDiario> result = tagdDAO.listarPorCodDiario(codDiario);
         return result;
     }
+
+    @Override
+    public List<TagDiario> pesquisarPorCodTag(Long codTag) throws ExcecaoPersistencia {
+        List<TagDiario> result = tagdDAO.listarPorCodTag(codTag);
+        return result;
+    }
     
 }

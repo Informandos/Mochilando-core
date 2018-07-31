@@ -207,5 +207,45 @@ public class UsuarioTagDAO implements InterfaceUsuarioTagDAO{
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
     }
+
+    @Override
+    public List<UsuarioTag> listarPorCodTag(Long codTag) throws ExcecaoPersistencia {
+       try {
+            Connection conn = ConnectionManager.getInstance().getConnection();
+
+            String sql = "SELECT * FROM usuario_tag WHERE cod_tag = ?";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, codTag);
+            ResultSet rs = pstmt.executeQuery();
+            
+            InterfaceUsuarioDAO usuarioDAO = new UsuarioDAO();
+            InterfaceTagDAO tagDAO = new TagDAO();
+            ArrayList<UsuarioTag> listarPorCodTag = null;
+            
+            if (rs.next()) {
+                listarPorCodTag = new ArrayList<>();
+                do {
+                    UsuarioTag usuarioTag = new UsuarioTag();
+                    usuarioTag.setSeqUsuarioTag(rs.getLong("seq_usuario_tag"));
+                    Usuario usuario = usuarioDAO.consultarPorId(rs.getLong("cod_usuario"));
+                    usuarioTag.setUsuario(usuario);
+                    Tag tag = tagDAO.consultarPorId(rs.getLong("cod_tag"));
+                    usuarioTag.setTag(tag);
+
+                    listarPorCodTag.add(usuarioTag);
+                } while (rs.next());
+
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+            return listarPorCodTag;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new ExcecaoPersistencia(e.getMessage(), e);
+        }
+    }
     
 }
