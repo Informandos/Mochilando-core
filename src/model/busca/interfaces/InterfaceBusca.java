@@ -6,6 +6,7 @@
 package model.busca.interfaces;
 
 import java.util.List;
+import util.db.exception.ExcecaoPersistencia;
 
 /**
  *
@@ -13,6 +14,6 @@ import java.util.List;
  * @param <ObjetoGenerico>
  */
 public interface InterfaceBusca<ObjetoGenerico> {
-    public List<ObjetoGenerico> BuscaGeral(String busca);
+    public List<ObjetoGenerico> BuscaGeral(String busca) throws ExcecaoPersistencia;
     /*Esta interface tem o proposito de retornar todos os objetos que tem algum atributo String que corresponda a string buscada*/
 }
