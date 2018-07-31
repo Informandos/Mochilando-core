@@ -16,18 +16,18 @@ import util.db.exception.ExcecaoPersistencia;
 public interface BuscarDiario extends InterfaceBusca {
     //O metodo abaixo chama os outros dois metodos abaixo dele
     @Override
-    public List<Diario> BuscaGeral(String busca) throws ExcecaoPersistencia;
+    public List<Diario> buscaGeral(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o nome do Diario
-    public List<Diario> CompararNomDiario(String busca) throws ExcecaoPersistencia;
+    public List<Diario> compararNomDiario(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o nome da atracao que esta ligada ao diario
-    public List<Diario> CompararNomAtracaoRelacionada(String busca) throws ExcecaoPersistencia;
+    public List<Diario> compararNomAtracaoRelacionada(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o nome da cidade que esta ligada ao diario
-    public List<Diario> CompararNomCidadeRelacionada(String busca) throws ExcecaoPersistencia;
+    public List<Diario> compararNomCidadeRelacionada(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o texto do diario
-    public List<Diario> CompararTextoDiario(String busca) throws ExcecaoPersistencia;
+    public List<Diario> compararTextoDiario(String busca) throws ExcecaoPersistencia;
     
 }

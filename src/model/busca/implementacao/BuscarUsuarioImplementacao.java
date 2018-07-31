@@ -16,9 +16,9 @@ import util.db.exception.ExcecaoPersistencia;
 public class BuscarUsuarioImplementacao implements BuscarUsuario {
 
     @Override
-    public List<Usuario> BuscaGeral(String busca) throws ExcecaoPersistencia{
+    public List<Usuario> buscaGeral(String busca) throws ExcecaoPersistencia{
         try {
-            List<Usuario> listaBuscaNome = CompararNomUsuario(busca);
+            List<Usuario> listaBuscaNome = compararNomUsuario(busca);
         
             return listaBuscaNome;
         } catch (ExcecaoPersistencia e) {
@@ -27,7 +27,7 @@ public class BuscarUsuarioImplementacao implements BuscarUsuario {
     }   
 
     @Override
-    public List<Usuario> CompararNomUsuario(String busca) throws ExcecaoPersistencia{
+    public List<Usuario> compararNomUsuario(String busca) throws ExcecaoPersistencia{
          try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

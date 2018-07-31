@@ -16,12 +16,12 @@ import util.db.exception.ExcecaoPersistencia;
 public class BuscarDiarioImplementacao implements BuscarDiario {
 
     @Override
-    public List<Diario> BuscaGeral(String busca) throws ExcecaoPersistencia{
+    public List<Diario> buscaGeral(String busca) throws ExcecaoPersistencia{
         try {
-            List<Diario> listaBuscaNome = CompararNomDiario(busca);
-            List<Diario> listaBuscaAtracao = CompararNomAtracaoRelacionada(busca);
-            List<Diario> listaBuscaCidade = CompararNomCidadeRelacionada(busca);
-            List<Diario> listaBuscaTxtDiario = CompararTextoDiario(busca);
+            List<Diario> listaBuscaNome = compararNomDiario(busca);
+            List<Diario> listaBuscaAtracao = compararNomAtracaoRelacionada(busca);
+            List<Diario> listaBuscaCidade = compararNomCidadeRelacionada(busca);
+            List<Diario> listaBuscaTxtDiario = compararTextoDiario(busca);
             
             List<Diario> listaBuscaConjunta = new ArrayList();
             listaBuscaConjunta.addAll(listaBuscaNome);
@@ -36,7 +36,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
     }
 
     @Override
-    public List<Diario> CompararNomDiario(String busca) throws ExcecaoPersistencia{
+    public List<Diario> compararNomDiario(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -77,7 +77,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
     }
 
     @Override
-    public List<Diario> CompararNomAtracaoRelacionada(String busca) throws ExcecaoPersistencia{
+    public List<Diario> compararNomAtracaoRelacionada(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -118,7 +118,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
     }
 
     @Override
-    public List<Diario> CompararNomCidadeRelacionada(String busca) throws ExcecaoPersistencia{
+    public List<Diario> compararNomCidadeRelacionada(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
@@ -161,7 +161,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
     }
 
     @Override
-    public List<Diario> CompararTextoDiario(String busca) throws ExcecaoPersistencia{
+    public List<Diario> compararTextoDiario(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 

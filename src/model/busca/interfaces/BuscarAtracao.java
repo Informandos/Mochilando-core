@@ -15,12 +15,12 @@ import util.db.exception.ExcecaoPersistencia;
  */
 public interface BuscarAtracao extends InterfaceBusca {
     @Override
-    public List<Atracao> BuscaGeral(String busca) throws ExcecaoPersistencia;
+    public List<Atracao> buscaGeral(String busca) throws ExcecaoPersistencia;
     //O metodo acima chama os dois metodos abaixo
     
     //O metodo abaixo compara a String com o nome da atracao
-    public List<Atracao> CompararNomAtracao(String busca) throws ExcecaoPersistencia;
+    public List<Atracao> compararNomAtracao(String busca) throws ExcecaoPersistencia;
     
     //O metodo abaixo compara a String com a cidade da atracao
-    public List<Atracao> CompararCidadeAtracao(String busca) throws ExcecaoPersistencia;
+    public List<Atracao> compararCidadeAtracao(String busca) throws ExcecaoPersistencia;
 }

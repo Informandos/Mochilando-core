@@ -22,25 +22,25 @@ import util.db.exception.ExcecaoPersistencia;
 public class BuscarAtracaoImplementacao implements BuscarAtracao {
 
     @Override
-<<<<<<< HEAD
-    public List<Atracao> BuscaGeral(String busca) throws ExcecaoPersistencia{
+
+    public List<Atracao> buscaGeral(String busca) throws ExcecaoPersistencia {
         try {
-            List<Atracao> listaBuscaNome = CompararNomAtracao(busca);
-            List<Atracao> listaBuscaCidade = CompararCidadeAtracao(busca);
-            
+            List<Atracao> listaBuscaNome = compararNomAtracao(busca);
+            List<Atracao> listaBuscaCidade = compararCidadeAtracao(busca);
+
             List<Atracao> listaBuscaConjunta = new ArrayList();
             listaBuscaConjunta.addAll(listaBuscaNome);
             listaBuscaConjunta.addAll(listaBuscaCidade);
-        
-        return listaBuscaConjunta;
+
+            return listaBuscaConjunta;
         } catch (ExcecaoPersistencia e) {
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
     }
 
     @Override
-    public List<Atracao> CompararNomAtracao(String busca) throws ExcecaoPersistencia{
-        try{
+    public List<Atracao> compararNomAtracao(String busca) throws ExcecaoPersistencia {
+        try {
             Connection conn = ConnectionManager.getInstance().getConnection();
 
             String sql = "SELECT * FROM atracao WHERE nom_atracao = ?";
@@ -49,12 +49,12 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
             pstmt.setString(1, busca);
             ResultSet rs = pstmt.executeQuery();
 
-            List<Atracao> listarBusca =null;
+            List<Atracao> listarBusca = null;
             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             InterfaceTipoAtracaoDAO tipoAtracaoDAO = new TipoAtracaoDAO();
             if (rs.next()) {
                 listarBusca = new ArrayList();
-                do{
+                do {
                     Atracao atracao = new Atracao();
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
@@ -66,7 +66,7 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
                     atracao.setNroLongitude(rs.getDouble("nro_longitude"));
 
                     listarBusca.add(atracao);
-                } while(rs.next());
+                } while (rs.next());
 
             }
 
@@ -78,28 +78,11 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
         } catch (ClassNotFoundException | SQLException e) {
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
-=======
-    public List<Atracao> BuscaGeral(String busca) {
-        List<Atracao> listaAtracoesNome = CompararNomAtracao(busca);
-        List<Atracao> listaAtracoesCidade = CompararCidadeAtracao( busca);
-        List<Atracao> listaAtracoes = null;
-        int numAtracoes = listaAtracoesCidade.size() + listaAtracoesNome.size();
-        for(int i=0; i<numAtracoes; i++ ){
-            
-        }
-        return listaAtracoes;
     }
 
     @Override
-    public List<Atracao> CompararNomAtracao(String busca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
->>>>>>> 384804e5e0eb8515e1d800c53750e35272254aa4
-    }
-
-    @Override
-    public List<Atracao> CompararCidadeAtracao(String busca) throws ExcecaoPersistencia{
-        try{
+    public List<Atracao> compararCidadeAtracao(String busca) throws ExcecaoPersistencia {
+        try {
             Connection conn = ConnectionManager.getInstance().getConnection();
 
             String sql = "SELECT * FROM atracao WHERE cod_cidade_atracao = ?";
@@ -108,12 +91,12 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
             pstmt.setString(1, busca);
             ResultSet rs = pstmt.executeQuery();
 
-            List<Atracao> listarBusca =null;
+            List<Atracao> listarBusca = null;
             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             InterfaceTipoAtracaoDAO tipoAtracaoDAO = new TipoAtracaoDAO();
             if (rs.next()) {
                 listarBusca = new ArrayList();
-                do{
+                do {
                     Atracao atracao = new Atracao();
                     atracao.setSeqAtracao(rs.getLong("seq_atracao"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade_atracao"));
@@ -125,7 +108,7 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
                     atracao.setNroLongitude(rs.getDouble("nro_longitude"));
 
                     listarBusca.add(atracao);
-                } while(rs.next());
+                } while (rs.next());
 
             }
 

@@ -15,8 +15,8 @@ import util.db.exception.ExcecaoPersistencia;
  */
 public interface BuscarUsuario extends InterfaceBusca{
     @Override
-    public List<Usuario> BuscaGeral(String busca) throws ExcecaoPersistencia;
+    public List<Usuario> buscaGeral(String busca) throws ExcecaoPersistencia;
     
     //Compara a String com o nome do Usuario
-    public List<Usuario> CompararNomUsuario(String busca) throws ExcecaoPersistencia;
+    public List<Usuario> compararNomUsuario(String busca) throws ExcecaoPersistencia;
 }

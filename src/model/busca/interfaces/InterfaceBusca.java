@@ -14,6 +14,6 @@ import util.db.exception.ExcecaoPersistencia;
  * @param <ObjetoGenerico>
  */
 public interface InterfaceBusca<ObjetoGenerico> {
-    public List<ObjetoGenerico> BuscaGeral(String busca) throws ExcecaoPersistencia;
+    public List<ObjetoGenerico> buscaGeral(String busca) throws ExcecaoPersistencia;
     /*Esta interface tem o proposito de retornar todos os objetos que tem algum atributo String que corresponda a string buscada*/
 }
