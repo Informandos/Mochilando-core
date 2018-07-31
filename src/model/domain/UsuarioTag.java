@@ -10,25 +10,25 @@ package model.domain;
  * @author Juliana
  */
 public class UsuarioTag {
-    private Long seqUsuarioPreferencia;
+    private Long seqUsuarioTag;
     private Usuario usuario;
     private Tag tag;
 
     public UsuarioTag() {
     }
 
-    public UsuarioTag(Long seqUsuarioPreferencia, Usuario usuario, Tag preferencia) {
-        this.seqUsuarioPreferencia = seqUsuarioPreferencia;
+    public UsuarioTag(Long seqUsuarioTag, Usuario usuario, Tag preferencia) {
+        this.seqUsuarioTag = seqUsuarioTag;
         this.usuario = usuario;
         this.tag = tag;
     }
 
-    public Long getSeqUsuarioPreferencia() {
-        return seqUsuarioPreferencia;
+    public Long getSeqUsuarioTag() {
+        return seqUsuarioTag;
     }
 
-    public void setSeqUsuarioPreferencia(Long seqUsuarioPreferencia) {
-        this.seqUsuarioPreferencia = seqUsuarioPreferencia;
+    public void setSeqUsuarioTag(Long seqUsuarioTag) {
+        this.seqUsuarioTag = seqUsuarioTag;
     }
 
     public Usuario getUsuario() {
