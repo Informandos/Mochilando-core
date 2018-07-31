@@ -22,6 +22,7 @@ import util.db.exception.ExcecaoPersistencia;
 public class BuscarAtracaoImplementacao implements BuscarAtracao {
 
     @Override
+<<<<<<< HEAD
     public List<Atracao> BuscaGeral(String busca) throws ExcecaoPersistencia{
         try {
             List<Atracao> listaBuscaNome = CompararNomAtracao(busca);
@@ -77,6 +78,23 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
         } catch (ClassNotFoundException | SQLException e) {
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
+=======
+    public List<Atracao> BuscaGeral(String busca) {
+        List<Atracao> listaAtracoesNome = CompararNomAtracao(busca);
+        List<Atracao> listaAtracoesCidade = CompararCidadeAtracao( busca);
+        List<Atracao> listaAtracoes = null;
+        int numAtracoes = listaAtracoesCidade.size() + listaAtracoesNome.size();
+        for(int i=0; i<numAtracoes; i++ ){
+            
+        }
+        return listaAtracoes;
+    }
+
+    @Override
+    public List<Atracao> CompararNomAtracao(String busca) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+>>>>>>> 384804e5e0eb8515e1d800c53750e35272254aa4
     }
 
     @Override
@@ -120,5 +138,5 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
             throw new ExcecaoPersistencia(e.getMessage(), e);
         }
     }
-    
+
 }
