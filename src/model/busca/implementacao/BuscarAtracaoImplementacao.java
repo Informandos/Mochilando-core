@@ -17,17 +17,25 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
 
     @Override
     public List<Atracao> BuscaGeral(String busca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Atracao> listaAtracoesNome = CompararNomAtracao(busca);
+        List<Atracao> listaAtracoesCidade = CompararCidadeAtracao( busca);
+        List<Atracao> listaAtracoes = null;
+        int numAtracoes = listaAtracoesCidade.size() + listaAtracoesNome.size();
+        for(int i=0; i<numAtracoes; i++ ){
+            
+        }
+        return listaAtracoes;
     }
 
     @Override
     public List<Atracao> CompararNomAtracao(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public List<Atracao> CompararCidadeAtracao(String busca) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
