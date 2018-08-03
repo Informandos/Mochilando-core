@@ -243,9 +243,10 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setString(2, senha);
             ResultSet rs = pstmt.executeQuery();
 
-            Usuario usuario = new Usuario();
+            Usuario usuario = null;
             InterfaceCidadeDAO cidadeDAO = new CidadeDAO();
             if (rs.next()) {
+                usuario = new Usuario();
                 usuario.setCodUsuario(rs.getLong("cod_usuario"));
                 usuario.setNomUsuario(rs.getString("nom_usuario"));
                 usuario.setSobrenomeUsuario(rs.getString("sobrenome_usuario"));
