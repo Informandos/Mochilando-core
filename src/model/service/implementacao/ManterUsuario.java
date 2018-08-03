@@ -40,9 +40,8 @@ public class ManterUsuario implements InterfaceManterUsuario {
           if((usuario.getSobrenomeUsuario()== null) || (usuario.getSobrenomeUsuario().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
           if((usuario.getSexo()== null) || (usuario.getSexo().isEmpty()))
-            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
-          if((usuario.getCidade()== null))
-            throw new ExcecaoNegocio("Obrigatório informar a cidade");
+            throw new ExcecaoNegocio("Obrigatório informar o sexo");
+         
         Long result = usuarioDAO.inserir(usuario);
         return result;
     }
