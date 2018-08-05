@@ -34,12 +34,12 @@ insert into dia (cod_diario, txt_dia, ordem_dia, data_dia) values ((select cod_d
 -- Tipo Atração
 insert into tipo_atracao (desc_tipo_atracao) values ('Praça');
 insert into tipo_atracao (desc_tipo_atracao) values ('Parque');
-insert into tipo_atracao (desc_tipo_atracao) values ('Sete Maravilhas do Mundo Moderno');
+insert into tipo_atracao (desc_tipo_atracao) values ('7 Maravilhas');
 
 -- Atração
 insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Belo Horizonte'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Praça'), 'Praça da Liberdade', 1, 1);
 insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'São Paulo'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Parque'), 'Parque Ibirapuera', 2, 2);
-insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like 'Sete Maravilhas do Mundo Moderno'), 'Cristo Redentor', 3, 3);
+insert into atracao (cod_cidade_atracao, cod_tipo_atracao, nom_atracao, nro_latitude, nro_longitude) values ((select cod_cidade from cidade where nom_cidade like 'Rio de Janeiro'), (select cod_tipo_atracao from tipo_atracao where desc_tipo_atracao like '7 Maravilhas'), 'Cristo Redentor', 3, 3);
 
 -- Dia Atração
 insert into dia_atracao (seq_atracao, seq_dia) values ((select seq_atracao from atracao where nro_latitude = 1), (select seq_dia from dia where data_dia = '2018-05-06'));
@@ -52,14 +52,19 @@ insert into foto (seq_dia) values ((select seq_dia from dia where data_dia = '20
 insert into foto (seq_dia) values ((select seq_dia from dia where data_dia = '2018-04-08'));
 
 -- Tag
-insert into tag (desc_tag) values ('Belo Horizonte');
-insert into tag (desc_tag) values ('São Paulo');
-insert into tag (desc_tag) values ('Rio de Janeiro');
+insert into tag (desc_tag) values ('Cidade');
+insert into tag (desc_tag) values ('Parque');
+insert into tag (desc_tag) values ('Montanha');
+insert into tag (desc_tag) values ('Interior');
+insert into tag (desc_tag) values ('Praça');
+insert into tag (desc_tag) values ('7 Maravilhas');
+insert into tag (desc_tag) values ('Museu');
+insert into tag (desc_tag) values ('Praia');	
 
 -- Tag Diário
-insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem à Belo Horizonte-MG'), (select cod_tag from tag where desc_tag like 'Belo Horizonte'));
-insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem à São Paulo-SP'), (select cod_tag from tag where desc_tag like 'São Paulo'));
-insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem ao Rio de Janeiro-RJ'), (select cod_tag from tag where desc_tag like 'Rio de Janeiro'));
+insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem à Belo Horizonte-MG'), (select cod_tag from tag where desc_tag like 'Praça'));
+insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem à São Paulo-SP'), (select cod_tag from tag where desc_tag like 'Parque'));
+insert into tag_diario (cod_diario, cod_tag) values ((select cod_diario from diario where nom_diario like 'Viagem ao Rio de Janeiro-RJ'), (select cod_tag from tag where desc_tag like '7 Maravilhas'));
 
 -- Usuário Tag
 insert into usuario_tag (cod_usuario, cod_tag) values ((select cod_usuario from usuario where nom_usuario like 'João'), (select cod_tag from tag where desc_tag like 'Belo Horizonte'));
