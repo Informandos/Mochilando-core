@@ -34,7 +34,7 @@ public class ManterUsuario implements InterfaceManterUsuario {
             throw new ExcecaoNegocio("Obrigatório informar a senha.");
          if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o E-mail.");
-          if((usuario.getDatNascimento()== null) || (usuario.getDatNascimento().isEmpty()))
+          if((usuario.getDatNascimento()== null))
             throw new ExcecaoNegocio("Obrigatório informar a data de nascimento.");
           if((usuario.getSobrenomeUsuario()== null) || (usuario.getSobrenomeUsuario().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
@@ -56,12 +56,12 @@ public class ManterUsuario implements InterfaceManterUsuario {
             throw new ExcecaoNegocio("Obrigatório informar a senha.");
          if((usuario.getTxtEmail() == null) || (usuario.getTxtEmail().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o E-mail.");
-          if((usuario.getDatNascimento()== null) || (usuario.getDatNascimento().isEmpty()))
+          if((usuario.getDatNascimento()== null))
             throw new ExcecaoNegocio("Obrigatório informar a data de nascimento.");
           if((usuario.getSobrenomeUsuario()== null) || (usuario.getSobrenomeUsuario().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
           if((usuario.getSexo()== null) || (usuario.getSexo().isEmpty()))
-            throw new ExcecaoNegocio("Obrigatório informar o sobrenome");
+            throw new ExcecaoNegocio("Obrigatório informar o sexo");
         
         
                   

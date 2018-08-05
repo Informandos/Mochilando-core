@@ -50,7 +50,7 @@ public class BuscarUsuarioImplementacao implements BuscarUsuario {
                     usuario.setTxtSenha(rs.getString("txt_senha"));
                     usuario.setImgPerfil(rs.getByte("img_perfil"));
                     usuario.setSexo(rs.getString("sexo"));
-                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                    usuario.setDatNascimento(rs.getDate("dat_nascimento"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                     usuario.setCidade(cidade);
                     listarBusca.add(usuario);

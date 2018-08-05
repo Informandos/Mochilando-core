@@ -22,7 +22,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?,?)";
+            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -30,10 +30,11 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setString(2, usuario.getSobrenomeUsuario());
             pstmt.setString(3, usuario.getTxtEmail());
             pstmt.setString(4, usuario.getTxtSenha());
-            
             pstmt.setString(5, usuario.getSexo());
-            pstmt.setString(6, usuario.getDatNascimento());
-            pstmt.setLong(7, usuario.getCidade().getCodCidade());
+            pstmt.setDate(6,new java.sql.Date( usuario.getDatNascimento().getTime()));
+            // pstmt.setLong(7, usuario.getCidade().getCodCidade());
+            int codCidade = 1;
+            pstmt.setInt(7, codCidade);
             ResultSet rs = pstmt.executeQuery();
 
             Long id = null;
@@ -79,7 +80,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setString(3, usuario.getTxtEmail());
             pstmt.setByte(5, usuario.getImgPerfil());
             pstmt.setString(6, usuario.getSexo());
-            pstmt.setString(7, usuario.getDatNascimento());
+            pstmt.setDate(7, (Date) usuario.getDatNascimento());
             pstmt.setLong(8, usuario.getCidade().getCodCidade());
             pstmt.executeUpdate();
 
@@ -136,7 +137,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                     usuario.setTxtSenha(rs.getString("txt_senha"));
                     usuario.setImgPerfil(rs.getByte("img_perfil"));
                     usuario.setSexo(rs.getString("sexo"));
-                    usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                    usuario.setDatNascimento(rs.getDate("dat_nascimento"));
                     Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                     usuario.setCidade(cidade);
                     listAll.add(usuario);
@@ -177,7 +178,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                 usuario.setTxtSenha(rs.getString("txt_senha"));
                 usuario.setImgPerfil(rs.getByte("img_perfil"));
                 usuario.setSexo(rs.getString("sexo"));
-                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                usuario.setDatNascimento(rs.getDate("dat_nascimento"));
                 Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                 usuario.setCidade(cidade);
             }
@@ -215,7 +216,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                 usuario.setTxtSenha(rs.getString("txt_senha"));
                 usuario.setImgPerfil(rs.getByte("img_perfil"));
                 usuario.setSexo(rs.getString("sexo"));
-                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                usuario.setDatNascimento(rs.getDate("dat_nascimento"));
                 Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                 usuario.setCidade(cidade);
             }
@@ -254,7 +255,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
                 usuario.setTxtSenha(rs.getString("txt_senha"));
                 usuario.setImgPerfil(rs.getByte("img_perfil"));
                 usuario.setSexo(rs.getString("sexo"));
-                usuario.setDatNascimento(rs.getString("dat_nascimento"));
+                usuario.setDatNascimento(rs.getDate("dat_nascimento"));
                 Cidade cidade = cidadeDAO.consultarPorId(rs.getLong("cod_cidade"));
                 usuario.setCidade(cidade);
             }

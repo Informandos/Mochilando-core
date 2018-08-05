@@ -18,9 +18,7 @@ public class ManterCidade implements InterfaceManterCidade {
     
     @Override
     public Long cadastrar(Cidade cidade) throws ExcecaoPersistencia, ExcecaoNegocio {
-        if(cidade.getCodCidade() == null){
-            throw new ExcecaoNegocio("Obrigatório informar o código da cidade");
-        }
+
         if(cidade.getEstado().getCodEstado() == null){
             throw new ExcecaoNegocio("Obrigatório informar o código do estado");
         }

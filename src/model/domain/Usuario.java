@@ -6,6 +6,7 @@
 package model.domain;
 
 import java.sql.Blob;
+import java.util.Date;
 
 /**
  *
@@ -19,13 +20,13 @@ public class Usuario {
     private String txtSenha;
     private Byte imgPerfil;
     private String sexo;
-    private String datNascimento;
+    private Date datNascimento;
     private Cidade cidade;
 
     public Usuario() {
     }
 
-    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, Byte imgPerfil, String sexo, String datNascimento, Cidade cidade) {
+    public Usuario(Long codUsuario, String nomUsuario, String sobrenomeUsuario, String txtEmail, String txtSenha, Byte imgPerfil, String sexo, Date datNascimento, Cidade cidade) {
         this.codUsuario = codUsuario;
         this.nomUsuario = nomUsuario;
         this.sobrenomeUsuario = sobrenomeUsuario;
@@ -138,14 +139,14 @@ public class Usuario {
     /**
      * @return the datNascimento
      */
-    public String getDatNascimento() {
+    public Date getDatNascimento() {
         return datNascimento;
     }
 
     /**
      * @param datNascimento the datNascimento to set
      */
-    public void setDatNascimento(String datNascimento) {
+    public void setDatNascimento(Date datNascimento) {
         this.datNascimento = datNascimento;
     }
 
