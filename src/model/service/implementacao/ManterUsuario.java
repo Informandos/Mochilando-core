@@ -27,8 +27,7 @@ public class ManterUsuario implements InterfaceManterUsuario {
     @Override
     public Long cadastrar(Usuario usuario) throws  ExcecaoPersistencia,ExcecaoNegocio{
         
-        if((usuario.getCodUsuario()== null))
-            throw new ExcecaoNegocio("Obrigatório informar o codigo usuario");
+        
          if((usuario.getNomUsuario()== null) || (usuario.getNomUsuario().isEmpty()))
             throw new ExcecaoNegocio("Obrigatório informar o nome.");
         if((usuario.getTxtSenha()== null) || (usuario.getTxtSenha().isEmpty()))

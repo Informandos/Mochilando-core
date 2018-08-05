@@ -22,7 +22,7 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,img_perfil,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?,?)";
+            String sql = "INSERT INTO usuario (nom_usuario,sobrenome_usuario,txt_email,txt_senha,sexo,dat_nascimento,cod_cidade) VALUES(?,?,?,md5(?),?,?,?,?)";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -30,10 +30,10 @@ public class UsuarioDAO implements InterfaceUsuarioDAO {
             pstmt.setString(2, usuario.getSobrenomeUsuario());
             pstmt.setString(3, usuario.getTxtEmail());
             pstmt.setString(4, usuario.getTxtSenha());
-            pstmt.setByte(5, usuario.getImgPerfil());
-            pstmt.setString(6, usuario.getSexo());
-            pstmt.setString(7, usuario.getDatNascimento());
-            pstmt.setLong(8, usuario.getCidade().getCodCidade());
+            
+            pstmt.setString(5, usuario.getSexo());
+            pstmt.setString(6, usuario.getDatNascimento());
+            pstmt.setLong(7, usuario.getCidade().getCodCidade());
             ResultSet rs = pstmt.executeQuery();
 
             Long id = null;
