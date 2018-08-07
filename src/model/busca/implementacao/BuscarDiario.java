@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import model.busca.interfaces.BuscarDiario;
 import model.dao.implementacao.UsuarioDAO;
 import model.dao.interfaces.InterfaceUsuarioDAO;
 import model.domain.Diario;
@@ -13,9 +12,8 @@ import model.domain.Usuario;
 import util.db.ConnectionManager;
 import util.db.exception.ExcecaoPersistencia;
 
-public class BuscarDiarioImplementacao implements BuscarDiario {
+public class BuscarDiario {
 
-    @Override
     public List<Diario> buscaGeral(String busca) throws ExcecaoPersistencia{
         try {
             List<Diario> listaBuscaNome = compararNomDiario(busca);
@@ -35,7 +33,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
         }
     }
 
-    @Override
+
     public List<Diario> compararNomDiario(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -76,7 +74,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
         }
     }
 
-    @Override
+
     public List<Diario> compararNomAtracaoRelacionada(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -117,7 +115,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
         }
     }
 
-    @Override
+
     public List<Diario> compararNomCidadeRelacionada(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
@@ -160,7 +158,7 @@ public class BuscarDiarioImplementacao implements BuscarDiario {
         }
     }
 
-    @Override
+
     public List<Diario> compararTextoDiario(String busca) throws ExcecaoPersistencia{
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();

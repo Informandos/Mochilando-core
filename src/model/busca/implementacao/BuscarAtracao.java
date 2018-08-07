@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.busca.interfaces.BuscarAtracao;
 import model.dao.implementacao.CidadeDAO;
 import model.dao.implementacao.TipoAtracaoDAO;
 import model.dao.interfaces.InterfaceCidadeDAO;
@@ -19,10 +18,13 @@ import model.domain.TipoAtracao;
 import util.db.ConnectionManager;
 import util.db.exception.ExcecaoPersistencia;
 
-public class BuscarAtracaoImplementacao implements BuscarAtracao {
+public class BuscarAtracao {
 
-    @Override
-
+    public BuscarAtracao() {
+    }
+    
+    
+   
     public List<Atracao> buscaGeral(String busca) throws ExcecaoPersistencia {
         try {
             List<Atracao> listaBuscaNome = compararNomAtracao(busca);
@@ -38,7 +40,7 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
         }
     }
 
-    @Override
+   
     public List<Atracao> compararNomAtracao(String busca) throws ExcecaoPersistencia {
         try {
             Connection conn = ConnectionManager.getInstance().getConnection();
@@ -80,7 +82,7 @@ public class BuscarAtracaoImplementacao implements BuscarAtracao {
         }
     }
 
-    @Override
+   
     public List<Atracao> compararCidadeAtracao(String busca) throws ExcecaoPersistencia {
         try {
             Connection conn = ConnectionManager.getInstance().getConnection();

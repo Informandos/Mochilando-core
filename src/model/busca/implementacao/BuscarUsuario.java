@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import model.busca.interfaces.BuscarUsuario;
 import model.dao.implementacao.CidadeDAO;
 import model.dao.interfaces.InterfaceCidadeDAO;
 import model.domain.Cidade;
@@ -13,9 +12,9 @@ import model.domain.Usuario;
 import util.db.ConnectionManager;
 import util.db.exception.ExcecaoPersistencia;
 
-public class BuscarUsuarioImplementacao implements BuscarUsuario {
+public class BuscarUsuario  {
 
-    @Override
+   
     public List<Usuario> buscaGeral(String busca) throws ExcecaoPersistencia{
         try {
             List<Usuario> listaBuscaNome = compararNomUsuario(busca);
@@ -26,7 +25,7 @@ public class BuscarUsuarioImplementacao implements BuscarUsuario {
         }    
     }   
 
-    @Override
+   
     public List<Usuario> compararNomUsuario(String busca) throws ExcecaoPersistencia{
          try {
             Connection connection = ConnectionManager.getInstance().getConnection();
