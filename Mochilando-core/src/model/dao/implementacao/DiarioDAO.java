@@ -39,8 +39,8 @@ public class DiarioDAO implements InterfaceDiarioDAO {
         try {
             Connection connection = ConnectionManager.getInstance().getConnection();
 
-            String sql = "INSERT INTO diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_Diario) "
-                    + "VALUES(?,?,?,?,?,?) RETURNING cod_diario";
+            String sql = "INSERT INTO diario (cod_usuario, nom_diario, dat_publicacao, dat_inicio_viagem, dat_fim_viagem, txt_Diario, tipo_diario) "
+                    + "VALUES(?,?,?,?,?,?,?) RETURNING cod_diario";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
 
@@ -50,6 +50,8 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.setDate(4, new java.sql.Date(diario.getDatInicioViagem().getTime()));
             pstmt.setDate(5, new java.sql.Date(diario.getDatFimViagem().getTime()));
             pstmt.setString(6, diario.getTxtDiario());
+            pstmt.setString(7, diario.getTipoDiario());
+
 
             ResultSet rs = pstmt.executeQuery();
 
@@ -81,6 +83,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     + "       dat_inicio_viagem = ?, "
                     + "       dat_fim_viagem = ?, "
                     + "       txt_diario= ? "
+                    + "       tipo_diario= ? "
                     + " WHERE cod_diario = ?;";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -91,6 +94,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
             pstmt.setDate(4, new java.sql.Date(diario.getDatInicioViagem().getTime()));
             pstmt.setDate(5, new java.sql.Date(diario.getDatFimViagem().getTime()));
             pstmt.setString(6, diario.getTxtDiario());
+            pstmt.setString(7, diario.getTipoDiario());
 
             pstmt.executeUpdate();
 
@@ -151,6 +155,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                 diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
                 diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
                 diario.setTxtDiario(rs.getString("txt_diario"));
+                diario.setTipoDiario(rs.getString("tipo_diario"));
             }
 
             rs.close();
@@ -189,6 +194,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
                     diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
                     diario.setTxtDiario(rs.getString("txt_diario"));
+                    diario.setTipoDiario(rs.getString("tipo_diario"));
 
                     listarTudo.add(diario);
                 } while (rs.next());
@@ -232,6 +238,7 @@ public class DiarioDAO implements InterfaceDiarioDAO {
                     diario.setDatInicioViagem(rs.getDate("dat_inicio_viagem"));
                     diario.setDatFimViagem(rs.getDate("dat_fim_viagem"));
                     diario.setTxtDiario(rs.getString("txt_diario"));
+                    diario.setTipoDiario(rs.getString("tipo_diario"));
 
                     listarPorCodUsuario.add(diario);
                 } while (rs.next());

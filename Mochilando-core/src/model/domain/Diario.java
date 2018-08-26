@@ -19,11 +19,12 @@ public class Diario {
     private Date datInicioViagem;
     private Date datFimViagem;
     private String txtDiario;
+    private String tipoDiario;
 
     public Diario() {
     }
 
-    public Diario(Long codDiario, Usuario usuario, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String txtDiario) {
+    public Diario(Long codDiario, Usuario usuario, String nomDiario, Date datPublicacao, Date datInicioViagem, Date datFimViagem, String txtDiario, String tipoDiario) {
         this.codDiario = codDiario;
         this.usuario = usuario;
         this.nomDiario = nomDiario;
@@ -31,6 +32,7 @@ public class Diario {
         this.datInicioViagem = datInicioViagem;
         this.datFimViagem = datFimViagem;
         this.txtDiario = txtDiario;
+        this.tipoDiario = tipoDiario;
     }
 
     /**
@@ -129,6 +131,14 @@ public class Diario {
      */
     public void setTxtDiario(String txtDiario) {
         this.txtDiario = txtDiario;
+    }
+
+    public String getTipoDiario() {
+        return tipoDiario;
+    }
+
+    public void setTipoDiario(String tipoDiario) {
+        this.tipoDiario = tipoDiario;
     }
 
     

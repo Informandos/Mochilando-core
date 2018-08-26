@@ -45,6 +45,9 @@ public class ManterDiario implements InterfaceManterDiario {
         if(diario.getTxtDiario() == null || diario.getTxtDiario().isEmpty()){
             throw new ExcecaoNegocio("Obrigatório informar texto do diario");
         }
+        if(diario.getTipoDiario() == null || diario.getTipoDiario().isEmpty()){
+            throw new ExcecaoNegocio("Obrigatório informar tipo do diario");
+        }
         Long result = diarioDAO.inserir(diario);
         return result;
     }
